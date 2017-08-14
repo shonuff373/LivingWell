@@ -1,0 +1,332 @@
+﻿@{
+    ViewBag.Title = "Living Well Rehab";
+}
+
+<!-- Main Carousel
+============================================= -->
+<section id="slider" class="slider-parallax swiper_wrapper clearfix">
+
+    <div class="slider-parallax-inner">
+
+        <div class="swiper-container swiper-parent">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide dark" style="background-image: url('../../Content/images/slider/swiper/nurse_patient_smiling.jpg');">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                            <h2 data-caption-animate="fadeInUp">Welcome to Living Well Rehab</h2>
+                            <p data-caption-animate="fadeInUp" data-caption-delay="200">Where quality care &amp; wellness are our standards.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide dark">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                            <h2 data-caption-animate="fadeInUp">Beautifully Flexible</h2>
+                            <p data-caption-animate="fadeInUp" data-caption-delay="200">Looks beautiful &amp; ultra-sharp on Retina Screen Displays. Powerful Layout with Responsive functionality that can be adapted to any screen size.</p>
+                        </div>
+                    </div>
+                    <div class="video-wrap">
+                        <video poster="../../Content/images/videos/explore.jpg" preload="auto" loop autoplay muted>
+                            <source src='../../Content/images/videos/explore.mp4' type='video/mp4' />
+                            <source src='../../Content/images/videos/explore.webm' type='video/webm' />
+                        </video>
+                        <div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url('../../Content/images/slider/swiper/3.jpg'); background-position: center top;">
+                    <div class="container clearfix">
+                        <div class="slider-caption">
+                            <h2 data-caption-animate="fadeInUp">Great Performance</h2>
+                            <p data-caption-animate="fadeInUp" data-caption-delay="200">You'll be surprised to see the Final Results of your Creation &amp; would crave for more.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
+            <div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
+            <div id="slide-number"><div id="slide-number-current"></div><span>/</span><div id="slide-number-total"></div></div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Content
+============================================= -->
+<section id="content">
+
+    <!-- Services
+    ============================================= -->
+    
+    <div class="container text-justify topmargin-sm bottommargin-sm clearfix">   
+        <div class="section-block notopmargin notoppadding bottommargin-sm center"><h3 class="col_full nomargin nopadding">The Best in Contact Rehabilitation Services</h3></div>
+        <div class="col_one_third nobottommargin">
+            <div class="feature-box media-box">
+                <div class="fbox-media">
+                    <img src="~/Content/images/services/staff_outdoors.jpg" alt="Why choose Us?">
+                </div>
+                <div class="fbox-desc blue-text service_Description">
+                    <h3 class="">Team Reliability</h3><h5><span class="subtitle">Available to you when you need us!</span></h5>
+                    @*<p class="service_Description dark-blue-text">Each Living Well specialist is dedicated to providing superior care for our guests. Partner with our team of professionals to create goal-oriented, tailored programs that increase resident functionality to the fullest.</p>*@
+                    <p class="dark-blue-text">We are your staffing and consultation solution! You will always talk to the owner to ensure that your expectations are exceeded.</p>
+                    @*<p class="dark-blue-text">Available to you when you need us!</p>*@
+                </div>
+            </div>
+            <div class="center">
+                @Html.ActionLink("Learn More", "About", "Home", new { @class = "button button-default-background button-xlarge noleftmargin norightmargin" })
+            </div>
+        </div>
+
+        <div class="col_one_third nobottommargin">
+            <div class="feature-box media-box">
+                <div class="fbox-media">
+                    <img src="~/Content/images/services/nurse_helping_patient.jpg" alt="">
+                </div>
+                <div class="fbox-desc blue-text service_Description">
+                    <h3 class="">Personalized Customer Services</h3><h5><span class="subtitle">Your source for solutions</span></h5>
+                    <p class="dark-blue-text">We are your partner. Our team well believes in collaborations personalized to meet your current and future needs.</p>
+                    @*<h3>Data Accessibility.@*<span class="subtitle"> .</span></h3>
+            <p class="service_Description dark-blue-text">We provide analytical, innovative data 24/7. To learn more about our enterprise-facing data and statistics and how to access it, click the link below.</p>*@
+                </div>
+            </div>
+            <div class="center">
+                @Html.ActionLink("Learn More", "Services", "Services", new { @class = "button button-default-background button-xlarge noleftmargin norightmargin" })
+            </div>
+        </div>
+
+        <div class="col_one_third nobottommargin col_last">
+            <div class="feature-box media-box">
+                <div class="fbox-media">
+                    <img src="~/Content/images/services/nurse_helping_patient02.jpg" alt="What We Do?">
+                </div>
+                <div class="fbox-desc blue-text service_Description">
+                    <h3 class="">Our Mission</h3><h5><span class="subtitle">It's in our name</span></h5>
+                    <p class="dark-blue-text"> We strive to provide the highest quality Physical, Occupational and Speech Therapy staff to assist our residents to live well!</p>
+                    @*<ul class="dark-blue-text" >
+                        <li class="leftmargin-sm">Physical Therapy</li>
+                        <li class="leftmargin-sm">Occupational Therapy</li>
+                        <li class="leftmargin-sm">Speech Therapy</li>
+                    </ul>*@
+                    @*<h3>financial mastery.<span class="subtitle">help complete activies of daily living.</span></h3>
+            <p class="service_Description dark-blue-text">Living Well Rehab will change the way you do business in a constantly shifting healthcare envronment. We understand how strategy and financial alignment can quickly change your trajectory toward success. Start by signing up for our free program-analysis.</p>*@
+                </div>
+            </div>
+            <div class="center">
+                @Html.ActionLink("Learn More", "Services", "Services", new { @class = "button button-default-background button-xlarge noleftmargin norightmargin" })
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Technology
+    ============================================= -->
+    <div class="section nomargin toppadding-sm bottompadding-sm">
+
+        <div class="container clearfix">
+
+            <div class="row nomargin">
+
+                <div class="section-block bottommargin-sm blue-text center">
+                    <h1>Feature Rich Technology</h1>
+                    <span class="divcenter">To impact your business</span>
+                </div>
+
+                <div class="col-md-4 col-sm-6 bottommargin">
+
+                    <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-line-heart"></i></a>
+                        </div>
+                        <h3 class="blue-text">Electronic Records</h3>
+                        <p class="dark-blue-text">Retrieve the latest news and updates on resident's status.</p>
+                    </div>
+
+                    <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn" data-delay="200">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-line-paper"></i></a>
+                        </div>
+                        <h3 class="blue-text">Extensive Documentation</h3>
+                        <p class="dark-blue-text"> we have covered each &amp; everything in our docs including videos &amp; screenshots.</p>
+                    </div>
+
+                    <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn" data-delay="400">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-line-layers"></i></a>
+                        </div>
+                        <h3 class="blue-text">Support</h3>
+                        <p class="dark-blue-text">Have any and all problems resolved with forums and live chat feature.</p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 hidden-sm bottommargin center">
+                    <img src="~/Content/images/services/imac2.png" alt="iphone 2">
+                </div>
+
+                <div class="col-md-4 col-sm-6 bottommargin">
+
+                    <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-line-power"></i></a>
+                        </div>
+                        <h3 class="blue-text">Interfacing</h3>
+                        <p class="dark-blue-text">Connect to our software interfaces internally and externally receive the data that you want.</p>
+                    </div>
+
+                    <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn" data-delay="200">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-bulb"></i></a>
+                        </div>
+                        <h3 class="blue-text">Endless Possibilities</h3>
+                        <p class="dark-blue-text">Complete control on each &amp; every element that provides endless customization.</p>
+                    </div>
+
+                    <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn" data-delay="400">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-line-check"></i></a>
+                        </div>
+                        <h3 class="blue-text">Outcome Checking</h3>
+                        <p class="dark-blue-text">Check resident's growth and progress towards personalized goals.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Free Analysis
+    ============================================= -->
+    <div class="allpadding-sm container clearfix">
+
+        <div id="analysis-apply" class="section-block bottommargin-sm center blue-text">
+            <h1>Let's get started!</h1>
+            <span>Schedule a free program analysis today.</span>
+        </div>
+        <div class="col_two_fifth nobottommargin">
+            <div id="analysis-form-result" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!"></div>
+
+            <form id="template-analysisform" name="template-analysisform" method="post" role="form" novalidate="novalidate" class="allpadding-sm analysis-form">
+
+                <div class="form-process"></div>
+
+                <div class="col_half">
+                    <label for="template-analysis-fname" class="dark">First Name <small>*</small></label>
+                    <input type="text" id="template-analysis-fname" name="template-analysis-fname" value="" class="sm-form-control required" aria-required="true">
+                </div>
+
+                <div class="col_half col_last">
+                    <label for="template-analysis-lname" class="dark">Last Name <small>*</small></label>
+                    <input type="text" id="template-analysis-lname" name="template-analysis-lname" value="" class="sm-form-control required" aria-required="true">
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="col_full">
+                    <label for="template-analysis-community-name" class="dark">Community Name <small>*</small></label>
+                    <input type="text" id="template-analysis-community-name" name="template-analysis-community-name" value="" class="required sm-form-control" aria-required="true">
+                </div>
+
+                <div class="col_full">
+                    <label for="template-analysis-community-community-address-one" class="dark">Community Address One @*<small>*</small>*@</label>
+                    <input type="text" id="template-analysis-community-community-address-one" name="template-analysis-community-community-address-one" value="" class="sm-form-control" aria-required="true">
+                </div>
+
+                <div class="col_full">
+                    <label for="template-analysis-community-address-two" class="dark">Community Address Two@*<small>*</small>*@</label>
+                    <input type="text" name="template-analysis-community-address-two" id="template-analysis-community-address-two" value=""  class="sm-form-control" aria-required="true">
+                </div>
+
+                <div class="col_half">
+                    <label for="template-analysis-city" class="dark">City @*<small>*</small>*@</label>
+                    <input type="text" name="template-analysis-city" id="template-analysis-city" value="" class="sm-form-control" aria-required="true">
+                </div>
+
+                <div class="col_one_sixth">
+                    <label for="template-analysis-community-state" class="dark">State@*<small>*</small>*@</label>
+                    <input type="text" name="template-analysis-community-state" id="template-analysis-community-state" value="" class="sm-form-control" aria-required="true">
+                </div>
+
+                <div class="col_one_third col_last">
+                    <label for="template-analysis-zip" class="dark">Zip <small>*</small></label>
+                    <input type="text" name="template-analysis-zip" id="template-analysis-city" value="" class="sm-form-control required" aria-required="true">
+                </div>
+
+                <div class="col_half">
+                    <label for="template-analysis-phone" class="dark">Phone <small>*</small></label>
+                    <input type="tel" name="template-analysis-phone" id="template-analysis-phone" value="" class="sm-form-control required" aria-required="true">
+                </div>
+
+                <div class="col_half col_last">
+                    <label for="template-analysis-phone" class="dark">Phone <small>*</small></label>
+                    <input type="email" name="template-analysis-phone" id="template-analysis-phone" value="" class="sm-form-control email required" aria-required="true">
+                </div>
+
+                <div class="clear"></div>
+
+
+                <div class="col_full">
+                    <button class="button button-orange-background button-3d button-large btn-block nomargin" name="template-analysis-apply" type="submit" value="apply">Schedule Analysis</button>
+                </div>
+
+            </form>
+
+            <script type="text/javascript">
+
+                jQuery("#template-jobform").validate({
+                    submitHandler: function (form) {
+                        jQuery('.form-process').fadeIn();
+                        jQuery(form).ajaxSubmit({
+                            target: '#job-form-result',
+                            success: function () {
+                                jQuery('.form-process').fadeOut();
+                                jQuery(form).find('.sm-form-control').val('');
+                                jQuery('#job-form-result').attr('data-notify-msg', jQuery('#job-form-result').html()).html('');
+                                SEMICOLON.widget.notifications(jQuery('#job-form-result'));
+                            }
+                        });
+                    }
+                });
+
+            </script>
+
+        </div>
+
+
+        <div class="col_three_fifth bottommargin-sm col_last">
+
+                <p class="lead dark-blue-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis.</p>
+
+            @*<div class="section-block topmargin-sm">
+                <h3>Get Started Today!</h3>
+                <span class="subtitle">Schedule a free financial analysis of your program.</span>
+            </div>*@
+            @*<div class="">
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis.</p>
+            </div>*@
+                
+            @*<a href="#" class="button button-border button-dark button-rounded button-large noleftmargin topmargin-sm">Learn more</a>*@
+
+        </div>
+
+    </div>
+
+
+    <!-- Call Us
+    ============================================= -->
+    <div class="section content-wrap nomargin toppadding-sm bottompadding-sm">
+        <div class="container clearfix">
+            <div class="promo nopadding center">
+                <div class="container clearfix">
+                    <h3>Call us today at 215.123.4567 or Email us at support@livingwellrehab.com</h3>
+                    <span>We strive to provide our patients with top notch support and care.</span>
+                    @*<a href="#" class="button button-xlarge"><span>Browse Now</span></a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- #content end -->

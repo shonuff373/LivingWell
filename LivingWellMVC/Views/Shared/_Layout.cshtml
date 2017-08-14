@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @*<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">*@
+
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/dark.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/animate.css" type="text/css" />
+    <link rel="stylesheet" href="~/Content/magnific-popup.css" type="text/css" />
+
+    <link rel="stylesheet" href="~/Content/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body class="stretched nopadding">
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+        ============================================= -->
+        <header id="header" class="transparent-header">
+
+            <div id="header-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                    <!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+                        <a href="index.html" class="standard-logo" data-dark-logo="../../Content/images/logo-dark.png"><img src="../../Content/images/logo.png" alt="Canvas Logo"></a>
+                        <a href="index.html" class="retina-logo" data-dark-logo="../../Content/images/logo-dark@2x.png"><img src="../../Content/images/logo-dark@2x.png" alt="Canvas Logo"></a>
+                    </div><!-- #logo end -->
+                    <!-- Primary Navigation
+                    ============================================= -->
+                    <nav id="primary-menu">
+
+                        <ul>
+                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Main" ? "current" : "")">
+                                @Html.ActionLink("Home", "Main", "Home")
+                            </li>
+                            <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "current" : "")">
+                                @Html.ActionLink("About Us", "About", "Home")
+                            </li>
+
+                            <li class="sub-menu @(ViewContext.RouteData.Values["Action"].ToString() == "Services" ? "current" : "")">
+                                @Html.ActionLink("Services", "Services", "Services")
+                                <ul style="display: none;">
+                                    <li class="sub-menu">
+                                        <a href="#" class=""><div><i class="icon-stack"></i>Select Services</div></a>
+                                        @*<ul style="display: none;">
+                                            <li class="sub-menu">
+                                                <a href="slider-revolution.html" class="sf-with-ul"><div>Revolution Slider</div></a>
+                                                <ul style="display: none;">
+                                                    <li><a href="rs-demo-premium-concept.html"><div>Premium Templates</div></a></li>
+                                                    <li><a href="slider-revolution.html"><div>Full Screen</div></a></li>
+                                                    <li><a href="slider-revolution-fullwidth.html"><div>Full Width</div></a></li>
+                                                    <li><a href="slider-revolution-kenburns.html"><div>Kenburns Effect</div></a></li>
+                                                    <li><a href="slider-revolution-html5-videos.html"><div>HTML5 Video</div></a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>*@
+                                    </li>
+                                    <li class="sub-menu">
+                                        <a href="#" class=""><div><i class="icon-stack"></i>Outpatient Services</div></a>
+                                    </li>
+                                    <li class="sub-menu">
+                                        <a href="#" class=""><div><i class="icon-stack"></i>Wellness Services</div></a>
+                                    </li>
+                                </ul>
+                            <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "current" : "")">
+                                @Html.ActionLink("Partner With Us", "About", "Home")
+                            </li>
+                            <li class="mega-menu-small @(ViewContext.RouteData.Values["Action"].ToString() == "Opportunities" ? "current" : "")">
+                                @Html.ActionLink("Careers", "Opportunities", "Opportunities")
+                                <ul style="display: none;">
+                                    <li class="sub-menu">
+                                        <a href="#" class=""><div><i class="icon-stack"></i>Career Opportunities</div></a>
+                                        @*<ul style="display: none;">
+                                            <li class="sub-menu">
+                                                <a href="slider-revolution.html" class="sf-with-ul"><div>Revolution Slider</div></a>
+                                                <ul style="display: none;">
+                                                    <li><a href="rs-demo-premium-concept.html"><div>Premium Templates</div></a></li>
+                                                    <li><a href="slider-revolution.html"><div>Full Screen</div></a></li>
+                                                    <li><a href="slider-revolution-fullwidth.html"><div>Full Width</div></a></li>
+                                                    <li><a href="slider-revolution-kenburns.html"><div>Kenburns Effect</div></a></li>
+                                                    <li><a href="slider-revolution-html5-videos.html"><div>HTML5 Video</div></a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>*@
+                                    <li class="sub-menu">
+                                        <a href="#" class=""><div><i class="icon-stack"></i>Partnership Opportunities</div></a>
+                                    </li>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "current" : "")">
+                                @Html.ActionLink("Contact Us", "Contact", "Home")
+                            </li>
+
+                        </ul>
+
+
+                        <!-- Top Search
+                        ============================================= -->
+                        <div id="top-search">
+                            <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+                            <form action="search.html" method="get">
+                                <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+                            </form>
+                        </div><!-- #top-search end -->
+
+                    </nav><!-- #primary-menu end -->
+
+                </div>
+
+            </div>
+
+        </header><!-- #header end -->
+
+       
+            @RenderBody()
+
+        <!-- Footer
+    ============================================= -->
+        <footer id="footer" class="dark">
+
+            <div class="container">
+
+                <!-- Footer Widgets
+            ============================================= -->
+                <div class="footer-widgets-wrap clearfix">
+
+                    <div class="col_two_third">
+
+                        <div class="col_one_third">
+
+                            <div class="widget clearfix">
+
+                                <h4>Contact Us</h4>
+
+                                <div style="background: url('../../Content/images/world-map.png') no-repeat center center; background-size: 100%;">
+                                    <address>
+                                        <abbr title="Phone Number"><strong>Address:</strong></abbr><br>
+                                        123 Main Street, Suite 600<br>
+                                        Bryn Mawr, PA 19010<br>
+                                    </address>
+                                    <abbr title="Phone Number"><strong>Phone:</strong></abbr> 215.123.4567<br>
+                                    <abbr title="Fax"><strong>Fax:</strong></abbr> 215.890.1234<br>
+                                    <abbr title="Email Address"><strong>Email:</strong></abbr>support@livingwellrehab.com
+
+
+                                </div>
+                                <div class="topmargin-sm clearfix"><p>Give us a call, we look foward to meeting you!</p></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col_one_third">
+
+                            <div class="widget widget_links clearfix">
+
+                                <h4>Free Analysis</h4>
+
+                                <div class="topmargin-sm clearfix"><p>Living Well Rehab is the perfect therapy solution for you. Our free analysis is the first step in letting show you what we can do.</p></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col_one_third col_last">
+
+                            <div class="widget clearfix">
+                                <h4>Opportunities</h4>
+                                <ul class="unordered-list">
+                                    <li>Patient-centered approach to care</li>
+                                    <li>On-site and local regional management</li>
+                                    <li>Growth opportunities</li>
+                                    <li>Flexible Schedules</li>
+                                    <li>Point of service documentation and more...</li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col_one_third col_last">
+
+                        <div class="widget subscribe-widget clearfix">
+                            <h4>FollOw US</h4>
+                            <h5><strong>Subscribe</strong> to Our Newsletter to get Important News &amp; Updates:</h5>
+                            <div class="widget-subscribe-form-result"></div>
+                            <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
+                                <div class="input-group divcenter">
+                                    <span class="input-group-addon"><i class="icon-email2"></i></span>
+                                    <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-success" type="submit">Subscribe</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="widget clearfix" style="margin-bottom: -20px;">
+
+                            <div class="row">
+
+                                <div class="col-md-6 clearfix bottommargin-sm">
+                                    <a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
+                                        <i class="icon-facebook"></i>
+                                        <i class="icon-facebook"></i>
+                                    </a>
+                                    <a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
+                                </div>
+                                <div class="col-md-6 clearfix">
+                                    <a href="#" class="social-icon si-dark si-colored si-rss nobottommargin" style="margin-right: 10px;">
+                                        <i class="icon-rss"></i>
+                                        <i class="icon-rss"></i>
+                                    </a>
+                                    <a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col_two_third">
+                        <div class="col_one_third">
+                            <a href="#" class="button button-default-background button-xlarge" style="width:100%; text-align:center; color: white;"><!--<i class="icon-angle-right"></i>--><span>Contact Us</span></a>
+
+                        </div>
+                        <div class="col_one_third">
+                            <a href="#" class="button button-default-background button-xlarge " style="width:100%; text-align:center; color: white;"><!--<i class="icon-angle-right"></i>--><span>Schedule Now</span></a>
+                        </div>
+                        <div class="col_one_third norightmargin">
+                            <a href="#" class="button button-default-background button-xlarge" style="width:100%; text-align:center; color: white;"><!--<i class="icon-angle-right"></i>--><span>Learn More</span></a>
+                        </div>
+                    </div>
+                </div><!-- .footer-widgets-wrap end -->
+
+            </div>
+            <!-- #copyrights end -->
+
+        </footer><!-- #footer end -->
+
+        <!-- Go To Top
+        ============================================= -->
+        <div id="gotoTop" class="icon-angle-up"></div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        <!-- External JavaScripts
+        ============================================= -->
+        @*<script type="text/javascript" src="../js/jquery.js"></script>*@
+        <script type="text/javascript" src="~/Scripts/js/plugins.js"></script>
+        <!-- Footer Scripts
+        ============================================= -->
+        <script type="text/javascript" src="~/Scripts/js/functions.js"></script>
+
+
+        @RenderSection("scripts", required: false)
+
+
+    </div><!-- #wrapper end -->
+</body>
+</html>
