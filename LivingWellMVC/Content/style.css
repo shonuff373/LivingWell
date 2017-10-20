@@ -94,7 +94,10 @@
 /* ----------------------------------------------------------------
 	Basic
 -----------------------------------------------------------------*/
-
+* {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+}
 dl, dt, dd, ol, ul, li {
 	margin: 0;
 	padding: 0;
@@ -140,7 +143,6 @@ dl, dt, dd, ol, ul, li {
 body {
 	line-height: 1.5;
 	color: #555;
-	font-family: 'Lato', sans-serif;
 }
 
 a {
@@ -1161,14 +1163,16 @@ body.stretched #header.full-header .container {
 	line-height: 22px;
 	padding: 39px 15px;
 	color: #EEE; /*#444;*/ /*ILJ*/
-	font-weight: bold;
-	font-size: 13px;
+	/*font-weight: bold;
+	font-size: 13px;*/
+    font: 400 15px Nunito,Arial,sans-serif;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	font-family: 'Raleway', sans-serif;
 	-webkit-transition: margin .4s ease, padding .4s ease;
 	-o-transition: margin .4s ease, padding .4s ease;
 	transition: margin .4s ease, padding .4s ease;
+    
 }
 
 #primary-menu ul li > a span { display: none; }
@@ -3067,7 +3071,7 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 	max-width: 550px;
 	color: #EEE;
 	font-size: 22px;
-	font-weight: 300;
+	font-weight: 100;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
 	-webkit-transition: top .3s ease;
 	-o-transition: top .3s ease;
@@ -3082,9 +3086,9 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner { left: auto; }
 
 .slider-caption h2 {
 	font-size: 64px;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	font-weight: 700;
+	letter-spacing: 4px;
+	/*text-transform: uppercase;
+	font-weight: 700;*/
 	line-height: 1;
 	margin-bottom: 30px;
 }
@@ -6661,12 +6665,18 @@ body:not(.device-xs):not(.device-xxs) .countdown.countdown-large.coming-soon .co
     	background-color: #0079c0; /*ILJ*/
 }
 .button-default-background:hover{
-    background-color: #1089d0;
+    background-color: darkred;
 }
 
 .button-orange-background{
     background-color: orange; /*ILJ*/
 }
+.button-red-background{
+    background-color: red; /*ILJ*/
+}
+/*.button-red-background:hover{
+    background-color: yellow;
+}*/
 body:not(.device-touch) .button {
 	-webkit-transition: all .2s ease-in-out;
 	-o-transition: all .2s ease-in-out;
@@ -6682,7 +6692,7 @@ body:not(.device-touch) .button {
 }
 
 .button:hover {
-	background-color: #1089d0; /*ILJ*/
+	background-color: #cc0000; /*#1089d0; ILJ*/
 	color: #FFF;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
@@ -6845,7 +6855,7 @@ body:not(.device-touch) .button {
 }
 
 .button.button-3d:hover {
-	background-color: #1ABC9C !important;
+	background-color: darkred !important;
 	opacity: 0.9;
 }
 
@@ -7526,7 +7536,8 @@ body:not(.device-touch) .button.button-full strong {
 	position: relative;
 	margin-top: 20px;
 	padding: 0 0 0 80px;
-    font-family: "Open-sans", sans-serif;
+    font-weight: 900;
+    /*font-family: "Open-sans", sans-serif;*/
 }
 
 .feature-box:first-child { margin-top: 0; }
@@ -7553,7 +7564,7 @@ body:not(.device-touch) .button.button-full strong {
 .feature-box .fbox-icon i,
 .feature-box .fbox-icon img {
 	border-radius: 50%;
-	background-color: #0079c0; /*#1ABC9C;*/ /*ILJ*/
+	background-color: #cc0000;/*#0079c0;*/ /*#1ABC9C;*/ /*ILJ*/
 }
 
 .feature-box .fbox-icon i {
@@ -7565,8 +7576,8 @@ body:not(.device-touch) .button.button-full strong {
 
 .feature-box h3 {
 	font-size: 20px;
-	/*font-weight: 700;
-	text-transform: uppercase;*/ /*ILJ*/
+	font-weight: 900;
+	/*text-transform: uppercase;*/ /*ILJ*/
 	letter-spacing: 1px;
 	margin-bottom: 0;
 	/*color: #333;*/ /*ILJ*/
@@ -7574,6 +7585,7 @@ body:not(.device-touch) .button.button-full strong {
 
 .feature-box p {
 	margin: 8px 0 0 0;
+    font-weight: 700;
 	/*color: #999;*/ /*ILJ*/
 }
 
@@ -11434,7 +11446,7 @@ input[type=checkbox]:not(:checked) + label.error { display: block !important; }
 	top: 8px;
 	left: 30px;
 	height: 0;
-	border-top: 1px solid #EEE;
+	border-top: 1px solid #0079c0;
 }
 
 .divider.divider-thick:after,
@@ -11551,12 +11563,12 @@ input[type=checkbox]:not(:checked) + label.error { display: block !important; }
 /* Divider - Rounded & Border
 -----------------------------------------------------------------*/
 
-.divider.divider-border { color: #E5E5E5; }
+.divider.divider-border { color: #0079c0; }
 
 .divider.divider-border i {
 	line-height: 38px;
 	background-color: transparent;
-	border: 1px solid #EEE;
+	border: 1px solid #0079c0;
 }
 
 
@@ -13674,7 +13686,7 @@ body:not(.no-transition) #wrapper,
 	40. CUSTOM CSS
 -----------------------------------------------------------------*/
 
-/*
+/* CHEAT SHEET
     #0060c5 -- Navigation blue
     #1070d5 -- Navigation Hover blue
     #0079c0 -- Button blue
@@ -13694,6 +13706,9 @@ body:not(.no-transition) #wrapper,
 
 .dark-blue-text{
     color:#425968;
+}
+.red-text{
+    color: #cc0000;
 }
 
 @media (min-width: 961px) {
@@ -13718,7 +13733,6 @@ body:not(.no-transition) #wrapper,
 	text-transform: uppercase;*/
 	letter-spacing: 1px;
 	color: #0079c0; /*ILJ*/
-    font-family: 'Open Sans', sans-serif;
 }
 
 .emphasis-title h1,
@@ -13732,7 +13746,9 @@ body:not(.no-transition) #wrapper,
 
 .section-block h2 { font-size: 36px; }
 
-.section-block h3 { font-size: 30px; }
+.section-block h3 { font-size: 30px;
+                    font-weight: 900;
+}
 
 .section-block h4 { font-size: 26px; }
 
@@ -13793,10 +13809,10 @@ body:not(.no-transition) #wrapper,
 .analysis-form{
     background-color: #0079c0;
     
-    border-radius: 15px;
+    /*border-radius: 15px;
     border-style: solid;
     border-width: 2px;
-    border-color: orange;
+    border-color: red;*/
 }
 
 /* Vertical Center
@@ -13817,5 +13833,5 @@ body:not(.no-transition) #wrapper,
 .inner {
     margin-left: auto;
     margin-right: auto; 
-    width: /*whatever width you want*/;
+    width: auto; /*whatever width you want*/;
 }

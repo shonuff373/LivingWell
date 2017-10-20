@@ -11,6 +11,7 @@
     <!-- Stylesheets
     ============================================= -->
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">    
     <link rel="stylesheet" href="~/Content/bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="~/Content/style.css" type="text/css" />
     <link rel="stylesheet" href="~/Content/swiper.css" type="text/css" />
@@ -43,17 +44,17 @@
                     <!-- Logo
                     ============================================= -->
                     <div id="logo">
-                        <a href="index.html" class="standard-logo" data-dark-logo="../../Content/images/logo-dark.png"><img src="../../Content/images/logo.png" alt="Canvas Logo"></a>
-                        <a href="index.html" class="retina-logo" data-dark-logo="../../Content/images/logo-dark@2x.png"><img src="../../Content/images/logo-dark@2x.png" alt="Canvas Logo"></a>
+                        <a href="@Url.Action("Main","Home")" class="standard-logo" data-dark-logo="../../Content/images/logo-dark.png"><img src="../../Content/images/logo.png" alt="Canvas Logo"></a>
+                        <a href="@Url.Action("Main","Home")" class="retina-logo" data-dark-logo="../../Content/images/logo-dark@2x.png"><img src="../../Content/images/logo-dark@2x.png" alt="Canvas Logo"></a>
                     </div><!-- #logo end -->
                     <!-- Primary Navigation
                     ============================================= -->
                     <nav id="primary-menu">
 
                         <ul>
-                            <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Main" ? "current" : "")">
+                            @*<li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Main" ? "current" : "")">
                                 @Html.ActionLink("Home", "Main", "Home")
-                            </li>
+                            </li>*@
                             <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "current" : "")">
                                 @Html.ActionLink("About Us", "About", "Home")
                             </li>
@@ -83,8 +84,8 @@
                                         <a href="#" class=""><div><i class="icon-stack"></i>Wellness Services</div></a>
                                     </li>
                                 </ul>
-                            <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "current" : "")">
-                                @Html.ActionLink("Partner With Us", "About", "Home")
+                            <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "Partner" ? "current" : "")">
+                                @Html.ActionLink("Partner With Us", "Partner", "Partner")
                             </li>
                             <li class="mega-menu-small @(ViewContext.RouteData.Values["Action"].ToString() == "Opportunities" ? "current" : "")">
                                 @Html.ActionLink("Careers", "Opportunities", "Opportunities")
@@ -118,14 +119,14 @@
 
                         <!-- Top Search
                         ============================================= -->
-                        <div id="top-search">
+                        @*<div id="top-search">
                             <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
                             <form action="search.html" method="get">
                                 <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
                             </form>
-                        </div><!-- #top-search end -->
+                        </div>*@
 
-                    </nav><!-- #primary-menu end -->
+                    </nav>
 
                 </div>
 
