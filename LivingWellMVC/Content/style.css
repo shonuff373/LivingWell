@@ -6662,17 +6662,17 @@ body:not(.device-xs):not(.device-xxs) .countdown.countdown-large.coming-soon .co
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 .button-default-background{
-    	background-color: #0079c0; /*ILJ*/
+    	background-color: #cc0000; /*#0079c0;*/ /*ILJ*/
 }
 .button-default-background:hover{
-    background-color: darkred;
+    background-color: black;
 }
 
 .button-orange-background{
     background-color: orange; /*ILJ*/
 }
-.button-red-background{
-    background-color: red; /*ILJ*/
+.red-background{
+    background-color: #cc0000; /*ILJ*/
 }
 /*.button-red-background:hover{
     background-color: yellow;
@@ -6692,7 +6692,7 @@ body:not(.device-touch) .button {
 }
 
 .button:hover {
-	background-color: #cc0000; /*#1089d0; ILJ*/
+	background-color: #ac0000; /*#1089d0; ILJ*/
 	color: #FFF;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
@@ -6852,10 +6852,11 @@ body:not(.device-touch) .button {
 	-webkit-transition: none;
 	-o-transition: none;
 	transition: none;
+    background-color: #cc0000;
 }
 
 .button.button-3d:hover {
-	background-color: darkred !important;
+	background-color: #ac0000; !important;
 	opacity: 0.9;
 }
 
@@ -13711,6 +13712,10 @@ body:not(.no-transition) #wrapper,
     color: #cc0000;
 }
 
+.dark-grey-text{
+    color: #494e5e;
+}
+
 @media (min-width: 961px) {
     .margin-one-hundred-px {
         margin-top: 100px;
@@ -13732,7 +13737,7 @@ body:not(.no-transition) #wrapper,
 	/*font-weight: 700;
 	text-transform: uppercase;*/
 	letter-spacing: 1px;
-	color: #0079c0; /*ILJ*/
+	color: #494e5e; /*ILJ*/
 }
 
 .emphasis-title h1,
@@ -13746,8 +13751,10 @@ body:not(.no-transition) #wrapper,
 
 .section-block h2 { font-size: 36px; }
 
-.section-block h3 { font-size: 30px;
-                    font-weight: 900;
+.section-block h3 { font-size: 42px;
+                    font-weight: 400;
+                    font-family: 'Nunito', sans-serif;
+                    /*font: 400 36px Nunito,Arial,sans-serif;*/
 }
 
 .section-block h4 { font-size: 26px; }
@@ -13783,14 +13790,38 @@ body:not(.no-transition) #wrapper,
 
 .section-block ~ p:not(.lead) { font-size: 15px; }
 
-.section-block:after {
-	content: '';
+.section-title h3:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    max-width: 470px;
+    height: 1px;
+    background: #c9cbd2;
+        transform: translateX(-50%) translateY(0) scale(1);
+	/*content: '';
 	display: block;
 	margin-top: 30px;
-	width: 40px;
-	border-top: 2px solid #444;
+	width: 40%;
+	border-top: 1px solid #c9cbd2;*/
 }
-
+.section-title h3:after{
+        content: "";
+    max-width: 470px;
+    width: 100%;
+    height: 6px;
+    border-left: solid 40px #cc0000;
+    border-right: solid 40px #cc0000;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    box-sizing: border-box;
+    -webkit-transform: translateX(-50%) translateY(0) scale(1);
+    -moz-transform: translateX(-50%) translateY(0) scale(1);
+    -ms-transform: translateX(-50%) translateY(0) scale(1);
+    transform: translateX(-50%) translateY(0) scale(1);
+}
 .center .section-block:after,
 .section-block.center:after,
 .section-block.title-center:after { margin: 30px auto 0; }
@@ -13833,5 +13864,12 @@ body:not(.no-transition) #wrapper,
 .inner {
     margin-left: auto;
     margin-right: auto; 
-    width: auto; /*whatever width you want*/;
+    width: auto; /*whatever width you want*/
 }
+
+.red-divider div {
+    height: 2em !important;
+    width: 100% !important;
+    background-color: #cc0000 !important;
+}
+

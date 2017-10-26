@@ -30,24 +30,29 @@
 <!-- Content
 ============================================= -->
 <section id="content">
+    <div class="container red-divider" style="height:2em; width: 100%; background-color:#cc0000"></div>
 
     <!-- Services
     ============================================= -->
     
     <div class="container text-justify topmargin-sm bottommargin-sm clearfix">   
-        <div class="section-block notopmargin notoppadding bottommargin-sm center"><h3 class="col_full nomargin nopadding">The Best in Contact Rehabilitation Services</h3></div>
+        <div class="section-block topmargin bottommargin center">
+            <div class="section-title">
+                <h3 class="col_full bottompadding-lg">What We Do</h3>
+            </div>
+        </div>
         <div class="col_one_third nobottommargin">
             <div class="feature-box media-box">
                 <div class="fbox-media">
                     <img src="~/Content/images/services/staff_outdoors.jpg" alt="Why choose Us?">
                 </div>
-                <div class="fbox-desc blue-text service_Description">
+                <div class="fbox-desc dark-grey-text service_Description">
                     <h3 class="">Team Reliability</h3><h5><span class="subtitle">Available to you when you need us!</span></h5>
                     <p class="dark-blue-text">We are your staffing and consultation solution! You will always talk to the owner to ensure that your expectations are exceeded.</p>
                 </div>
             </div>
             <div class="center">
-                @Html.ActionLink("Learn More", "About", "Home", new { @class = "button button-default-background button-xlarge noleftmargin norightmargin" })
+                @*@Html.ActionLink("Learn More", "About", "Home", new { @class = "button button-default-background button-xlarge noleftmargin norightmargin" })*@
             </div>
         </div>
 
@@ -56,13 +61,13 @@
                 <div class="fbox-media">
                     <img src="~/Content/images/services/nurse_helping_patient.jpg" alt="">
                 </div>
-                <div class="fbox-desc blue-text service_Description">
+                <div class="fbox-desc dark-grey-text service_Description">
                     <h3 class="">Personalized Customer Services</h3><h5><span class="subtitle">Your source for solutions</span></h5>
                     <p class="dark-blue-text">We are your partner. Our team well believes in collaborations personalized to meet your current and future needs.</p>
                 </div>
             </div>
             <div class="center">
-                @Html.ActionLink("Learn More", "Services", "Services", new { @class = "button button-default-background button-xlarge noleftmargin norightmargin" })
+                @*@Html.ActionLink("Learn More", "Services", "Services", new { @class = "button button-default-background button-xlarge noleftmargin norightmargin" })*@
             </div>
         </div>
 
@@ -71,91 +76,109 @@
                 <div class="fbox-media">
                     <img src="~/Content/images/services/nurse_helping_patient02.jpg" alt="What We Do?">
                 </div>
-                <div class="fbox-desc blue-text service_Description">
+                <div class="fbox-desc dark-grey-text service_Description">
                     <h3 class="">Our Mission</h3><h5><span class="subtitle">It's in our name</span></h5>
                     <p class="dark-blue-text"> We strive to provide the highest quality Physical, Occupational and Speech Therapy staff to assist our residents to live well!</p>
                 </div>
             </div>
             <div class="center">
-                @Html.ActionLink("Learn More", "Services", "Services", new { @class = "button button-default-background button-xlarge noleftmargin norightmargin" })
+                @*@Html.ActionLink("Learn More", "Services", "Services", new { @class = "button button-default-background button-xlarge noleftmargin norightmargin" })*@
             </div>
         </div>
+
+        <div class="center">
+            @Html.ActionLink("Our Services", "Services", "Home", new { @class = "button button-default-background button-xlarge topmargin" })
+        </div>
+
+
 
     </div>
 
 
     <!-- Technology
     ============================================= -->
-    <div class="section nomargin toppadding-sm nobottompadding">
+    <div class="container col_full toppadding-sm nobottompadding">
 
-        <div class="nobottommargin clearfix">
+        <div class="section nopadding nomargin clearfix">
 
-            <div class="row nomargin"style="font-size:large;">
-
-                <div class="section-block nobottommargin blue-text center">
-                    <h1>Feature Rich Technology</h1>
-                    @*<span class="divcenter">To impact your business</span>*@
-                </div>
-
-                <div class="col_one_third nobottommargin">
-
-                    <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn">
-                        <div class="fbox-icon">
-                            <i class="icon-line-heart"></i>
+            <div class="row nomargin"style="font-size:large; background-color:#435967">
+                <div class="col_two_third nomargin"><img src="~/Content/images/temp/Nurse-Happy-hold-stethoscope.png"></div>
+                <div class="col_one_third nomargin">
+                    <div class="section-block center" style="margin-left:30px">
+                        <div class="section-title">
+                            <h3 class="col_full bottompadding-sm" style="color:white;">Who We Are</h3>
+                            <p style="font-size:x-large; color:white;">Therapist owned and operated. Living Well is driven and dedicated to provide client centered Physical, Occupational and Speech rehabilitative excellence. 
+                                    
                         </div>
-                        <h3 class="red-text">Electronic Records</h3>
-                        <p class="dark-blue-text">Retrieve the latest news and updates on resident's status.</p>
-                    </div>
-
-                    <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn" data-delay="200">
-                        <div class="fbox-icon">
-                            <i class="icon-line-paper"></i>
+                        <div class="center">
+                            @Html.ActionLink("About Us", "Services", "Home", new { @class = "button button-default-background button-xlarge topmargin-sm nobottommargin" })
                         </div>
-                        <h3 class="red-text">Extensive Documentation</h3>
-                        <p class="dark-blue-text">We have covered each &amp; everything in our docs including videos &amp; screenshots.</p>
-                    </div>
-
-                    <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn" data-delay="400">
-                        <div class="fbox-icon">
-                            <i class="icon-line-layers"></i>
-                        </div>
-                        <h3 class="red-text">Support</h3>
-                        <p class="dark-blue-text">Have any and all problems resolved with forums and live chat feature.</p>
                     </div>
 
                 </div>
+                @*<div class="section-block nobottommargin dark-grey-text center">
+        <h1>Feature Rich Technology</h1>
+    </div>
 
-                <div class="col_one_third hidden-sm nobottommargin center">
-                    <img src="~/Content/images/temp/temp_nurse_computer03.png" alt="nurse_computer">
-                </div>
+    <div class="col_one_third nobottommargin">
 
-                <div class="col_one_third col_last nobottommargin">
+        <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn">
+            <div class="fbox-icon">
+                <i class="icon-line-heart"></i>
+            </div>
+            <h3 class="red-text">Electronic Records</h3>
+            <p class="dark-blue-text">Retrieve the latest news and updates on resident's status.</p>
+        </div>
 
-                    <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn">
-                        <div class="fbox-icon">
-                            <i class="icon-line-power"></i>
-                        </div>
-                        <h3 class="red-text">Interfacing</h3>
-                        <p class="dark-blue-text">Connect to our software interfaces internally and externally receive the data that you want.</p>
-                    </div>
+        <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn" data-delay="200">
+            <div class="fbox-icon">
+                <i class="icon-line-paper"></i>
+            </div>
+            <h3 class="red-text">Extensive Documentation</h3>
+            <p class="dark-blue-text">We have covered each &amp; everything in our docs including videos &amp; screenshots.</p>
+        </div>
 
-                    <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn" data-delay="200">
-                        <div class="fbox-icon">
-                            <i class="icon-bulb"></i>
-                        </div>
-                        <h3 class="red-text">Endless Possibilities</h3>
-                        <p class="dark-blue-text">Complete control on each &amp; every element that provides endless customization.</p>
-                    </div>
+        <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn" data-delay="400">
+            <div class="fbox-icon">
+                <i class="icon-line-layers"></i>
+            </div>
+            <h3 class="red-text">Support</h3>
+            <p class="dark-blue-text">Have any and all problems resolved with forums and live chat feature.</p>
+        </div>
 
-                    <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn" data-delay="400">
-                        <div class="fbox-icon">
-                            <i class="icon-line-check"></i>
-                        </div>
-                        <h3 class="red-text">Outcome Checking</h3>
-                        <p class="dark-blue-text">Check resident's growth and progress towards personalized goals.</p>
-                    </div>
+    </div>
 
-                </div>
+    <div class="col_one_third hidden-sm nobottommargin center">
+        <img src="~/Content/images/temp/temp_nurse_computer03.png" alt="nurse_computer">
+    </div>
+
+    <div class="col_one_third col_last nobottommargin">
+
+        <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn">
+            <div class="fbox-icon">
+                <i class="icon-line-power"></i>
+            </div>
+            <h3 class="red-text">Interfacing</h3>
+            <p class="dark-blue-text">Connect to our software interfaces internally and externally receive the data that you want.</p>
+        </div>
+
+        <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn" data-delay="200">
+            <div class="fbox-icon">
+                <i class="icon-bulb"></i>
+            </div>
+            <h3 class="red-text">Endless Possibilities</h3>
+            <p class="dark-blue-text">Complete control on each &amp; every element that provides endless customization.</p>
+        </div>
+
+        <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn" data-delay="400">
+            <div class="fbox-icon">
+                <i class="icon-line-check"></i>
+            </div>
+            <h3 class="red-text">Outcome Checking</h3>
+            <p class="dark-blue-text">Check resident's growth and progress towards personalized goals.</p>
+        </div>
+
+    </div>*@
 
             </div>
 
@@ -238,7 +261,7 @@
 
 
                 <div class="col_full">
-                    <button class="button button-red button-3d button-large btn-block nomargin" name="template-analysis-apply" type="submit" value="apply">Schedule Analysis</button>
+                    <button class="button button-3d button-large btn-block nomargin" name="template-analysis-apply" type="submit" value="apply">Schedule Analysis</button>
                 </div>
 
             </form>

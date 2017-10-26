@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace LivingWellMVC.Controllers {
     public class HomeController : Controller {
-        public ActionResult Main() {
+        public ActionResult Index() {
             return View();
         }
 
@@ -19,6 +19,18 @@ namespace LivingWellMVC.Controllers {
         public ActionResult Contact() {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult Opportunities() {
+            return View();
+        }
+
+        public ActionResult Partner() {
+            return View();
+        }
+
+        public ActionResult Services() {
             return View();
         }
     }
