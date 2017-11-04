@@ -10,7 +10,7 @@
 
         <div class="swiper-container swiper-parent">
             <div class="swiper-wrapper">
-                <div class="swiper-slide dark" style="background-image: url('../../Content/images/slider/swiper/nurse_patient_smiling.jpg');">
+                <div class="swiper-slide dark" style="background-image: url('../../Content/images/temp/nurse_patient_smiling.png');">
                     <div class="container clearfix">
                         <div class="slider-caption slider-caption-center">
                             <h2 data-caption-animate="fadeInUp">Welcome to Living Well Rehab</h2>
@@ -32,6 +32,15 @@
 <section id="content">
     <div class="container red-divider" style="height:2em; width: 100%; background-color:#cc0000"></div>
 
+
+
+
+
+
+
+
+
+
     <!-- Services
     ============================================= -->
     
@@ -44,7 +53,7 @@
         <div class="col_one_third nobottommargin">
             <div class="feature-box media-box">
                 <div class="fbox-media">
-                    <img src="~/Content/images/services/staff_outdoors.jpg" alt="Why choose Us?">
+                    <img src="~/Content/images/temp/staff_outdoors.png" alt="Why choose Us?">
                 </div>
                 <div class="fbox-desc dark-grey-text service_Description">
                     <h3 class="">Team Reliability</h3><h5><span class="subtitle">Available to you when you need us!</span></h5>
@@ -59,7 +68,7 @@
         <div class="col_one_third nobottommargin">
             <div class="feature-box media-box">
                 <div class="fbox-media">
-                    <img src="~/Content/images/services/nurse_helping_patient.jpg" alt="">
+                    <img src="~/Content/images/temp/nurse_helping_patient.png" alt="">
                 </div>
                 <div class="fbox-desc dark-grey-text service_Description">
                     <h3 class="">Personalized Customer Services</h3><h5><span class="subtitle">Your source for solutions</span></h5>
@@ -74,7 +83,7 @@
         <div class="col_one_third nobottommargin col_last">
             <div class="feature-box media-box">
                 <div class="fbox-media">
-                    <img src="~/Content/images/services/nurse_helping_patient02.jpg" alt="What We Do?">
+                    <img src="~/Content/images/temp/nurse_helping_patient02.png" alt="What We Do?">
                 </div>
                 <div class="fbox-desc dark-grey-text service_Description">
                     <h3 class="">Our Mission</h3><h5><span class="subtitle">It's in our name</span></h5>
@@ -95,107 +104,118 @@
     </div>
 
 
-    <!-- Technology
+    <!-- About Us
     ============================================= -->
-    <div class="container col_full toppadding-sm nobottompadding">
+    <div class="section nomargin">
+        <div class="col_full notoppadding nobottompadding">
 
-        <div class="section nopadding nomargin clearfix">
+            <div class="col_one_eighth"></div>
+            <div class="section col_three_fourth nopadding nomargin clearfix">
 
-            <div class="row nomargin"style="font-size:large; background-color:#435967">
-                <div class="col_two_third nomargin"><img src="~/Content/images/temp/Nurse-Happy-hold-stethoscope.png"></div>
-                <div class="col_one_third nomargin">
-                    <div class="section-block center" style="margin-left:30px">
-                        <div class="section-title">
-                            <h3 class="col_full bottompadding-sm" style="color:white;">Who We Are</h3>
-                            <p style="font-size:x-large; color:white;">Therapist owned and operated. Living Well is driven and dedicated to provide client centered Physical, Occupational and Speech rehabilitative excellence. 
-                                    
+                <div class="row nomargin" style="font-size:large; background-color:#435967">
+                    <div class="col_three_fifth nomargin"><img src="~/Content/images/temp/Nurse-Happy-hold-stethoscope.png"></div>
+                    <div class="col_two_fifth nomargin">
+                        <div class="section-block bottommargin-sm center" style="margin-left:30px">
+                            <div class="section-title">
+                                <h3 class="col_full bottompadding-sm" style="color:white;">Who We Are</h3>
+                                <p style="font-size:3vh; color:white;">Therapist owned and operated. Living Well is driven and dedicated to provide client centered Physical, Occupational and Speech rehabilitative excellence.
+
+                            </div>
+                            <div class="center" style="font-size:3vh">
+                                @Html.ActionLink("About Us", "Services", "Home", new { @class = "button button-default-background button-xlarge topmargin nobottommargin" })
+                            </div>
                         </div>
-                        <div class="center">
-                            @Html.ActionLink("About Us", "Services", "Home", new { @class = "button button-default-background button-xlarge topmargin-sm nobottommargin" })
-                        </div>
+
                     </div>
+                    @*
+                                            <!-- Technology
+                        ============================================= -->
+                                        <div class="section-block nobottommargin dark-grey-text center">
+                            <h1>Feature Rich Technology</h1>
+                        </div>
+
+                        <div class="col_one_third nobottommargin">
+
+                            <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn">
+                                <div class="fbox-icon">
+                                    <i class="icon-line-heart"></i>
+                                </div>
+                                <h3 class="red-text">Electronic Records</h3>
+                                <p class="dark-blue-text">Retrieve the latest news and updates on resident's status.</p>
+                            </div>
+
+                            <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn" data-delay="200">
+                                <div class="fbox-icon">
+                                    <i class="icon-line-paper"></i>
+                                </div>
+                                <h3 class="red-text">Extensive Documentation</h3>
+                                <p class="dark-blue-text">We have covered each &amp; everything in our docs including videos &amp; screenshots.</p>
+                            </div>
+
+                            <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn" data-delay="400">
+                                <div class="fbox-icon">
+                                    <i class="icon-line-layers"></i>
+                                </div>
+                                <h3 class="red-text">Support</h3>
+                                <p class="dark-blue-text">Have any and all problems resolved with forums and live chat feature.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="col_one_third hidden-sm nobottommargin center">
+                            <img src="~/Content/images/temp/temp_nurse_computer03.png" alt="nurse_computer">
+                        </div>
+
+                        <div class="col_one_third col_last nobottommargin">
+
+                            <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn">
+                                <div class="fbox-icon">
+                                    <i class="icon-line-power"></i>
+                                </div>
+                                <h3 class="red-text">Interfacing</h3>
+                                <p class="dark-blue-text">Connect to our software interfaces internally and externally receive the data that you want.</p>
+                            </div>
+
+                            <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn" data-delay="200">
+                                <div class="fbox-icon">
+                                    <i class="icon-bulb"></i>
+                                </div>
+                                <h3 class="red-text">Endless Possibilities</h3>
+                                <p class="dark-blue-text">Complete control on each &amp; every element that provides endless customization.</p>
+                            </div>
+
+                            <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn" data-delay="400">
+                                <div class="fbox-icon">
+                                    <i class="icon-line-check"></i>
+                                </div>
+                                <h3 class="red-text">Outcome Checking</h3>
+                                <p class="dark-blue-text">Check resident's growth and progress towards personalized goals.</p>
+                            </div>
+
+                        </div>*@
 
                 </div>
-                @*<div class="section-block nobottommargin dark-grey-text center">
-        <h1>Feature Rich Technology</h1>
-    </div>
-
-    <div class="col_one_third nobottommargin">
-
-        <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn">
-            <div class="fbox-icon">
-                <i class="icon-line-heart"></i>
-            </div>
-            <h3 class="red-text">Electronic Records</h3>
-            <p class="dark-blue-text">Retrieve the latest news and updates on resident's status.</p>
-        </div>
-
-        <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn" data-delay="200">
-            <div class="fbox-icon">
-                <i class="icon-line-paper"></i>
-            </div>
-            <h3 class="red-text">Extensive Documentation</h3>
-            <p class="dark-blue-text">We have covered each &amp; everything in our docs including videos &amp; screenshots.</p>
-        </div>
-
-        <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn" data-delay="400">
-            <div class="fbox-icon">
-                <i class="icon-line-layers"></i>
-            </div>
-            <h3 class="red-text">Support</h3>
-            <p class="dark-blue-text">Have any and all problems resolved with forums and live chat feature.</p>
-        </div>
-
-    </div>
-
-    <div class="col_one_third hidden-sm nobottommargin center">
-        <img src="~/Content/images/temp/temp_nurse_computer03.png" alt="nurse_computer">
-    </div>
-
-    <div class="col_one_third col_last nobottommargin">
-
-        <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn">
-            <div class="fbox-icon">
-                <i class="icon-line-power"></i>
-            </div>
-            <h3 class="red-text">Interfacing</h3>
-            <p class="dark-blue-text">Connect to our software interfaces internally and externally receive the data that you want.</p>
-        </div>
-
-        <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn" data-delay="200">
-            <div class="fbox-icon">
-                <i class="icon-bulb"></i>
-            </div>
-            <h3 class="red-text">Endless Possibilities</h3>
-            <p class="dark-blue-text">Complete control on each &amp; every element that provides endless customization.</p>
-        </div>
-
-        <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn" data-delay="400">
-            <div class="fbox-icon">
-                <i class="icon-line-check"></i>
-            </div>
-            <h3 class="red-text">Outcome Checking</h3>
-            <p class="dark-blue-text">Check resident's growth and progress towards personalized goals.</p>
-        </div>
-
-    </div>*@
 
             </div>
 
+            <div class="col_one_eighth col_last"></div>
         </div>
     </div>
+
+
 
 
     <!-- Free Analysis
     ============================================= -->
     <div class="nopadding container clearfix">
-
-        <div id="analysis-apply" class="section-block bottommargin-sm center blue-text">
-            <h1>Let's get started!</h1>
-            <span>Schedule a free program analysis today.</span>
+        <div class="section-block topmargin bottommargin center">
+            <div class="section-title">
+                <h3 class="col_full bottompadding-lg">Let's Get Started</h3>
+            </div>
         </div>
+
         <div class="col_half nobottommargin">
-            <div id="analysis-form-result" data-notify-type="success" data-notify-msg=""></div>@*<i class=icon-ok-sign></i> Message Sent Successfully!"></div>*@
+            <div id="analysis-form-result" data-notify-type="success" data-notify-msg=""></div>
 
             <form id="template-analysisform" name="template-analysisform" method="post" role="form" novalidate="novalidate" class="allpadding-sm analysis-form">
 
@@ -255,7 +275,7 @@
 
                 <div class="col_full">
                     <label for="template-analysis-message" class="dark">Message</label>
-                    <textarea type="email" name="template-analysis-message" id="template-analysis-message" value="" class="sm-form-control email required" aria-required="true" rows="6"></textarea>
+                    <textarea type="email" name="template-analysis-message" id="template-analysis-message" value="" class="sm-form-control email required" style="resize:none;" aria-required="true" rows="6"></textarea>
                 </div>
                 <div class="clear"></div>
 
@@ -290,7 +310,7 @@
 
         <div class="col_half bottommargin-sm col_last">
 
-            <p class="lead dark-blue-text" style="font-size:xx-large; text-align:justify">
+            <p class="lead dark-blue-text" style="font-size:4vh; text-align:justify">
                 Living Well Rehab promotes a unique approach to care by using the latest advancements in rehabilitation and nursing care.
                 Our solutions ensure that you will no longer need to concern yourself with rising staff costs,
                 staffing coverage, or lost revenue.  Allow us to evolve your rehab department to excellence!

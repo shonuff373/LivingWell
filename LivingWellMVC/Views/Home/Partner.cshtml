@@ -12,7 +12,7 @@
 
         <div class="swiper-container swiper-parent">
             <div class="swiper-wrapper">
-                <div class="swiper-slide dark" style="background-image: url('../../Content/images/temp/partner_banner.jpg');">
+                <div class="swiper-slide dark" style="background-image: url('../../Content/images/temp/partner_banner.png');">
                     <div class="container clearfix">
                         <div class="slider-caption slider-caption-center">
                             <h2 data-caption-animate="fadeInUp">Partner With Us</h2>
@@ -26,133 +26,124 @@
 
 </section>
     
-
-<!-- Free Analysis
-============================================= -->
 <section id="content">
+    <!-- Free Analysis
+    ============================================= -->
+    <div class="nopadding container clearfix">
+        <div class="section-block topmargin bottommargin center">
+            <div class="section-title">
+                <h3 class="col_full bottompadding-lg">
+                    Let's Get Started
+                </h3>
 
-
-<div class="container">
-        <div class="col_three_fifth bottommargin-sm col_last">
-            <div id="analysis-apply" class="section-block bottommargin-sm center blue-text">
-                <h1>No-Cost Analysis of Your Therapy Program</h1>
-                <span>Schedule a free program analysis today.</span>
             </div>
-            <div class="nopadding clearfix">
+        </div>
+        @*<div id="analysis-apply" class="section-block bottommargin-sm center blue-text">
+                <h1>Let's get started!</h1>
+                <span>Schedule a free program analysis today.</span>
+            </div>*@
+        <div class="col_half nobottommargin">
+            <div id="analysis-form-result" data-notify-type="success" data-notify-msg=""></div>@*<i class=icon-ok-sign></i> Message Sent Successfully!"></div>*@
+
+            <form id="template-analysisform" name="template-analysisform" method="post" role="form" novalidate="novalidate" class="allpadding-sm analysis-form">
+
+                <div class="form-process"></div>
+
+                <div class="col_half">
+                    <label for="template-analysis-fname" class="dark">First Name <small>*</small></label>
+                    <input type="text" id="template-analysis-fname" name="template-analysis-fname" value="" class="sm-form-control required" aria-required="true">
+                </div>
+
+                <div class="col_half col_last">
+                    <label for="template-analysis-lname" class="dark">Last Name <small>*</small></label>
+                    <input type="text" id="template-analysis-lname" name="template-analysis-lname" value="" class="sm-form-control required" aria-required="true">
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="col_full">
+                    <label for="template-analysis-community-name" class="dark">Community Name <small>*</small></label>
+                    <input type="text" id="template-analysis-community-name" name="template-analysis-community-name" value="" class="required sm-form-control" aria-required="true">
+                </div>
+
+                <div class="col_half">
+                    <label for="template-analysis-community-community-address-one" class="dark">Community Address One</label>
+                    <input type="text" id="template-analysis-community-community-address-one" name="template-analysis-community-community-address-one" value="" class="sm-form-control" aria-required="true">
+                </div>
+
+                <div class="col_one_fourth">
+                    <label for="template-analysis-community-address-two" class="dark">Address Two</label>
+                    <input type="text" name="template-analysis-community-address-two" id="template-analysis-community-address-two" value="" class="sm-form-control" aria-required="true">
+                </div>
+
+                <div class="col_one_fourth col_last">
+                    <label for="template-analysis-city" class="dark">City</label>
+                    <input type="text" name="template-analysis-city" id="template-analysis-city" value="" class="sm-form-control" aria-required="true">
+                </div>
+
+                <div class="col_one_sixth">
+                    <label for="template-analysis-community-state" class="dark">State</label>
+                    <input type="text" name="template-analysis-community-state" id="template-analysis-community-state" value="" class="sm-form-control" aria-required="true">
+                </div>
+
+                <div class="col_one_sixth ">
+                    <label for="template-analysis-zip" class="dark">Zip <small>*</small></label>
+                    <input type="text" name="template-analysis-zip" id="template-analysis-city" value="" class="sm-form-control required" aria-required="true">
+                </div>
+
+                <div class="col_one_third">
+                    <label for="template-analysis-phone" class="dark">Phone <small>*</small></label>
+                    <input type="tel" name="template-analysis-phone" id="template-analysis-phone" value="" class="sm-form-control required" aria-required="true">
+                </div>
+
+                <div class="col_one_third col_last">
+                    <label for="template-analysis-phone" class="dark">Email <small>*</small></label>
+                    <input type="email" name="template-analysis-phone" id="template-analysis-phone" value="" class="sm-form-control email required" aria-required="true">
+                </div>
+
+                <div class="col_full">
+                    <label for="template-analysis-message" class="dark">Message</label>
+                    <textarea type="email" name="template-analysis-message" id="template-analysis-message" value="" class="sm-form-control email required" style="resize:none;" aria-required="true" rows="6"></textarea>
+                </div>
+                <div class="clear"></div>
 
 
-                <div class="col_half nobottommargin">
-                    <div id="analysis-form-result" data-notify-type="success" data-notify-msg=""></div>@*<i class=icon-ok-sign></i> Message Sent Successfully!"></div>*@
+                <div class="col_full">
+                    <button class="button button-3d button-large btn-block nomargin" name="template-analysis-apply" type="submit" value="apply">Schedule Analysis</button>
+                </div>
 
-                    <form id="template-analysisform" name="template-analysisform" method="post" role="form" novalidate="novalidate" class="allpadding-sm analysis-form">
+            </form>
 
-                        <div class="form-process"></div>
+            <script type="text/javascript">
 
-                        <div class="col_half">
-                            <label for="template-analysis-fname" class="dark">First Name <small>*</small></label>
-                            <input type="text" id="template-analysis-fname" name="template-analysis-fname" value="" class="sm-form-control required" aria-required="true">
-                        </div>
-
-                        <div class="col_half col_last">
-                            <label for="template-analysis-lname" class="dark">Last Name <small>*</small></label>
-                            <input type="text" id="template-analysis-lname" name="template-analysis-lname" value="" class="sm-form-control required" aria-required="true">
-                        </div>
-
-                        <div class="clear"></div>
-
-                        <div class="col_full">
-                            <label for="template-analysis-community-name" class="dark">Community Name <small>*</small></label>
-                            <input type="text" id="template-analysis-community-name" name="template-analysis-community-name" value="" class="required sm-form-control" aria-required="true">
-                        </div>
-
-                        <div class="col_half">
-                            <label for="template-analysis-community-community-address-one" class="dark">Community Address One</label>
-                            <input type="text" id="template-analysis-community-community-address-one" name="template-analysis-community-community-address-one" value="" class="sm-form-control" aria-required="true">
-                        </div>
-
-                        <div class="col_one_fourth">
-                            <label for="template-analysis-community-address-two" class="dark">Address Two</label>
-                            <input type="text" name="template-analysis-community-address-two" id="template-analysis-community-address-two" value="" class="sm-form-control" aria-required="true">
-                        </div>
-
-                        <div class="col_one_fourth col_last">
-                            <label for="template-analysis-city" class="dark">City</label>
-                            <input type="text" name="template-analysis-city" id="template-analysis-city" value="" class="sm-form-control" aria-required="true">
-                        </div>
-
-                        <div class="col_one_sixth">
-                            <label for="template-analysis-community-state" class="dark">State</label>
-                            <input type="text" name="template-analysis-community-state" id="template-analysis-community-state" value="" class="sm-form-control" aria-required="true">
-                        </div>
-
-                        <div class="col_one_sixth ">
-                            <label for="template-analysis-zip" class="dark">Zip <small>*</small></label>
-                            <input type="text" name="template-analysis-zip" id="template-analysis-city" value="" class="sm-form-control required" aria-required="true">
-                        </div>
-
-                        <div class="col_one_third">
-                            <label for="template-analysis-phone" class="dark">Phone <small>*</small></label>
-                            <input type="tel" name="template-analysis-phone" id="template-analysis-phone" value="" class="sm-form-control required" aria-required="true">
-                        </div>
-
-                        <div class="col_one_third col_last">
-                            <label for="template-analysis-phone" class="dark">Email <small>*</small></label>
-                            <input type="email" name="template-analysis-phone" id="template-analysis-phone" value="" class="sm-form-control email required" aria-required="true">
-                        </div>
-
-                        <div class="col_full">
-                            <label for="template-analysis-message" class="dark">Message</label>
-                            <textarea type="email" name="template-analysis-message" id="template-analysis-message" value="" class="sm-form-control email required" aria-required="true" rows="6"></textarea>
-                        </div>
-                        <div class="clear"></div>
-
-
-                        <div class="col_full">
-                            <button class="button button-red button-3d button-large btn-block nomargin" name="template-analysis-apply" type="submit" value="apply">Schedule Analysis</button>
-                        </div>
-
-                    </form>
-
-                    <script type="text/javascript">
-
-                        jQuery("#template-jobform").validate({
-                            submitHandler: function (form) {
-                                jQuery('.form-process').fadeIn();
-                                jQuery(form).ajaxSubmit({
-                                    target: '#job-form-result',
-                                    success: function () {
-                                        jQuery('.form-process').fadeOut();
-                                        jQuery(form).find('.sm-form-control').val('');
-                                        jQuery('#job-form-result').attr('data-notify-msg', jQuery('#job-form-result').html()).html('');
-                                        SEMICOLON.widget.notifications(jQuery('#job-form-result'));
-                                    }
-                                });
+                jQuery("#template-jobform").validate({
+                    submitHandler: function (form) {
+                        jQuery('.form-process').fadeIn();
+                        jQuery(form).ajaxSubmit({
+                            target: '#job-form-result',
+                            success: function () {
+                                jQuery('.form-process').fadeOut();
+                                jQuery(form).find('.sm-form-control').val('');
+                                jQuery('#job-form-result').attr('data-notify-msg', jQuery('#job-form-result').html()).html('');
+                                SEMICOLON.widget.notifications(jQuery('#job-form-result'));
                             }
                         });
+                    }
+                });
 
-                    </script>
+            </script>
 
-                </div>
+        </div>
 
 
-                <div class="col_half bottommargin-sm col_last">
+        <div class="col_half bottommargin-sm col_last">
 
-                    <p class="lead dark-blue-text" style="font-size:xx-large; text-align:justify">
-                        Living Well Rehab promotes a unique approach to care by using the latest advancements in rehabilitation and nursing care.
-                        Our solutions ensure that you will no longer need to concern yourself with rising staff costs,
-                        staffing coverage, or lost revenue.  Allow us to evolve your rehab department to excellence!
-                    </p>
-
-                </div>
-
-            </div>
-
-            <p class="lead dark-blue-text">
-                Thank you for inquiring about our Free Analysis. Please provide us with your contact information in the form below. After filling out your information completely, click the "Schedule Analysis" button. Or, you may contact our information team at 123.456.7890, info@livingwell.com.
+            <p class="lead dark-blue-text" style="font-size:xx-large; text-align:justify">
+                Living Well Rehab promotes a unique approach to care by using the latest advancements in rehabilitation and nursing care.
+                Our solutions ensure that you will no longer need to concern yourself with rising staff costs,
+                staffing coverage, or lost revenue.  Allow us to evolve your rehab department to excellence!
             </p>
-            @*<p class="lead dark-blue-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quidem minus id omnis, nam expedita, ea fuga commodi voluptas iusto, hic autem deleniti dolores explicabo labore enim repellat earum perspiciatis.</p>
-                *@
-            
+
         </div>
 
     </div>
