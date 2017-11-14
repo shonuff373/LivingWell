@@ -29,6 +29,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
+@model LivingWellMVC.Models.AnalysisTemplate
 <body class="stretched side-panel-left device-lg nopadding">
     <div id="wrapper" class="clearfix">
 
@@ -56,7 +57,7 @@
                             <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "current" : "")">
                                 @Html.ActionLink("About Us", "About", "Home")
                             </li>
-                            <li class="sub-menu @(ViewContext.RouteData.Values["Action"].ToString() == "Services" ? "current" : "")">
+                            <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "Services" ? "current" : "")">
                                 @Html.ActionLink("Services", "Services", "Home")
                             <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "Partner" ? "current" : "")">
                                 @Html.ActionLink("Partner With Us", "Partner", "Home")
@@ -75,116 +76,181 @@
         </header><!-- #header end -->
         @RenderBody()
      
-            <div class="body-overlay">
-                <div id="side-panel">
+    <div class="body-overlay">
+        <div id="side-panel">
 
-                    <div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i class="icon-line-cross"></i></a></div>
+            <div id="side-panel-trigger-close" class="side-panel-trigger"><a href="#"><i class="icon-line-cross"></i></a></div>
 
-                    <div class="side-panel-wrap">
+            <div class="side-panel-wrap">
 
 
 
-                        <div class="widget quick-contact-widget clearfix">
+                <div class="widget quick-contact-widget clearfix">
 
-                            <h2 class="notopmargin">Quick Contact</h2>
+                    <h2 class="notopmargin">Quick Contact</h2>
 
-                            <div id="analysis-form-result" data-notify-type="success" data-notify-msg=""></div>@*<i class=icon-ok-sign></i> Message Sent Successfully!"></div>*@
+                            
+                        
+                    <div id="analysis-form-result" data-notify-type="success" data-notify-msg=""></div>
 
-                            <form id="template-analysisform" name="template-analysisform" method="post" role="form" novalidate="novalidate">
+                            
+                    <form id="template-quick-analysis-form" name="template-quick-analysis-form" method="post" role="form" novalidate="novalidate">
 
                                 <div class="form-process"></div>
 
                                 <div class="col_half">
-                                    <label for="template-analysis-fname" class="dark">First Name <small>*</small></label>
-                                    <input type="text" id="template-analysis-fname" name="template-analysis-fname" value="" class="sm-form-control required" aria-required="true">
+                                    <label for="template-quick-analysis-fname" class="dark">First Name <small>*</small></label>
+                                    <input type="text" id="template-quick-analysis-fname" name="template-quick-analysis-fname" value="" class="sm-form-control required" aria-required="true">
                                 </div>
 
                                 <div class="col_half col_last">
-                                    <label for="template-analysis-lname" class="dark">Last Name <small>*</small></label>
-                                    <input type="text" id="template-analysis-lname" name="template-analysis-lname" value="" class="sm-form-control required" aria-required="true">
+                                    <label for="template-quick-analysis-lname" class="dark">Last Name <small>*</small></label>
+                                    <input type="text" id="template-quick-analysis-lname" name="template-quick-analysis-lname" value="" class="sm-form-control required" aria-required="true">
                                 </div>
 
                                 <div class="clear"></div>
 
                                 <div class="col_full">
-                                    <label for="template-analysis-community-name" class="dark">Community Name <small>*</small></label>
-                                    <input type="text" id="template-analysis-community-name" name="template-analysis-community-name" value="" class="required sm-form-control" aria-required="true">
+                                    <label for="template-quick-analysis-community-name" class="dark">Community Name <small>*</small></label>
+                                    <input type="text" id="template-quick-analysis-community-name" name="template-quick-analysis-community-name" value="" class="sm-form-control">
                                 </div>
 
                                 <div class="col_half">
-                                    <label for="template-analysis-community-community-address-one" class="dark">Community Address One</label>
-                                    <input type="text" id="template-analysis-community-community-address-one" name="template-analysis-community-community-address-one" value="" class="sm-form-control" aria-required="true">
+                                    <label for="template-quick-analysis-address-one" class="dark">Community Address One</label>
+                                    <input type="text" id="template-quick-analysis-address-one" name="template-quick-analysis-address-one" value="" class="sm-form-control">
                                 </div>
 
                                 <div class="col_one_fourth">
-                                    <label for="template-analysis-community-address-two" class="dark">Address Two</label>
-                                    <input type="text" name="template-analysis-community-address-two" id="template-analysis-community-address-two" value="" class="sm-form-control" aria-required="true">
+                                    <label for="template-quick-analysis-address-two" class="dark">Address Two</label>
+                                    <input type="text" name="template-quick-analysis-address-two" id="template-quick-analysis-address-two" value="" class="sm-form-control">
                                 </div>
 
                                 <div class="col_one_fourth col_last">
-                                    <label for="template-analysis-city" class="dark">City</label>
-                                    <input type="text" name="template-analysis-city" id="template-analysis-city" value="" class="sm-form-control" aria-required="true">
+                                    <label for="template-quick-analysis-city" class="dark">City</label>
+                                    <input type="text" name="template-quick-analysis-city" id="template-quick-analysis-city" value="" class="sm-form-control">
                                 </div>
 
                                 <div class="col_one_sixth">
-                                    <label for="template-analysis-community-state" class="dark">State</label>
-                                    <input type="text" name="template-analysis-community-state" id="template-analysis-community-state" value="" class="sm-form-control" aria-required="true">
+                                    <label for="template-quick-analysis-state" class="dark">State</label>
+                                    <input type="text" name="template-quick-analysis-state" id="template-quick-analysis-state" value="" class="sm-form-control">
                                 </div>
 
                                 <div class="col_one_sixth ">
-                                    <label for="template-analysis-zip" class="dark">Zip <small>*</small></label>
-                                    <input type="text" name="template-analysis-zip" id="template-analysis-city" value="" class="sm-form-control required" aria-required="true">
+                                    <label for="template-quick-analysis-postal-code" class="dark">Zip <small>*</small></label>
+                                    <input type="text" name="template-quick-analysis-postal-code" id="template-quick-analysis-postal-code" value="" class="sm-form-control">
                                 </div>
 
                                 <div class="col_one_third">
-                                    <label for="template-analysis-phone" class="dark">Phone <small>*</small></label>
-                                    <input type="tel" name="template-analysis-phone" id="template-analysis-phone" value="" class="sm-form-control required" aria-required="true">
+                                    <label for="template-quick-analysis-phone" class="dark">Phone <small>*</small></label>
+                                    <input type="tel" name="template-quick-analysis-phone" id="template-quick-analysis-phone" value="" class="sm-form-control">
                                 </div>
 
                                 <div class="col_one_third col_last">
-                                    <label for="template-analysis-phone" class="dark">Email <small>*</small></label>
-                                    <input type="email" name="template-analysis-phone" id="template-analysis-phone" value="" class="sm-form-control email required" aria-required="true">
+                                    <label for="template-quick-analysis-email" class="dark">Email <small>*</small></label>
+                                    <input type="email" name="template-quick-analysis-wmail" id="template-quick-analysis-email" value="" class="sm-form-control required" aria-required="true">
                                 </div>
 
                                 <div class="col_full">
-                                    <label for="template-analysis-message" class="dark">Message</label>
-                                    <textarea type="email" name="template-analysis-message" id="template-analysis-message" value="" class="sm-form-control email required" style="resize:none;" aria-required="true" rows="6"></textarea>
+                                    <label for="template-quick-analysis-message" class="dark">Message</label>
+                                    <textarea type="email" name="template-quick-analysis-message" id="template-quick-analysis-message" value="" class="sm-form-control" rows="6"></textarea>
                                 </div>
                                 <div class="clear"></div>
 
 
                                 <div class="col_full">
-                                    <button class="button button-3d button-large btn-block nomargin" name="template-analysis-apply" type="submit" value="apply">Schedule Analysis</button>
+                                    <button onclick="quickAnalysisSubmissionClick(); return false;" class="button button-3d button-large btn-block nomargin" name="template-quick-analysis-apply" value="apply">Schedule Analysis</button>
                                 </div>
 
                             </form>
 
-                            <script type="text/javascript">
+                            
+                        <script type="text/javascript">
 
-                                jQuery("#template-jobform").validate({
-                                    submitHandler: function (form) {
-                                        jQuery('.form-process').fadeIn();
-                                        jQuery(form).ajaxSubmit({
-                                            target: '#job-form-result',
-                                            success: function () {
-                                                jQuery('.form-process').fadeOut();
-                                                jQuery(form).find('.sm-form-control').val('');
-                                                jQuery('#job-form-result').attr('data-notify-msg', jQuery('#job-form-result').html()).html('');
-                                                SEMICOLON.widget.notifications(jQuery('#job-form-result'));
-                                            }
-                                        });
-                                    }
-                                });
-
-                            </script>
+                            var self ;
+        var baseURl;
 
 
-                        </div>
+        function fff() {
+            self = this;
+            baseUrl = '@Url.Content("~/api/analysis/")';
+            bindInput();
+            if (isValidInput()) {
+                sendEmail();
+            }
+        }
 
-                    </div>
+        function bindInput(){
+            self.model = {
+                firstName: document.getElementById('template-quick-analysis-fname').value,
+                lastName: document.getElementById('template-quick-analysis-lname').value,
+                name: '',
+                communityName: document.getElementById('template-quick-analysis-community-name').value,
+                addressOne: document.getElementById('template-quick-analysis-address-one').value,
+                addressTwo: document.getElementById('template-quick-analysis-address-two').value,
+                city: document.getElementById('template-quick-analysis-city').value,
+                state: document.getElementById('template-quick-analysis-state').value,
+                postalCode: document.getElementById('template-quick-analysis-postal-code').value,
+                emailAddress: document.getElementById('template-quick-analysis-email').value,
+                phone: document.getElementById('template-quick-analysis-phone').value,
+                message: document.getElementById('template-quick-analysis-message').value
+            }
+        }
 
+        function sendEmail() {
+            var formData = new FormData();
+
+            $.ajax({
+                url: baseUrl,
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8',
+                //cache: false,
+                //processData: false,
+                data: JSON.stringify(self.model),
+                success: function (data) {
+                    // ..... any success code you want
+                    if (data) {
+                        alert(data);
+                    } else {
+                        alert('Email was sent successfully!');
+                    }
+                },
+                error: function (data) {
+                    if (data) {
+                        alert(data);
+                    } else {
+                        alert('There was an error processing this email!');
+                    }
+            }
+            });
+        }
+
+        function isValidInput() {
+            var isValid = true;
+            if (!self.model.firstName || !self.model.lastName) {
+                isValid = false;
+            }
+
+            if (!self.model.emailAddress) {
+                isValid = false;
+            } else {
+
+            }
+
+            return isValid;
+        }
+
+
+
+    </script>
+
+
+
+                        
+                    </div>    
                 </div>
             </div>
+        </div>
   
 
 
@@ -298,14 +364,14 @@
 
                     <div class="col_two_third">
                         <div class="col_one_third">
-                            <a href="#" class="button button-default-background button-xlarge" style="width:100%; text-align:center; color: white;"><!--<i class="icon-angle-right"></i>--><span>Contact Us</span></a>
+                            <a href="#" class="button button-default-background button-large" style="width:100%; text-align:center; color: white;"><!--<i class="icon-angle-right"></i>--><span>Contact Us</span></a>
 
                         </div>
                         <div class="col_one_third">
-                            <a href="#" class="button button-default-background button-xlarge " style="width:100%; text-align:center; color: white;"><!--<i class="icon-angle-right"></i>--><span>Schedule Now</span></a>
+                            <a href="#" class="button button-default-background button-large " style="width:100%; text-align:center; color: white;"><!--<i class="icon-angle-right"></i>--><span>Schedule Now</span></a>
                         </div>
                         <div class="col_one_third norightmargin">
-                            <a href="#" class="button button-default-background button-xlarge" style="width:100%; text-align:center; color: white;"><!--<i class="icon-angle-right"></i>--><span>Learn More</span></a>
+                            <a href="#" class="button button-default-background button-large" style="width:100%; text-align:center; color: white;"><!--<i class="icon-angle-right"></i>--><span>Learn More</span></a>
                         </div>
                     </div>
                 </div><!-- .footer-widgets-wrap end -->
@@ -324,6 +390,7 @@
         ============================================= -->
         @*<script type="text/javascript" src="../js/jquery.js"></script>*@
         <script type="text/javascript" src="~/Scripts/js/plugins.js"></script>
+    <script type="text/javascript" src="~/Scripts/livingwell.js"></script>
         <!-- Footer Scripts
         ============================================= -->
         <script type="text/javascript" src="~/Scripts/js/functions.js"></script>
@@ -333,5 +400,6 @@
 
 
     </div><!-- #wrapper end -->
+
 </body>
 </html>

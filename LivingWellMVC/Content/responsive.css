@@ -20,6 +20,14 @@
 	.promo-uppercase > span,
 	.promo-uppercase > .container > span { font-size: 14px; }
 
+    #side-panel {
+        width: 90vw;
+    }
+
+    .block-image {
+        width: 100%;
+    }
+
 }
 
 
@@ -298,14 +306,14 @@
 
 	#header.transparent-header,
 	#header.semi-transparent {
-		background: #0060c5;
+		background: #435967;
 		border-bottom: 1px solid #F5F5F5;
 		z-index: auto;
 	}
 
 	#header.dark.transparent-header,
 	#header.dark.semi-transparent {
-		background-color: #0060c5; /*#333; ILJ*/
+		background-color: #435967; /*#333; ILJ*/
 		border-bottom: 1px solid rgba(0,0,0,0.1);
 	}
 
@@ -1018,7 +1026,7 @@
 		max-width: none;
 	}
 
-	.promo:not(.promo-full) { padding: 30px 20px !important; }
+	.promo:not(.promo-full) { /*padding: 30px 20px !important;*/ }
 
 	.promo.promo-dark h3 { line-height: 1.6; }
 

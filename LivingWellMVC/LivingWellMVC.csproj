@@ -167,14 +167,21 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Api\AnalysisController.cs" />
+    <Compile Include="Controllers\Api\ApplicationController.cs" />
+    <Compile Include="Controllers\Api\ContactController.cs" />
+    <Compile Include="Controllers\Api\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OpportunitiesController.cs" />
     <Compile Include="Controllers\PartnerController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Services\EmailService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AnalysisEmail.cs" />
+    <Compile Include="Models\AnalysisTemplate.cs" />
+    <Compile Include="Models\Email.cs" />
+    <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -233,6 +240,7 @@
     <Content Include="Content\images\temp\generic_graph_up.png" />
     <Content Include="Content\images\temp\LivingWellLogo.PNG" />
     <Content Include="Content\images\temp\Nurse-Happy-hold-stethoscope.png" />
+    <Content Include="Content\images\temp\nurse003.png" />
     <Content Include="Content\images\temp\nurse_assistance_001.png" />
     <Content Include="Content\images\temp\nurse_assistance_002.png" />
     <Content Include="Content\images\temp\nurse_assistance_003.png" />
@@ -241,6 +249,9 @@
     <Content Include="Content\images\temp\nurse_helping_patient.png" />
     <Content Include="Content\images\temp\nurse_helping_patient02.png" />
     <Content Include="Content\images\temp\nurse_patient_smiling.png" />
+    <Content Include="Content\images\temp\nurse_smile001.png" />
+    <Content Include="Content\images\temp\nurse_smile002.png" />
+    <Content Include="Content\images\temp\nusringworkforce_Large.png" />
     <Content Include="Content\images\temp\partner_banner.jpg" />
     <Content Include="Content\images\temp\Speech &amp; Swallow Rehabilitation 1.png" />
     <Content Include="Content\images\temp\staff_outdoors.png" />
@@ -262,6 +273,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="MailTemplates\AnalysisEmailTemplate.html" />
+    <Content Include="notes.txt" />
+    <Content Include="Scripts\livingwell.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\colors-rtl.php" />
@@ -370,7 +384,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

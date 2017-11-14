@@ -31,14 +31,7 @@
 ============================================= -->
 <section id="content">
     <div class="container red-divider" style="height:2em; width: 100%; background-color:#cc0000"></div>
-
-
-
-
-
-
-
-
+    
 
 
     <!-- Services
@@ -46,8 +39,8 @@
     
     <div class="container text-justify topmargin-sm bottommargin-sm clearfix">   
         <div class="section-block topmargin bottommargin center">
-            <div class="section-title">
-                <h3 class="col_full bottompadding-lg">What We Do</h3>
+            <div class="section-title dark-grey-text">
+                <h3 class="col_full bottompadding-sm">What We Do</h3>
             </div>
         </div>
         <div class="col_one_third nobottommargin">
@@ -61,7 +54,6 @@
                 </div>
             </div>
             <div class="center">
-                @*@Html.ActionLink("Learn More", "About", "Home", new { @class = "button button-default-background button-xlarge noleftmargin norightmargin" })*@
             </div>
         </div>
 
@@ -76,7 +68,6 @@
                 </div>
             </div>
             <div class="center">
-                @*@Html.ActionLink("Learn More", "Services", "Services", new { @class = "button button-default-background button-xlarge noleftmargin norightmargin" })*@
             </div>
         </div>
 
@@ -91,12 +82,10 @@
                 </div>
             </div>
             <div class="center">
-                @*@Html.ActionLink("Learn More", "Services", "Services", new { @class = "button button-default-background button-xlarge noleftmargin norightmargin" })*@
             </div>
         </div>
 
         <div class="center">
-            @Html.ActionLink("Our Services", "Services", "Home", new { @class = "button button-default-background button-xlarge topmargin" })
         </div>
 
 
@@ -107,95 +96,26 @@
     <!-- About Us
     ============================================= -->
     <div class="section nomargin">
-        <div class="col_full notoppadding nobottompadding">
-
+        <div class="col_full notoppadding nobottompadding nobottommargin">
             <div class="col_one_eighth"></div>
-            <div class="section col_three_fourth nopadding nomargin clearfix">
-
-                <div class="row nomargin" style="font-size:large; background-color:#435967">
-                    <div class="col_three_fifth nomargin"><img src="~/Content/images/temp/Nurse-Happy-hold-stethoscope.png"></div>
-                    <div class="col_two_fifth nomargin">
-                        <div class="section-block bottommargin-sm center" style="margin-left:30px">
+            <div class="section popout-block">
+                <img class="block-image" src="~/Content/images/temp/Nurse-Happy-hold-stethoscope.png">
+                    <div class="popout-block-info">
+                        <div class="section-block bottommargin-sm center">
                             <div class="section-title">
-                                <h3 class="col_full bottompadding-sm" style="color:white;">Who We Are</h3>
-                                <p style="font-size:3vh; color:white;">Therapist owned and operated. Living Well is driven and dedicated to provide client centered Physical, Occupational and Speech rehabilitative excellence.
+                                <h3 class="col_full topmargin bottompadding-sm">Who We Are</h3>
+                            </div>    
+                                                        
+                            <p class="popout-block-desc">Therapist owned and operated. Living Well is driven and dedicated to 
+                                provide client centered Physical, Occupational and Speech rehabilitative excellence.
+                            </p>
 
-                            </div>
-                            <div class="center" style="font-size:3vh">
+                            <div class="popout-block-button center">
                                 @Html.ActionLink("About Us", "Services", "Home", new { @class = "button button-default-background button-xlarge topmargin nobottommargin" })
                             </div>
                         </div>
 
                     </div>
-                    @*
-                                            <!-- Technology
-                        ============================================= -->
-                                        <div class="section-block nobottommargin dark-grey-text center">
-                            <h1>Feature Rich Technology</h1>
-                        </div>
-
-                        <div class="col_one_third nobottommargin">
-
-                            <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn">
-                                <div class="fbox-icon">
-                                    <i class="icon-line-heart"></i>
-                                </div>
-                                <h3 class="red-text">Electronic Records</h3>
-                                <p class="dark-blue-text">Retrieve the latest news and updates on resident's status.</p>
-                            </div>
-
-                            <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn" data-delay="200">
-                                <div class="fbox-icon">
-                                    <i class="icon-line-paper"></i>
-                                </div>
-                                <h3 class="red-text">Extensive Documentation</h3>
-                                <p class="dark-blue-text">We have covered each &amp; everything in our docs including videos &amp; screenshots.</p>
-                            </div>
-
-                            <div class="feature-box fbox-right topmargin fadeIn animated" data-animate="fadeIn" data-delay="400">
-                                <div class="fbox-icon">
-                                    <i class="icon-line-layers"></i>
-                                </div>
-                                <h3 class="red-text">Support</h3>
-                                <p class="dark-blue-text">Have any and all problems resolved with forums and live chat feature.</p>
-                            </div>
-
-                        </div>
-
-                        <div class="col_one_third hidden-sm nobottommargin center">
-                            <img src="~/Content/images/temp/temp_nurse_computer03.png" alt="nurse_computer">
-                        </div>
-
-                        <div class="col_one_third col_last nobottommargin">
-
-                            <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn">
-                                <div class="fbox-icon">
-                                    <i class="icon-line-power"></i>
-                                </div>
-                                <h3 class="red-text">Interfacing</h3>
-                                <p class="dark-blue-text">Connect to our software interfaces internally and externally receive the data that you want.</p>
-                            </div>
-
-                            <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn" data-delay="200">
-                                <div class="fbox-icon">
-                                    <i class="icon-bulb"></i>
-                                </div>
-                                <h3 class="red-text">Endless Possibilities</h3>
-                                <p class="dark-blue-text">Complete control on each &amp; every element that provides endless customization.</p>
-                            </div>
-
-                            <div class="feature-box topmargin fadeIn animated" data-animate="fadeIn" data-delay="400">
-                                <div class="fbox-icon">
-                                    <i class="icon-line-check"></i>
-                                </div>
-                                <h3 class="red-text">Outcome Checking</h3>
-                                <p class="dark-blue-text">Check resident's growth and progress towards personalized goals.</p>
-                            </div>
-
-                        </div>*@
-
-                </div>
-
             </div>
 
             <div class="col_one_eighth col_last"></div>
@@ -209,15 +129,13 @@
     ============================================= -->
     <div class="nopadding container clearfix">
         <div class="section-block topmargin bottommargin center">
-            <div class="section-title">
-                <h3 class="col_full bottompadding-lg">Let's Get Started</h3>
+            <div class="section-title dark-grey-text">
+                <h3 class="col_full bottompadding-sm">Let's Get Started</h3>
             </div>
         </div>
 
         <div class="col_half nobottommargin">
-            <div id="analysis-form-result" data-notify-type="success" data-notify-msg=""></div>
-
-            <form id="template-analysisform" name="template-analysisform" method="post" role="form" novalidate="novalidate" class="allpadding-sm analysis-form">
+            <form id="template-analysis-form" name="template-analysis-form" method="post" role="form" novalidate="novalidate" class="allpadding-sm analysis-form">
 
                 <div class="form-process"></div>
 
@@ -234,77 +152,57 @@
                 <div class="clear"></div>
 
                 <div class="col_full">
-                    <label for="template-analysis-community-name" class="dark">Community Name <small>*</small></label>
-                    <input type="text" id="template-analysis-community-name" name="template-analysis-community-name" value="" class="required sm-form-control" aria-required="true">
+                    <label for="template-analysis-community-name" class="dark">Community Name</label>
+                    <input type="text" id="template-analysis-community-name" name="template-analysis-community-name" value="" class="sm-form-control">
                 </div>
 
                 <div class="col_half">
-                    <label for="template-analysis-community-community-address-one" class="dark">Community Address One</label>
-                    <input type="text" id="template-analysis-community-community-address-one" name="template-analysis-community-community-address-one" value="" class="sm-form-control" aria-required="true">
+                    <label for="template-analysis-address-one" class="dark">Community Address One</label>
+                    <input type="text" id="template-analysis-address-one" name="template-analysis-address-one" value="" class="sm-form-control">
                 </div>
 
                 <div class="col_one_fourth">
-                    <label for="template-analysis-community-address-two" class="dark">Address Two</label>
-                    <input type="text" name="template-analysis-community-address-two" id="template-analysis-community-address-two" value=""  class="sm-form-control" aria-required="true">
+                    <label for="template-analysis-address-two" class="dark">Address Two</label>
+                    <input type="text" name="template-analysis-address-two" id="template-analysis-address-two" value=""  class="sm-form-control">
                 </div>
 
                 <div class="col_one_fourth col_last">
                     <label for="template-analysis-city" class="dark">City</label>
-                    <input type="text" name="template-analysis-city" id="template-analysis-city" value="" class="sm-form-control" aria-required="true">
+                    <input type="text" name="template-analysis-city" id="template-analysis-city" value="" class="sm-form-control">
                 </div>
 
                 <div class="col_one_sixth">
-                    <label for="template-analysis-community-state" class="dark">State</label>
-                    <input type="text" name="template-analysis-community-state" id="template-analysis-community-state" value="" class="sm-form-control" aria-required="true">
+                    <label for="template-analysis-state" class="dark">State</label>
+                    <input type="text" name="template-analysis-state" id="template-analysis-state" value="" class="sm-form-control">
                 </div>
 
-                <div class="col_one_sixth ">
-                    <label for="template-analysis-zip" class="dark">Zip <small>*</small></label>
-                    <input type="text" name="template-analysis-zip" id="template-analysis-city" value="" class="sm-form-control required" aria-required="true">
+                <div class="col_one_sixth">
+                    <label for="template-analysis-postal-code" class="dark">Zip</label>
+                    <input type="text" name="template-analysis-postal-code" id="template-analysis-postal-code" value="" class="sm-form-control">
                 </div>
 
                 <div class="col_one_third">
-                    <label for="template-analysis-phone" class="dark">Phone <small>*</small></label>
-                    <input type="tel" name="template-analysis-phone" id="template-analysis-phone" value="" class="sm-form-control required" aria-required="true">
+                    <label for="template-analysis-phone" class="dark">Phone</label>
+                    <input type="tel" name="template-analysis-phone" id="template-analysis-phone" value="" class="sm-form-control">
                 </div>
 
                 <div class="col_one_third col_last">
-                    <label for="template-analysis-phone" class="dark">Email <small>*</small></label>
-                    <input type="email" name="template-analysis-phone" id="template-analysis-phone" value="" class="sm-form-control email required" aria-required="true">
+                    <label for="template-analysis-email" class="dark">Email <small>*</small></label>
+                    <input type="email" name="template-analysis-email" id="template-analysis-email" value="" class="sm-form-control email required" aria-required="true">
                 </div>
 
                 <div class="col_full">
                     <label for="template-analysis-message" class="dark">Message</label>
-                    <textarea type="email" name="template-analysis-message" id="template-analysis-message" value="" class="sm-form-control email required" style="resize:none;" aria-required="true" rows="6"></textarea>
+                    <textarea type="email" name="template-analysis-message" id="template-analysis-message" value="" class="sm-form-control" rows="6"></textarea>
                 </div>
                 <div class="clear"></div>
 
 
                 <div class="col_full">
-                    <button class="button button-3d button-large btn-block nomargin" name="template-analysis-apply" type="submit" value="apply">Schedule Analysis</button>
+                    <button onclick="analysisSubmissionClick(); return false;"  class="button button-3d button-large btn-block nomargin" name="template-analysis-apply">Schedule Analysis</button>
                 </div>
 
             </form>
-
-            <script type="text/javascript">
-
-                jQuery("#template-jobform").validate({
-                    submitHandler: function (form) {
-                        jQuery('.form-process').fadeIn();
-                        jQuery(form).ajaxSubmit({
-                            target: '#job-form-result',
-                            success: function () {
-                                jQuery('.form-process').fadeOut();
-                                jQuery(form).find('.sm-form-control').val('');
-                                jQuery('#job-form-result').attr('data-notify-msg', jQuery('#job-form-result').html()).html('');
-                                SEMICOLON.widget.notifications(jQuery('#job-form-result'));
-                            }
-                        });
-                    }
-                });
-
-            </script>
-
         </div>
 
 
