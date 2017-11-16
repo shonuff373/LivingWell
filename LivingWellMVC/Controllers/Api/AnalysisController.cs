@@ -25,19 +25,27 @@ namespace LivingWellMVC.Controllers.Api
 
         // POST: api/Email
         [HttpPost]
-        public void Post([FromBody]string firstName, 
+        public string Post([FromBody]string firstName, 
             string lastName, string communityName, string addressOne,
-            string addressTwo, string city, string state, string postalCode, string phone)
+            string addressTwo, string city, string state, string postalCode, string phone, string email)
         {
-            AnalysisTemplate form = new AnalysisTemplate();
+            Status status = new Status();
+            AnalysisSubmissionInfo info = new AnalysisSubmissionInfo(firstName, lastName, communityName, addressOne, addressTwo, city, state, postalCode, phone, email);
+            AnalysisWorkflowService workflow = new AnalysisWorkflowService();
 
-            Status emailStatus = EmailService.ProcessEmail(form);
+            status = workflow.ProcessWorkflow(info);
+
+
+            return status.GetResultMessage();
         }
 
         [HttpPost]
-        public string Post([FromBody]AnalysisTemplate form) {
+        public string Post([FromBody]AnalysisSubmissionInfo info) {
             Status status = new Status();
-            //status = EmailService.ProcessEmail(form);
+            AnalysisWorkflowService workflow = new AnalysisWorkflowService();
+
+            status = workflow.ProcessWorkflow(info);
+            
 
             return status.GetResultMessage();
         }

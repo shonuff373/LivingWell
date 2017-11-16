@@ -4,18 +4,18 @@ using System.Linq;
 using System.Web;
 
 namespace LivingWellMVC.Models {
-    public interface ITemplate {
+    public interface ISubmissionInfo {
 
     }
 
-    public class Template: ITemplate {
-        public string Name { get; set; }
+    public class SubmissionInfo: ISubmissionInfo {
+        public virtual string Name { get; set; }
         public string Phone { get; set; }        
         public string EmailAddress { get; set; }
         public string Message { get; set; }
     }
 
-    public class AnalysisTemplate : Template {
+    public class AnalysisSubmissionInfo : SubmissionInfo {
 
         #region Properties
 
@@ -28,17 +28,27 @@ namespace LivingWellMVC.Models {
         public string State { get; set; }
         public string PostalCode { get; set; }
 
+        public override string Name {
+            get {
+                if (string.IsNullOrWhiteSpace(Name)) {
+                    base.Name = FirstName + " " + LastName;
+                }
+
+                return base.Name;
+            }
+            set { base.Name = value; }
+        }
 
 
         #endregion
         
         #region Constructors
 
-        public AnalysisTemplate() {
+        public AnalysisSubmissionInfo() {
             
         }
 
-        public AnalysisTemplate(string firstName, string lastname, string communityName, string addressOne, string addressTwo, string city, string state, string zip, string phone, string email) {
+        public AnalysisSubmissionInfo(string firstName, string lastname, string communityName, string addressOne, string addressTwo, string city, string state, string zip, string phone, string email) {
             this.FirstName = firstName;
             this.LastName = lastname;
             this.CommunityName = communityName;
@@ -54,7 +64,6 @@ namespace LivingWellMVC.Models {
 
         #endregion
 
-
         #region Methods
 
         
@@ -63,7 +72,7 @@ namespace LivingWellMVC.Models {
 
     }
 
-    public class ContactTemplate : Template {
+    public class ContactSubmissionInfo : SubmissionInfo {
         public string Service { get; set; }
     }
 }

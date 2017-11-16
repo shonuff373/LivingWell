@@ -9,11 +9,7 @@ namespace LivingWellMVC.Controllers
     public class OpportunitiesController : Controller
     {
         // GET: Opportunities
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
-        public ActionResult Opportunities() {
+        public ActionResult Index() {
             return View();
         }
     }

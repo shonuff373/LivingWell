@@ -11,12 +11,16 @@ namespace LivingWellMVC.Models {
 
         #region Properties
 
-        public string To { get; set; }
-        public string From { get; set; }
+        public string ToAddress { get; set; }
+        public string ToDisplayName { get; set; }
+        public string FromAddress { get; set; }
+        public string FromDisplayName { get; set; }
         public string Subject { get; set; }
         public string Body { get; set; }
         public ListDictionary BodyKeys;
+        public string TemplatePath { get; set; }
         public EmailType EmailType { get; set; }
+        public WorkflowType Workflow { get; set; }
         public Status Status { get; set; }
 
         private const string defaultFrom = "noreply@livingwellrehabilitation.com";
@@ -26,55 +30,75 @@ namespace LivingWellMVC.Models {
         #region Constructors
 
         public Email() {
-            this.From = defaultFrom;
+            this.FromAddress = defaultFrom;
         }
 
         public Email(string to, string from) {
-            this.To = to;
-            this.From = from;
+            this.ToAddress = to;
+            this.FromAddress = from;
         }
 
-        public virtual void CalculateBodyKeys(Template tmp){ }
+        public virtual void CalculateBodyKeys(SubmissionInfo info){ }
 
         #endregion
 
         #region Methods
 
         public void DefaultParameters(string to, string from, string subject) {
-            this.To = to;
-            this.From = from;
+            this.ToAddress = to;
+            this.FromAddress = from;
             this.Subject = subject;
         }
 
         #endregion
     }
 
+    public class EmailList : List<Email> {
+        public Status Status { get; set; }
+    }
+
     public class AnalysisEmail : Email {
 
-        public override void CalculateBodyKeys(Template tmp) {
-            AnalysisTemplate template = (AnalysisTemplate)tmp;
+        public override void CalculateBodyKeys(SubmissionInfo tmp) {
+            AnalysisSubmissionInfo info = (AnalysisSubmissionInfo)tmp;
 
             this.BodyKeys = new ListDictionary();
  
-            this.BodyKeys.Add("<%FIRSTNAME%>",  template.FirstName);
-            this.BodyKeys.Add("<%LASTNAME%>",  template.LastName);
-            this.BodyKeys.Add("<%COMMUNITYNAME%>",  template.CommunityName);
-            this.BodyKeys.Add("<%ADDRESSONE%>",  template.AddressOne);
-            this.BodyKeys.Add("<%ADDRESSTWO%>",  template.AddressTwo);
-            this.BodyKeys.Add("<%CITY%>",  template.City);
-            this.BodyKeys.Add("<%STATE%>",  template.State);
-            this.BodyKeys.Add("<%POSTALCODE%>",  template.PostalCode);
-            this.BodyKeys.Add("<%PHONE%>",  template.Phone);
-            this.BodyKeys.Add("<%EMAILADDRESS%>",  template.EmailAddress);
-            this.BodyKeys.Add("<%MESSAGE%>",  template.Message);
+            this.BodyKeys.Add("<%FIRSTNAME%>",  info.FirstName);
+            this.BodyKeys.Add("<%LASTNAME%>", info.LastName);
+            this.BodyKeys.Add("<%FULLNAME%>", info.FirstName + " " + info.LastName);
+            this.BodyKeys.Add("<%COMMUNITYNAME%>", info.CommunityName);
+            this.BodyKeys.Add("<%ADDRESSONE%>", info.AddressOne);
+            this.BodyKeys.Add("<%ADDRESSTWO%>", info.AddressTwo);
+            this.BodyKeys.Add("<%CITY%>", info.City);
+            this.BodyKeys.Add("<%STATE%>", info.State);
+            this.BodyKeys.Add("<%POSTALCODE%>", info.PostalCode);
+            this.BodyKeys.Add("<%PHONE%>", info.Phone);
+            this.BodyKeys.Add("<%EMAILADDRESS%>", info.EmailAddress);
+            this.BodyKeys.Add("<%MESSAGE%>", info.Message);
 
         }
     }
 
+    public class ContactEmail : Email {
+        public override void CalculateBodyKeys(SubmissionInfo tmp) {
+            ContactSubmissionInfo info = (ContactSubmissionInfo)tmp;
+
+            this.BodyKeys = new ListDictionary();
+            
+            this.BodyKeys.Add("<%FULLNAME%>", info.Name);
+            this.BodyKeys.Add("<%SERVICE%>", info.Service);
+            this.BodyKeys.Add("<%PHONE%>", info.Phone);
+            this.BodyKeys.Add("<%EMAILADDRESS%>", info.EmailAddress);
+            this.BodyKeys.Add("<%MESSAGE%>", info.Message);
+
+        }
+
+    }
+
     public enum EmailType {
         Unknown = 0,
-        Analysis = 1,
-        Contact = 2,
-        Response = 3
+        Submission = 1,
+        Response = 2
     }
 }

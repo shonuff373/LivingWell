@@ -29,7 +29,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-@model LivingWellMVC.Models.AnalysisTemplate
+
 <body class="stretched side-panel-left device-lg nopadding">
     <div id="wrapper" class="clearfix">
 
@@ -55,15 +55,16 @@
 
                         <ul>
                             <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "current" : "")">
-                                @Html.ActionLink("About Us", "About", "Home")
+                                @Html.ActionLink("About Us", "Index", "About")
                             </li>
                             <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "Services" ? "current" : "")">
-                                @Html.ActionLink("Services", "Services", "Home")
+                                @Html.ActionLink("Services", "Index", "Services")
+                            </li>
                             <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "Partner" ? "current" : "")">
-                                @Html.ActionLink("Partner With Us", "Partner", "Home")
+                                @Html.ActionLink("Partner With Us", "Index", "Partner")
                             </li>
                             <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "current" : "")">
-                                @Html.ActionLink("Contact Us", "Contact", "Home")
+                                @Html.ActionLink("Contact Us", "Index", "Contact")
                             </li>
 
                         </ul>

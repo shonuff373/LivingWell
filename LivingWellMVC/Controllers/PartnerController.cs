@@ -9,7 +9,7 @@ namespace LivingWellMVC.Controllers
     public class PartnerController : Controller
     {
         // GET: Partner
-        public ActionResult Partner()
+        public ActionResult Index()
         {
             return View();
         }

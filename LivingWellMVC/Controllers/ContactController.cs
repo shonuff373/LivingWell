@@ -6,10 +6,13 @@ using System.Web.Mvc;
 
 namespace LivingWellMVC.Controllers
 {
-    public class ServicesController : Controller
+    public class ContactController : Controller
     {
-        public ActionResult Index() {
+        // GET: Contact
+        public ActionResult Index()
+        {
             return View();
         }
+
     }
 }
