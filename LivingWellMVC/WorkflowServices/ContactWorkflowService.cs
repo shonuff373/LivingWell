@@ -11,14 +11,14 @@ using LivingWellMVC.Models;
 using LivingWellMVC.Services;
 
 namespace LivingWellMVC.Services {
-    public class ContactUsWorkflowService : BaseService {
+    public class ContactWorkflowService : BaseService {
         private ContactSubmissionInfo info;
 
-        public ContactUsWorkflowService(){
+        public ContactWorkflowService(){
             this.validation = new Status();
         }
 
-        public ContactUsWorkflowService(SubmissionInfo info) {
+        public ContactWorkflowService(SubmissionInfo info) {
             this.info = (ContactSubmissionInfo)info;
             this.validation = new Status();
         }

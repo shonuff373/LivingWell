@@ -186,7 +186,7 @@
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorkflowServices\ContactUsWorkflowService.cs" />
+    <Compile Include="WorkflowServices\ContactWorkflowService.cs" />
     <Compile Include="WorkflowServices\Service.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
