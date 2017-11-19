@@ -211,7 +211,7 @@ h6 { font-weight: bold; }
     h4 > span:not(.nocolor),
     h5 > span:not(.nocolor),
     h6 > span:not(.nocolor) {
-        color: #cc0000;/*#0079c0*/; /*#1ABC9C;*/ /*ILJ*/
+        color: #cc0000;/*#0079c0;*/ /*#1ABC9C;*/ /*ILJ*/
     }
 
 p,
@@ -2067,7 +2067,7 @@ body:not(.device-touch) .button {
 }
 
 .button.button-3d:hover {
-	background-color: #ac0000; !important;
+	background-color: #ac0000 !important;
 	opacity: 0.9;
 }
 
@@ -4837,7 +4837,7 @@ body:not(.device-touch) #gotoTop {
 	-o-transition: background-color .2s linear;
 }
 
-.stretched #gotoTop { bottom: 30px; }
+.stretched #gotoTop { bottom: 50px; }
 
 #gotoTop:hover { background-color: #1ABC9C; }
 
@@ -4861,7 +4861,7 @@ body:not(.device-touch) #gotoTop {
 	letter-spacing: 4px;
 }
 
-.error404-wrap .container { z-inde`x: 7; }
+.error404-wrap .container { z-index: 7; }
 
 .error404-wrap .error404 {
 	line-height: 0.9;
@@ -6496,6 +6496,7 @@ body:not(.no-transition) #wrapper,
     .popout-block-info {
         width: 100%;
         font-size: 5vh;
+        margin: auto;
     }
 
     .popout-block-desc {
@@ -6688,9 +6689,9 @@ body:not(.no-transition) #wrapper,
     width: auto; /*whatever width you want*/
 }
 
-.red-divider div {
+.red-divider {
     height: 2em !important;
-    width: 100% !important;
+    width: 80% !important;
     background-color: #cc0000 !important;
 }
 
@@ -6702,6 +6703,24 @@ body:not(.no-transition) #wrapper,
 .stretchImage {
     height: 100%;
     width: 100%;
+}
+
+.application-footer-container {
+    position: relative;
+    min-height: 100%;
+}
+
+.application-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 5vh;
+    clear: both;
+    color: white;
+    font-size:2vh;
+    border-top:1px solid #888;
+    text-align:center;
+    padding-top: 5px;
 }
 
 /*#endregion*/
