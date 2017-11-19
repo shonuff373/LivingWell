@@ -8,9 +8,9 @@ namespace LivingWellMVC.Models {
 
     }
 
-    public class SubmissionInfo: ISubmissionInfo {
+    public class SubmissionInfo : ISubmissionInfo {
         public virtual string Name { get; set; }
-        public string Phone { get; set; }        
+        public string Phone { get; set; }
         public string EmailAddress { get; set; }
         public string Message { get; set; }
     }
@@ -30,7 +30,7 @@ namespace LivingWellMVC.Models {
 
         public override string Name {
             get {
-                if (string.IsNullOrWhiteSpace(Name)) {
+                if (string.IsNullOrWhiteSpace(base.Name)) {
                     base.Name = FirstName + " " + LastName;
                 }
 
@@ -41,11 +41,11 @@ namespace LivingWellMVC.Models {
 
 
         #endregion
-        
+
         #region Constructors
 
         public AnalysisSubmissionInfo() {
-            
+
         }
 
         public AnalysisSubmissionInfo(string firstName, string lastname, string communityName, string addressOne, string addressTwo, string city, string state, string zip, string phone, string email) {
@@ -66,7 +66,7 @@ namespace LivingWellMVC.Models {
 
         #region Methods
 
-        
+
 
         #endregion
 

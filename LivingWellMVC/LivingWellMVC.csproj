@@ -242,6 +242,7 @@
     <Content Include="Content\images\preloader.gif" />
     <Content Include="Content\images\temp\8506367.png" />
     <Content Include="Content\images\temp\cityScape.png" />
+    <Content Include="Content\images\temp\diverse-workforce-banner.png" />
     <Content Include="Content\images\temp\generic_graph_up.png" />
     <Content Include="Content\images\temp\LivingWellLogo.PNG" />
     <Content Include="Content\images\temp\Nurse-Happy-hold-stethoscope.png" />
@@ -278,13 +279,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="MailTemplates\AnalysisSubmissionNotificationEmailTemplate.html" />
     <Content Include="MailTemplates\AnalysisResponseEmailTemplate.html" />
+    <Content Include="MailTemplates\AnalysisSubmissionNotificationEmailTemplate.html" />
     <Content Include="MailTemplates\ContactRequestNotificationEmailTemplate.html" />
     <Content Include="MailTemplates\ContactResponseEmailTemplate.html" />
     <Content Include="MailTemplates\GenericTemplate.html" />
     <Content Include="notes.txt" />
-    <Content Include="Scripts\livingwell.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\colors-rtl.php" />
@@ -389,6 +389,7 @@
     <Content Include="Scripts\js\vmap\jquery.vmap.turkey.js" />
     <Content Include="Scripts\js\vmap\jquery.vmap.usa.js" />
     <Content Include="Scripts\js\vmap\jquery.vmap.world.js" />
+    <Content Include="Scripts\livingwell.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -442,7 +443,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51962</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
