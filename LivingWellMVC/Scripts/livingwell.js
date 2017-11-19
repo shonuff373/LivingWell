@@ -21,7 +21,7 @@ function analysisSubmissionClick() {
     }
 }
 
-function contactUsClick() {
+function contactRequestClick() {
     self = this;
     setURL('contact');
     bindContactUsInput();
@@ -33,8 +33,6 @@ function contactUsClick() {
 function setURL(type) {
     switch (type) {
         case 'analysis':
-            //baseUrl = '~/api/analysis/'
-            //baseUrl = '@Url.Content("~/api/analysis/")';
             baseUrl = '/api/analysis/submit';
             break;
         case 'contact':

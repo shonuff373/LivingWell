@@ -5,6 +5,8 @@ using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 using LivingWellMVC.Models;
 namespace LivingWellMVC.Services {
     public interface Service {
@@ -56,7 +58,51 @@ namespace LivingWellMVC.Services {
         }
         
         public virtual MailMessage GenerateEmail(Email email) {
-            return new MailMessage();
+            // first we create a plain text version and set it to the AlternateView
+            // then we create the HTML version
+            MailMessage msg = new MailMessage(new MailAddress(email.FromAddress, email.FromDisplayName),
+                new MailAddress(email.ToAddress, email.ToDisplayName));
+
+            msg.From = new MailAddress(email.FromAddress, email.FromDisplayName);
+            msg.Subject = email.Subject;
+            msg.To.Add(email.ToAddress);
+            msg.BodyEncoding = Encoding.UTF8;
+
+            String plainBody = "Let's live well!";
+
+            //first we create the text version
+            AlternateView plainView = AlternateView.CreateAlternateViewFromString(plainBody, Encoding.UTF8, "text/plain");
+            msg.AlternateViews.Add(plainView);
+
+            //now create the HTML version
+            MailDefinition message = new MailDefinition();
+            message.BodyFileName = email.TemplatePath;
+            message.IsBodyHtml = true;
+            message.From = email.FromAddress;
+            message.Subject = email.Subject;
+
+            //Build replacement collection to replace fields in template1.htm file
+            //ListDictionary replacements = new ListDictionary();
+            //replacements.Add("<%FIRSTNAME%>", "ToUsername");//example of dynamic content for Username
+
+            //now create mail message using the mail definition object
+            //the CreateMailMessage object takes a source control object as the last parameter,
+            //if the object you are working with is webcontrol then you can just pass "this",
+            //otherwise create a dummy control as below.
+            MailMessage msgHtml = message.CreateMailMessage(email.ToAddress, email.BodyKeys, new LiteralControl());
+
+            AlternateView htmlView = AlternateView.CreateAlternateViewFromString(msgHtml.Body, Encoding.UTF8, "text/html");
+
+            //example of a linked image 
+            //LinkedResource imgRes = new LinkedResource(Server.MapPath("~/MailTemplates/images/imgA.jpg"), System.Net.Mime.MediaTypeNames.Image.Jpeg);
+            //imgRes.ContentId = "imgA";
+            //imgRes.ContentType.Name = "imgA.jpg";
+            //imgRes.TransferEncoding = System.Net.Mime.TransferEncoding.Base64;
+            //htmlView.LinkedResources.Add(imgRes);
+
+            msg.AlternateViews.Add(htmlView);
+
+            return msg;
         }
         
         public virtual Status SendEmails(EmailList emailList) {
