@@ -63,6 +63,9 @@
                             <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "Partner" ? "current" : "")">
                                 @Html.ActionLink("Partner With Us", "Index", "Partner")
                             </li>
+                            <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "Partner" ? "current" : "")">
+                                @Html.ActionLink("Careers", "Index", "Careers")
+                            </li>
                             <li class="mega-menu @(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "current" : "")">
                                 @Html.ActionLink("Contact Us", "Index", "Contact")
                             </li>
@@ -162,92 +165,7 @@
                                     <button onclick="quickAnalysisSubmissionClick(); return false;" class="button button-3d button-large btn-block nomargin" name="template-quick-analysis-apply" value="apply">Schedule Analysis</button>
                                 </div>
 
-                            </form>
-
-                            
-                        <script type="text/javascript">
-
-                            var self ;
-        var baseURl;
-
-
-        function fff() {
-            self = this;
-            baseUrl = '@Url.Content("~/api/analysis/")';
-            bindInput();
-            if (isValidInput()) {
-                sendEmail();
-            }
-        }
-
-        function bindInput(){
-            self.model = {
-                firstName: document.getElementById('template-quick-analysis-fname').value,
-                lastName: document.getElementById('template-quick-analysis-lname').value,
-                name: '',
-                communityName: document.getElementById('template-quick-analysis-community-name').value,
-                addressOne: document.getElementById('template-quick-analysis-address-one').value,
-                addressTwo: document.getElementById('template-quick-analysis-address-two').value,
-                city: document.getElementById('template-quick-analysis-city').value,
-                state: document.getElementById('template-quick-analysis-state').value,
-                postalCode: document.getElementById('template-quick-analysis-postal-code').value,
-                emailAddress: document.getElementById('template-quick-analysis-email').value,
-                phone: document.getElementById('template-quick-analysis-phone').value,
-                message: document.getElementById('template-quick-analysis-message').value
-            }
-        }
-
-        function sendEmail() {
-            var formData = new FormData();
-
-            $.ajax({
-                url: baseUrl,
-                type: 'POST',
-                dataType: 'json',
-                contentType: 'application/json; charset=utf-8',
-                //cache: false,
-                //processData: false,
-                data: JSON.stringify(self.model),
-                success: function (data) {
-                    // ..... any success code you want
-                    if (data) {
-                        alert(data);
-                    } else {
-                        alert('Email was sent successfully!');
-                    }
-                },
-                error: function (data) {
-                    if (data) {
-                        alert(data);
-                    } else {
-                        alert('There was an error processing this email!');
-                    }
-            }
-            });
-        }
-
-        function isValidInput() {
-            var isValid = true;
-            if (!self.model.firstName || !self.model.lastName) {
-                isValid = false;
-            }
-
-            if (!self.model.emailAddress) {
-                isValid = false;
-            } else {
-
-            }
-
-            return isValid;
-        }
-
-
-
-    </script>
-
-
-
-                        
+                            </form>                        
                     </div>    
                 </div>
             </div>
@@ -379,6 +297,13 @@
 
             </div>
             <!-- #copyrights end -->
+            <div class="application-footer-container">
+                <div class="application-footer dark-background">
+                    Ready to start your new Career?
+                        @Html.ActionLink("I'm Ready!", "Index", "Careers", null, new { @class = "button button-3d" })
+                </div>
+
+            </div>
 
         </footer><!-- #footer end -->
         <!-- Go To Top

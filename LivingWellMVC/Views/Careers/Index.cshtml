@@ -1,0 +1,214 @@
+﻿
+@{
+    ViewBag.Title = "Career Opportunities";
+}
+
+<section class="nomargin nopadding"></section><!--Buffer for header-->
+
+
+<!-- Main Image
+============================================= -->
+
+<section id="slider" class="boxed-slider swiper_wrapper nopadding clearfix">
+    <div class="swiper_wrapper_med_height">
+
+        <div class="swiper-container swiper-parent">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide dark main-image-careers">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                            <h2 data-caption-animate="fadeInUp">Careers</h2>
+                            <p data-caption-animate="fadeInUp" data-caption-delay="200">Join a team that you that you believe in.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- #main image end -->
+
+
+<!-- Statement 
+============================================= -->
+
+<section id="content" class="bottomgreyborder">
+    <div class="container red-divider"></div>
+    <div class="nopadding container clearfix">
+        <div class="container">
+            <div class="col_full text-justify nobottommargin">
+                <div class="header-blurb-container">
+                    <h2 class="thin-text center">At Living Well Rehabilitation, the world's most talented and educated therapists are shaping the future of clinical fulfillment.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- #statement end-->
+
+<!-- Content
+============================================= -->
+
+<section id="content">
+    <div id="openPositions" class="nopadding container clearfix">
+        <div class="container">
+            <div class="col_full text-justify nobottommargin">
+                <div class="header-blurb-small-container nobottompadding">
+                    <div>
+                        <h1 class="thin-text center">Open Positions</h1>
+                        <h4 class="thin-text center">
+                            We're looking for people to join the team who are as excited and as passionate as we are to help build and grow
+                            the platform that empowers others to live a life of satisfaction.
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Career
+    ============================================= -->
+
+    <div class="content-wrap bottompadding-sm">
+        <div class="container clearfix">
+
+            <!-- Career Posts
+            ============================================= -->
+            
+            <div id="posts" class="post-grid post-masonry grid-3 clearfix" style="position: relative; height: 1878.8px;">
+                <div class="entry career-container thin-text">
+                    <div>
+                        <div class="thin-text career-title">Occupational Therapist</div>
+                        <div class="thin-text career-short-desc">Assist in the recuperation of physical or mental illness through performing activities required in daily life.</div>
+                    </div>
+                    <div class="popout-block-button center">
+                        @Html.ActionLink("Apply Now", "Apply", "Careers", new { applicationType = "Occupational" }, new { @class = "button button-default-background button-xlarge" })
+                    </div>
+                </div>
+                <div class="entry career-container">
+                    <div>
+                        <div class="thin-text career-title">Physical Therapist</div>
+                        <div class="thin-text career-short-desc">Help grow the preservation, enhancement and restoration of movement and physical function.</div>
+                    </div>
+                    <div class="popout-block-button center">
+                        @Html.ActionLink("Apply Now", "Apply", "Careers", new { applicationType = "Physical" }, new { @class = "button button-default-background button-xlarge" })
+                    </div>
+                </div>
+                <div class="entry career-container">
+                    <div>
+                        <div class="thin-text career-title">Speech Therapist</div>
+                        <div class="thin-text career-short-desc">Aid others in strengthening their ability to communicate by training and treating speech defects.</div>
+                    </div>
+                    <div class="popout-block-button center">
+                        @Html.ActionLink("Apply Now", "Apply", "Careers", new{ applicationType = "Speech"}, new { @class = "button button-default-background button-xlarge" })
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- #career posts end -->
+
+        </div>
+    </div>
+
+    <!-- #careers end-->
+    
+    <!-- Image Divider
+            ============================================= -->
+    
+    <img src="~/Content/images/temp/team_looking_up.png" class="col_full" />
+
+    <!-- #image divider end-->
+    
+    <!-- Benefits 
+        ================================================= -->
+
+    <div class="nopadding container clearfix">
+        <div class="container clearfix">
+            <div class="col_full text-justify">
+                <div class="nobottompadding">
+                    <div>
+                        <h1 class="thin-text center">Living Well Benefits</h1>
+                        <h4 class="center">
+                            Living Well looks to satisfy more than its partners, we're here to completely take care of our employees. 
+                        </h4>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Posts
+                ============================================= -->
+
+            <div id="posts" class="post-grid grid-3 clearfix">
+                <div class="entry">
+                    <div>
+                        <div class="benefits-title">You're Covered</div>
+                        <div class="thin-text benefits-short-desc">We take care of our employees in every way possible. Our competitive, nationally recognized, health care benefits package includes a comprehensive medical, prescription, dental and vision coverage.  We also offer short term disability, parental leave, and many other coverages to insure your life stays on track.</div>
+                    </div>
+
+                </div>
+                <div class="entry">
+                    <div>
+                        <div class="thin-text benefits-title">Work-Life Balance</div>
+                        <div class="thin-text benefits-short-desc">We believe that valued time outside of work is essential to our employees' happiness. Paid holidays and the option to carry time over are just a few ways our PTO plan allows encourages taking time to refresh yourself away from work. There's also a cash-out option for unused PTO time.</div>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div>
+                        <div class="thin-text benefits-title">Flexible Positions</div>
+                        <div class="thin-text benefits-short-desc">Here at Living Well, we offer flexible hours and a variety of clinical settings and positions. We have capacity for full-time, part-time, per-diem, evening, and weekend positions. We're willing to work with you to make a schedule that works!</div>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div>
+                        <div class="thin-text benefits-title">Long-Term Planning</div>
+                        <div class="thin-text benefits-short-desc">Our employees are important to us, and we're serious about taking care of them.  We are a team and we believe our entire team should share in our success. Employees recieve an equity package in the company as part of their total compensation, and we match up to 4% of a team member's salary in 401K contributions.</div>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div>
+                        <div class="benefits-title">Supporting Your Changes</div>
+                        <div class="thin-text benefits-short-desc">We realize that life happens and the unexpected will throw a wrench in your plans. Living Well, however, extends itself to keep your life going by offering Worker's Compensation, Flexible Spending Account, Relocation Assistance, Continuing Education Allowance as well as additional optional insurance.</div>
+                    </div>
+                </div>
+                <div class="entry">
+                    <div>
+                        <div class="benefits-title">Accessibility</div>
+                        <div class="thin-text benefits-short-desc">As we've stated to our customers, we always hear that the people who can make changes in a company are never available. Like our customers, our employees have a voice and we will listen to what you have to say. Our employees will always have a platform and a variety of avenues for ideas and suggestions to improve the quality and service of Living Well.</div>
+                    </div>
+                </div>
+        </div>
+
+            <!-- #benefits posts end -->
+
+        <div class="col_full">
+            <h3 class="center">To hear more about our generous salaries and comprehensive list of benefits:</h3>                
+            <h4 class="center">
+                <strong>Call </strong>us at 215.123.4567 |
+                <strong>E-mail </strong>us at jobs@livingwellrehabilitation.com |
+                <strong>Fax </strong>an application to 215.890.1234
+            </h4>
+        </div>
+        <div class="col_full">
+            <h3 class="center"><strong> - or -</strong></h3>
+        </div>
+        <div class="col_full nobottommargin">
+            <h4 class="center">Get started on your application by clicking here: </h4>
+        </div>
+        <div class="col_full">
+            <div class="popout-block-button center">
+                <a href="#openPositions" class="button button-default-background button-xlarge">Apply Now!</a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- #benefits end -->
+
+</section>
+
+<!-- #content end -->

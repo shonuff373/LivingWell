@@ -33,16 +33,16 @@ function contactRequestClick() {
 function setURL(type) {
     switch (type) {
         case 'analysis':
-            baseUrl = '/api/analysis/submit';
+            baseUrl = 'api/analysis/submit';
             break;
         case 'contact':
-            baseUrl = '/api/application/submit';
+            baseUrl = 'api/application/submit';
             break;
         case 'contact':
-            baseUrl = '/api/contact/submit';
+            baseUrl = 'api/contact/submit';
             break;
         default:
-            baseUrl = '/api/error/';
+            baseUrl = 'api/error/';
             break;
     }
 }
@@ -107,18 +107,16 @@ function sendEmail() {
         data: JSON.stringify(self.info),
         success: function (data) {
             // ..... any success code you want
-            if (data) {
-                alert(data);
-            } else {
-                alert('Email was sent successfully!');
-            }
+            //if (data) {
+            //    alert(data);
+            //} else {
+            //    alert('Email was sent successfully!');
+            //}
         },
-        error: function (data) {
-            if (data) {
-                alert(data);
-            } else {
-                alert('There was an error processing this email!');
-            }
+        error: function (xhr, status, error) {
+            var err = eval("(" + xhr.responseText + ")");
+            console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
+            //alert(err.Message);
         }
     });
 }
@@ -138,3 +136,15 @@ function isValidInput() {
     return isValid;
 }
 
+
+jQuery(window).load(function(){
+
+    var $container = $('#posts');
+
+    $container.isotope({ transitionDuration: '0.65s' });
+
+    $(window).resize(function() {
+        $container.isotope('layout');
+    });
+
+});

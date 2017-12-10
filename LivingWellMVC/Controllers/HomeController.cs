@@ -10,28 +10,5 @@ namespace LivingWellMVC.Controllers {
             return View();
         }
 
-        //public ActionResult About() {
-        //    ViewBag.Message = "About Us";
-
-        //    return View();
-        //}
-
-        //public ActionResult Contact() {
-        //    ViewBag.Message = "Your contact page.";
-
-        //    return View();
-        //}
-
-        //public ActionResult Opportunities() {
-        //    return View();
-        //}
-
-        //public ActionResult Partner() {
-        //    return View();
-        //}
-
-        //public ActionResult Services() {
-        //    return View();
-        //}
     }
 }

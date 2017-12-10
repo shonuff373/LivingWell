@@ -174,7 +174,7 @@
     <Compile Include="Controllers\Api\ErrorController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\OpportunitiesController.cs" />
+    <Compile Include="Controllers\CareersController.cs" />
     <Compile Include="Controllers\PartnerController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Models\Workflow.cs" />
@@ -241,6 +241,7 @@
     <Content Include="Content\images\preloader-dark.gif" />
     <Content Include="Content\images\preloader.gif" />
     <Content Include="Content\images\temp\8506367.png" />
+    <Content Include="Content\images\temp\apply_banner.png" />
     <Content Include="Content\images\temp\cityScape.png" />
     <Content Include="Content\images\temp\diverse-workforce-banner.png" />
     <Content Include="Content\images\temp\generic_graph_up.png" />
@@ -261,6 +262,7 @@
     <Content Include="Content\images\temp\partner_banner.jpg" />
     <Content Include="Content\images\temp\Speech &amp; Swallow Rehabilitation 1.png" />
     <Content Include="Content\images\temp\staff_outdoors.png" />
+    <Content Include="Content\images\temp\team_looking_up.png" />
     <Content Include="Content\images\temp\temp_nurse_computer.png" />
     <Content Include="Content\images\temp\temp_nurse_computer02.png" />
     <Content Include="Content\images\temp\temp_nurse_computer03.png" />
@@ -407,17 +409,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Home\Services.cshtml" />
-    <Content Include="Views\Home\Partner.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Opportunities\Index.cshtml" />
+    <Content Include="Views\Careers\Index.cshtml" />
     <Content Include="Views\Partner\Index.cshtml" />
     <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Careers\TherapistApplication.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

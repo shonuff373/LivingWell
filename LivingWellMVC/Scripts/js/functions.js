@@ -1586,7 +1586,7 @@ var SEMICOLON = SEMICOLON || {};
 					loop: elementLoop,
 					effect: elementEffect,
 					slidesPerView: 1,
-					grabCursor: elementGrabCursor,
+					//grabCursor: elementGrabCursor, /*ILJ*/
 					pagination: elementPagination,
 					paginationClickable: elementPaginationClickable,
 					prevButton: elementNavPrev,
