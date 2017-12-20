@@ -23,7 +23,8 @@ namespace LivingWellMVC.Models {
         public WorkflowType Workflow { get; set; }
         public Status Status { get; set; }
 
-        private const string defaultFrom = "noreply@livingwellrehabilitation.com";
+        private const string defaultFrom = "ilj373@gmail.com";//     "noreply@livingwellrehabilitation.com";
+        private const string defaultMailingAddress = "123 Main St., Philadelphia, PA 19191";
 
         #endregion  
 
@@ -38,7 +39,14 @@ namespace LivingWellMVC.Models {
             this.FromAddress = from;
         }
 
-        public virtual void CalculateBodyKeys(SubmissionInfo info){ }
+        public virtual void CalculateBodyKeys(SubmissionInfo info){
+            this.BodyKeys = new ListDictionary();
+
+            this.BodyKeys.Add("<%PHONE%>", info.Phone);
+            this.BodyKeys.Add("<%EMAILADDRESS%>", info.EmailAddress);
+            this.BodyKeys.Add("<%LWLADDRESS%>", defaultMailingAddress);
+
+        }
 
         #endregion
 
@@ -62,7 +70,7 @@ namespace LivingWellMVC.Models {
         public override void CalculateBodyKeys(SubmissionInfo tmp) {
             AnalysisSubmissionInfo info = (AnalysisSubmissionInfo)tmp;
 
-            this.BodyKeys = new ListDictionary();
+            //this.BodyKeys = new ListDictionary();
  
             this.BodyKeys.Add("<%FIRSTNAME%>",  info.FirstName);
             this.BodyKeys.Add("<%LASTNAME%>", info.LastName);
@@ -73,8 +81,6 @@ namespace LivingWellMVC.Models {
             this.BodyKeys.Add("<%CITY%>", info.City);
             this.BodyKeys.Add("<%STATE%>", info.State);
             this.BodyKeys.Add("<%POSTALCODE%>", info.PostalCode);
-            this.BodyKeys.Add("<%PHONE%>", info.Phone);
-            this.BodyKeys.Add("<%EMAILADDRESS%>", info.EmailAddress);
             this.BodyKeys.Add("<%MESSAGE%>", info.Message);
 
         }
@@ -82,18 +88,43 @@ namespace LivingWellMVC.Models {
 
     public class ContactEmail : Email {
         public override void CalculateBodyKeys(SubmissionInfo tmp) {
+            base.CalculateBodyKeys(tmp);
+
             ContactSubmissionInfo info = (ContactSubmissionInfo)tmp;
 
-            this.BodyKeys = new ListDictionary();
+
+            //this.BodyKeys = new ListDictionary();
             
             this.BodyKeys.Add("<%FULLNAME%>", info.Name);
             this.BodyKeys.Add("<%SERVICE%>", info.Service);
-            this.BodyKeys.Add("<%PHONE%>", info.Phone);
-            this.BodyKeys.Add("<%EMAILADDRESS%>", info.EmailAddress);
             this.BodyKeys.Add("<%MESSAGE%>", info.Message);
 
         }
 
+    }
+
+    public class ApplicationEmail : Email {
+        public override void CalculateBodyKeys(SubmissionInfo tmp) {
+            ApplicationSubmissionInfo info = (ApplicationSubmissionInfo)tmp;
+
+            //this.BodyKeys = new ListDictionary();
+
+            this.BodyKeys.Add("<%FIRSTNAME%>", info.FirstName);
+            this.BodyKeys.Add("<%LASTNAME%>", info.LastName);
+            this.BodyKeys.Add("<%FULLNAME%>", info.FirstName + " " + info.LastName);
+            this.BodyKeys.Add("<%SECONDARYPHONE%>", info.SecondaryPhone);
+            this.BodyKeys.Add("<%ADDRESSONE%>", info.AddressOne);
+            this.BodyKeys.Add("<%ADDRESSTWO%>", info.AddressTwo);
+            this.BodyKeys.Add("<%CITY%>", info.City);
+            this.BodyKeys.Add("<%STATE%>", info.State);
+            this.BodyKeys.Add("<%POSTALCODE%>", info.PostalCode);
+            this.BodyKeys.Add("<%POSITIONTYPE%>", info.GetEnumDescription(info.PositionType));
+            this.BodyKeys.Add("<%POSITIONSTATUS%>", info.GetEnumDescription(info.PositionStatus));
+            this.BodyKeys.Add("<%WEEKLYHOURS%>", info.WeeklyHours);
+            this.BodyKeys.Add("<%REFERRAL%>", info.Referral);
+            this.BodyKeys.Add("<%RESUMEFILENAME%>", info.ResumeFileName);
+            this.BodyKeys.Add("<%MESSAGE%>", info.Message);
+        }
     }
 
     public enum EmailType {

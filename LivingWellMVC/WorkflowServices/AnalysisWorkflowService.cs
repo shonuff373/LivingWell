@@ -8,9 +8,8 @@ using System.Web.UI;
 using System.Text;
 using System.Web.UI.WebControls;
 using LivingWellMVC.Models;
-using LivingWellMVC.Services;
 
-namespace LivingWellMVC {
+namespace LivingWellMVC.WorkflowServices {
     public class AnalysisWorkflowService : BaseService {
         private AnalysisSubmissionInfo info;
 

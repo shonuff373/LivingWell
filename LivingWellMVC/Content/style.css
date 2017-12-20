@@ -4303,6 +4303,8 @@ label.label-muted {
 	margin-right: 5px;
 }
 
+textarea { resize: none;}
+
 form .col_full,
 form .col_half,
 form .col_one_third,
@@ -4316,7 +4318,7 @@ form .col_four_fifth,
 form .col_one_sixth,
 form .col_five_sixth { margin-bottom: 25px; }
 
-.sm-form-control textarea {
+.sm-form-control .textarea {
     resize:none;
 }
 
@@ -7358,6 +7360,14 @@ body:not(.device-touch) .entry-link {
     background-color: #cc0000 !important;
 }
 
+.grey-line-divider {
+    height: 2px !important;
+    width: 100% !important;
+    background-color: #DDD !important;
+    margin: 5vh 0vw 5vh 0vw;
+}
+
+
 .story-text p{
     font-family: 'Nunito', sans-serif;
     font-size: large;
@@ -7453,4 +7463,10 @@ body:not(.device-touch) .entry-link {
     font-size: 2.2vh;
     font-weight: 300;
 }
+
+.application_container {
+    margin: 5vh 20vw 0vh 20vw;
+}
+
+
 /*#endregion*/

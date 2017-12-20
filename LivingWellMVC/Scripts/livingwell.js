@@ -30,17 +30,29 @@ function contactRequestClick() {
     }
 }
 
+function applicationSubmissionClick() {
+    self = this;
+    setURL('application')
+    bindApplicationInput();
+    if (isValidInput()) {
+        sendEmail();
+    }
+}
+
+
 function setURL(type) {
     switch (type) {
         case 'analysis':
             baseUrl = 'api/analysis/submit';
             break;
-        case 'contact':
+        case 'application':
             baseUrl = 'api/application/submit';
             break;
         case 'contact':
             baseUrl = 'api/contact/submit';
             break;
+        case 'upload':
+            baseUrl = 'api/application/upload';
         default:
             baseUrl = 'api/error/';
             break;
@@ -93,6 +105,86 @@ function bindContactUsInput() {
         service: document.getElementById('template-contactform-service')
     }
 }
+
+function bindApplicationInput() {
+    self.info = {
+        firstName: document.getElementById('application-fname').value,
+        lastName: document.getElementById('application-lname').value,
+        name: '',
+        phone: document.getElementById('application-primary-phone').value,
+        secondaryPhone: document.getElementById('application-secondary-phone').value,
+        emailAddress: document.getElementById('application-email').value,
+        addressOne: document.getElementById('application-address-one').value,
+        addressTwo: document.getElementById('application-address-two').value,
+        city: document.getElementById('application-city').value,
+        state: document.getElementById('application-state').value,
+        postalCode: document.getElementById('application-postal-code').value,
+        positionType: document.getElementById('application-position-type').value,
+        positionStatus: document.getElementById('application-position-status').value,
+        weeklyHours: document.getElementById('application-weekly-hours').value,
+        referral: document.getElementById('application-referral').value,
+        resumeFileName: document.getElementById('application-resume').value.split(/(\\|\/)/g).pop(), //use regular expression to get filename
+        message: document.getElementById('application-additional-information').value
+    }
+}
+
+$('#application-resume').on('change', function (e) {
+    var formdata = new FormData(); //FormData object
+    var fileInput = document.getElementById('application-resume');
+    //Iterating through each files selected in fileInput
+    for (i = 0; i < fileInput.files.length; i++) {
+        //Appending each file to FormData object
+        formdata.append(fileInput.files[i].name, fileInput.files[i]);
+    }
+    //Creating an XMLHttpRequest and sending
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/api/application/upload');
+    xhr.send(formdata);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            alert(xhr.responseText);
+        }
+    }
+    return false;
+});
+
+
+//$('#application-resume').on('change', function (e) {
+
+//    self = this;
+//    var files = e.target.files;
+//    var myID = '3'; //uncomment this to make sure the ajax URL works
+//    var uploadUrl = 'api/application/upload';
+
+//    if (files.length > 0) {
+//        if (window.FormData !== undefined) {
+//            var data = new FormData();
+//            for (var x = 0; x < files.length; x++) {
+//                data.append("file" + x, files[x]);
+//            }
+
+//            $.ajax({
+//                url: uploadUrl,
+//                type: "POST",
+//                dataType: 'json',
+//                contentType: 'application/json; charset=utf-8',
+//                //processData: false,
+//                data: JSON.stringify(data),
+//                success: function (result) {
+//                    console.log(result);
+//                },
+//                error: function (xhr, status, p3, p4) {
+//                    var err = "Error " + " " + status + " " + p3 + " " + p4;
+//                    if (xhr.responseText && xhr.responseText[0] == "{")
+//                        err = JSON.parse(xhr.responseText).Message;
+//                    console.log(err);
+//                }
+//            });
+//        } else {
+//            alert("This browser doesn't support HTML5 file uploads!");
+//        }
+//    }
+//});
 
 function sendEmail() {
     var formData = new FormData();

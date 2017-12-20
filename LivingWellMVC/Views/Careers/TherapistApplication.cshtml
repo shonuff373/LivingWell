@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "Online Application";
+}
+
+<section class="nomargin nopadding"></section><!--Buffer for header-->
+<!-- Main Image
+============================================= -->
+<section id="slider" class="boxed-slider swiper_wrapper nopadding clearfix">
+    <div class="swiper_wrapper_small_height">
+
+        <div class="swiper-container swiper-parent">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide dark main-image-apply">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                            <h2 data-caption-animate="fadeInUp">Online Application</h2>
+                            <p data-caption-animate="fadeInUp" data-caption-delay="200">Let's get started!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- Statement
+============================================= -->
+
+<section id="content" class="bottomgreyborder">
+    <div class="container red-divider"></div>
+    <div class="nopadding container clearfix">
+        <div class="container">
+            <div class="col_full text-justify nobottommargin">
+                <div class="header-blurb-container">
+                    <h2 class="thin-text center">Our therapy team creates solutions that enable our residents to regain a better quality of life. We believe in adaptability, teamwork, and applying a personal touch that encourages other to achieve.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- #statement end-->
+
+<!-- Therapy Application
+============================================= -->
+
+<section id="content">
+    <div id="careerApplication" class="nopadding clearfix">
+        <div class="application_container dark-grey-text">
+
+            <h2 class="col_full bottommargin-sm">Personal Information</h2>
+
+            <div class="col_half">
+                <label for="application-fname" class="">First Name <small>*</small></label>
+                <input type="text" id="application-fname" name="application-fname" value="" class="sm-form-control required" placeholder="" aria-required="true">
+            </div>
+
+            <div class="col_half col_last">
+                <label for="application-lname" class="">Last Name <small>*</small></label>
+                <input type="text" id="application-lname" name="application-lname" value="" class="sm-form-control required" placeholder="" aria-required="true">
+            </div>
+
+            <div class="col_one_third">
+                <label for="application_primary-phone" class="">Home/Mobile Phone<small>*</small></label>
+                <input type="tel" id="application-primary-phone" name="application-primary-phone" value="" class="sm-form-control required" placeholder="" aria-required="true">
+            </div>
+            
+            <div class="col_one_third">
+                <label for="application_secondary-phone" class="">Alternate Phone</label>
+                <input type="tel" id="application-secondary-phone" name="application-secondary-phone" value="" class="sm-form-control" placeholder="">
+            </div>
+
+            <div class="col_one_third col_last">
+                <label for="application-email" class="">Email Address <small>*</small></label>
+                <input type="email" id="application-email" name="application-email" value="" class="sm-form-control required" placeholder="" aria-required="true">
+            </div>
+
+            <div class="col_half">
+                <label for="application-address-one" class="">Address One</label>
+                <input type="text" id="application-address-one" name="application-address-one" value="" class="sm-form-control">
+            </div>
+
+            <div class="col_one_fourth">
+                <label for="application-address-two" class="">Address Two</label>
+                <input type="text" name="application-address-two" id="application-address-two" value="" class="sm-form-control">
+            </div>
+
+            <div class="col_one_fourth col_last">
+                <label for="application-city" class="">City</label>
+                <input type="text" name="application-city" id="application-city" value="" class="sm-form-control">
+            </div>
+
+            <div class="col_one_sixth">
+                <label for="application-state" class="">State</label>
+                <input type="text" name="application-state" id="application-state" value="" class="sm-form-control">
+            </div>
+
+            <div class="col_one_sixth">
+                <label for="application-postal-code" class="">Zip</label>
+                <input type="text" name="application-postal-code" id="application-postal-code" value="" class="sm-form-control">
+            </div>
+
+            <div class="col_full bottommargin-sm grey-line-divider"></div>
+
+            <h2 class="col_full bottommargin-sm">Desired Position Information</h2>
+
+            <div class="col_one_third">
+                <label for="application-position-type" class="">Position Type</label>
+                <select id="application-position-type" name="application-position-type" class="sm-form-control">
+                    <option value="0">-- Select One --</option>
+                    <option value="1">Occupational Therapy</option>
+                    <option value="2">Physical Therapy</option>
+                    <option value="3">Speech Therapy</option>
+                </select>
+            </div>
+
+            <div class="col_one_third ">
+                <label for="application-position-status" class="">Position Status</label>
+                <select id="application-position-status" name="application-position-status" class="sm-form-control">
+                    <option value="0">-- Select One --</option>
+                    <option value="1">Full Time</option>
+                    <option value="2">Part Time</option>
+                    <option value="3">Per Diem days / PRN</option>
+                </select>
+            </div>
+
+            <div class="col_one_third col_last">
+                <label for="application-weekly-hours" class="">Hours are you available per week</label>
+                <input type="text" id="application-weekly-hours" name="application-weekly-hours" value="" class="sm-form-control required" placeholder="">
+            </div>
+
+            <div class="col_full grey-line-divider"></div>
+
+            <h2 class="col_full bottommargin-sm">Additional Application Information</h2>
+
+            <div class="col_full">
+                <label for="application-referral" class="">How did you hear about us?</label>
+                <input type="text" id="application-referral" name="application-referral" value="" class="sm-form-control required" placeholder="(e.g. LinkedIn, Indeed, Employee Referral)">
+            </div>
+
+            <div class="col_full">
+                <label for="application-additional-information" class="">Additional Information related to position?</label>
+                <textarea type="text" id="application-additional-information" name="application-additional-information" value="" class="no_resize sm-form-control required " rows="6" placeholder="(e.g. Citizenship information, Disabilities, Previously Employed at Living Well)"></textarea>
+            </div>
+
+            <div class="col_full">
+                <label for="application-resume" class="">Attach your cover letter and/or resume in doc, docx, txt, or pdf format (size limit 2 MB)</label>
+                <input type="file" id="application-resume" name="application-resume" value="" class="sm-form-control required" placeholder="(e.g. LinkedIn, Indeed, Employee)" multiple>
+            </div>
+
+            <div class="col_full">
+                <div class="col_one_third"></div>
+                <div class="col_one_third">
+                    <button onclick="applicationSubmissionClick(); return false;" data-toggle="modal" data-target="bs-example-modal-sm" class="button button-3d button-large btn-block nomargin" name="application_submit">Submit Application</button>
+                </div>
+                <div class="col_one_third col_last"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <!-- #therapy application end-->
+
+@*<section>
+    <div class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" hidden="hidden" style="display: block; padding-right: 16px;">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-body">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p class="nobottommargin">Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>*@

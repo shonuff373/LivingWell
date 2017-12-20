@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using LivingWellMVC.Models;
-namespace LivingWellMVC.Services {
+
+namespace LivingWellMVC.WorkflowServices {
     public interface Service {
          Status ProcessWorkflow(SubmissionInfo info);
          void ValidateInfo(SubmissionInfo info);
@@ -101,6 +102,7 @@ namespace LivingWellMVC.Services {
             //htmlView.LinkedResources.Add(imgRes);
 
             msg.AlternateViews.Add(htmlView);
+            
 
             return msg;
         }

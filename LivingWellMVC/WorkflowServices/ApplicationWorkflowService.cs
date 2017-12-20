@@ -10,37 +10,35 @@ using System.Web.UI.WebControls;
 using LivingWellMVC.Models;
 
 namespace LivingWellMVC.WorkflowServices {
-    public class ContactWorkflowService : BaseService {
-        private ContactSubmissionInfo info;
+    public class ApplicationWorkflowService : BaseService{
+        private ApplicationSubmissionInfo info;
 
-        public ContactWorkflowService(){
+        public ApplicationWorkflowService() {
             this.validation = new Status();
         }
 
-        public ContactWorkflowService(SubmissionInfo info) {
-            this.info = (ContactSubmissionInfo)info;
+        public ApplicationWorkflowService(SubmissionInfo info) {
+            this.info = (ApplicationSubmissionInfo)info;
             this.validation = new Status();
-        }
-        
-        public override Models.Status ProcessWorkflow(Models.SubmissionInfo info) {
-            return base.ProcessWorkflow(info);
         }
 
         public override void ValidateInfo(SubmissionInfo info) {
+            base.ValidateInfo(info);
             ValidateEmptyString(info.EmailAddress);
             ValidateEmailFormat(info.EmailAddress);
         }
 
         public override Email SetupSubmissionEmailProperties(SubmissionInfo info, Status status) {
-            ContactEmail email = new ContactEmail();
+            ApplicationEmail email = new ApplicationEmail();
 
             email.ToAddress = info.EmailAddress;
+            email.ToDisplayName = info.Name;
             email.FromDisplayName = "Living Well Rehabilitation";
-            email.Subject = "Living Well Contact Request";
+            email.Subject = "Living Well Application Submission";
             email.EmailType = EmailType.Submission;
-            email.Workflow = WorkflowType.Contact;
-            email.TemplatePath = "~/MailTemplates/ContactRequestNotificationEmailTemplate.html";
-            email.CalculateBodyKeys(info);
+            email.Workflow = WorkflowType.Application;
+            email.TemplatePath = "~/MailTemplates/ApplicationSubmissionNotificationEmailTemplate.html"; //https://www.quora.com/Is-there-any-way-to-include-an-HTML-page-in-an-HTML-page
+            email.CalculateBodyKeys(info); //https://www.html5rocks.com/en/tutorials/webcomponents/imports/
 
             email.Status = status;
 
@@ -48,15 +46,14 @@ namespace LivingWellMVC.WorkflowServices {
         }
 
         public override Email SetupResponseEmailProperties(SubmissionInfo info, Status status) {
-            AnalysisEmail email = new AnalysisEmail();
+            ApplicationEmail email = new ApplicationEmail();
 
             email.ToAddress = info.EmailAddress;
-            email.ToDisplayName = info.Name;
             email.FromDisplayName = "Living Well Rehabilitation";
-            email.Subject = "Analysis Submission Recieved!";
+            email.Subject = "Application Submission Recieved!";
             email.EmailType = EmailType.Response;
-            email.Workflow = WorkflowType.Analysis;
-            email.TemplatePath = "~/MailTemplates/ContactResponseEmailTemplate.html";
+            email.Workflow = WorkflowType.Application;
+            email.TemplatePath = "~/MailTemplates/ApplicationResponseEmailTemplate.html";
 
             email.CalculateBodyKeys(info);
 

@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 
 using LivingWellMVC.Models;
+using LivingWellMVC.WorkflowServices;
 
 namespace LivingWellMVC.Controllers.Api
 {    
@@ -29,7 +30,7 @@ namespace LivingWellMVC.Controllers.Api
         public string Post([FromBody]ContactSubmissionInfo info)
         {
             Status status = new Status();
-            Services.ContactWorkflowService workflow = new Services.ContactWorkflowService();
+            ContactWorkflowService workflow = new ContactWorkflowService();
 
             status = workflow.ProcessWorkflow(info);
 
