@@ -7167,9 +7167,11 @@ body:not(.device-touch) .entry-link {
     .popout-block-desc {
         height: auto;
     }
+    
+ }
+
+
 }
-
-
 
 
 .stretchy {
@@ -7219,6 +7221,11 @@ body:not(.device-touch) .entry-link {
     .margin-one-hundred-px {
         margin-top: 100px;
     }
+
+    .geo-location-map {
+        width:100%; 
+        min-height:400px;
+}
 }
 
 /* Section Block - with Subtitle
@@ -7468,5 +7475,9 @@ body:not(.device-touch) .entry-link {
     margin: 5vh 20vw 0vh 20vw;
 }
 
+.geo-location-map {
+    width:100%; 
+    min-height:400px;
+}
 
 /*#endregion*/

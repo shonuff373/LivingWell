@@ -40,11 +40,25 @@ namespace LivingWellMVC.Models {
          public string GetResultMessage(){
             StringBuilder message = new StringBuilder();
 
+            if (this.Results.Count == 0) {
+                switch (this.StatusType) {               
+                    case StatusEnum.Invalid:
+                    case StatusEnum.Error:
+                    case StatusEnum.Unknown:
+                        this.Results.Add(new Result("This submission was not successful. Please try again or contact us by phone and/or email to confirm this submission. Thank you.", this.StatusType));
+                        break;
+                    default:
+                        this.Results.Add(new Result("Submission successful, thank you!", this.StatusType));
+                        break;
+                }
+            }
+
             foreach (Result res in this.Results) {
                 if (res.StatusType == this.StatusType) {
                     message.AppendLine(res.Message);
                 }
             }
+            
 
             return message.ToString();
         }

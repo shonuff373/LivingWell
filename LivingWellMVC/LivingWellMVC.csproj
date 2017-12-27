@@ -172,11 +172,13 @@
     <Compile Include="Controllers\Api\ApplicationController.cs" />
     <Compile Include="Controllers\Api\ContactController.cs" />
     <Compile Include="Controllers\Api\ErrorController.cs" />
+    <Compile Include="Controllers\Api\UploadsController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CareersController.cs" />
     <Compile Include="Controllers\PartnerController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Models\Shared.cs" />
     <Compile Include="Models\Workflow.cs" />
     <Compile Include="WorkflowServices\AnalysisWorkflowService.cs" />
     <Compile Include="Global.asax.cs">
@@ -424,6 +426,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\" />
+    <Folder Include="Views\Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

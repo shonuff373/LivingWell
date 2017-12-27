@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Reflection;
 using System.Web;
 
 namespace LivingWellMVC.Models {
     public interface ISubmissionInfo {
-        private string GetEnumDescription();
     }
 
     public class SubmissionInfo : ISubmissionInfo {
@@ -16,15 +14,6 @@ namespace LivingWellMVC.Models {
         public string EmailAddress { get; set; }
         public string Message { get; set; }
 
-        public string GetEnumDescription(this Enum value) {
-            FieldInfo field = value.GetType().GetField(value.ToString());
-
-            DescriptionAttribute attribute
-                    = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute))
-                        as DescriptionAttribute;
-
-            return attribute == null ? value.ToString() : attribute.Description;
-        }
     }
 
     public class AnalysisSubmissionInfo : SubmissionInfo {
@@ -98,11 +87,35 @@ namespace LivingWellMVC.Models {
         public string City { get; set; }
         public string State { get; set; }
         public string PostalCode { get; set; }
-        public PositionTypeEnum PositionType { get; set; }
-        public PositionStatusEnum PositionStatus { get; set; }
+        public string PositionType { get; set; }
+        public string PositionStatus { get; set; }
         public string WeeklyHours { get; set; }
         public string Referral { get; set; }
         public string ResumeFileName { get; set; }
+
+        public ApplicationSubmissionInfo() { }
+
+        public ApplicationSubmissionInfo(string firstName, string lastName, string name, string phone, string secondaryPhone, string emailAddress,
+                         string addressOne, string addressTwo, string city, string state, string postalCode, string positionType,
+                         string positionStatus, string weeklyHours, string referral, string resumeFileName, string message) {
+                             this.FirstName = firstName;
+                             this.LastName = lastName;
+                             this.Name = firstName + " " + lastName;
+                             this.Phone = phone;
+                             this.SecondaryPhone = secondaryPhone;
+                             this.EmailAddress = emailAddress;
+                             this.AddressOne = addressOne;
+                             this.AddressTwo = addressTwo;
+                             this.City = city;
+                             this.State = state;
+                             this.PostalCode = postalCode;
+                             this.PositionType = positionType;
+                             this.PositionStatus = positionStatus;
+                             this.WeeklyHours = weeklyHours;
+                             this.Referral = referral;
+                             this.ResumeFileName = resumeFileName;
+                             this.Message = message;
+        }
 
     }
 

@@ -46,13 +46,14 @@ function setURL(type) {
             baseUrl = 'api/analysis/submit';
             break;
         case 'application':
-            baseUrl = 'api/application/submit';
+            baseUrl = '/api/application/submit';
             break;
         case 'contact':
             baseUrl = 'api/contact/submit';
             break;
         case 'upload':
-            baseUrl = 'api/application/upload';
+            baseUrl = 'api/uploads/resume';
+            break;
         default:
             baseUrl = 'api/error/';
             break;
@@ -98,11 +99,13 @@ function bindQuickAnalysisInput() {
 function bindContactUsInput() {
     self.info = {
         name: document.getElementById('template-contactform-name').value,
+        firstName: document.getElementById('template-contactform-name').value,
+        lastName: document.getElementById('template-contactform-name').value,
         emailAddress: document.getElementById('template-contactform-email').value,
         phone: document.getElementById('template-contactform-phone').value,
         message: document.getElementById('template-contactform-message').value,
 
-        service: document.getElementById('template-contactform-service')
+        service: document.getElementById('template-contactform-service').value
     }
 }
 
@@ -138,7 +141,7 @@ $('#application-resume').on('change', function (e) {
     }
     //Creating an XMLHttpRequest and sending
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/api/application/upload');
+    xhr.open('POST', 'api/uploads/resume');
     xhr.send(formdata);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -149,46 +152,8 @@ $('#application-resume').on('change', function (e) {
 });
 
 
-//$('#application-resume').on('change', function (e) {
-
-//    self = this;
-//    var files = e.target.files;
-//    var myID = '3'; //uncomment this to make sure the ajax URL works
-//    var uploadUrl = 'api/application/upload';
-
-//    if (files.length > 0) {
-//        if (window.FormData !== undefined) {
-//            var data = new FormData();
-//            for (var x = 0; x < files.length; x++) {
-//                data.append("file" + x, files[x]);
-//            }
-
-//            $.ajax({
-//                url: uploadUrl,
-//                type: "POST",
-//                dataType: 'json',
-//                contentType: 'application/json; charset=utf-8',
-//                //processData: false,
-//                data: JSON.stringify(data),
-//                success: function (result) {
-//                    console.log(result);
-//                },
-//                error: function (xhr, status, p3, p4) {
-//                    var err = "Error " + " " + status + " " + p3 + " " + p4;
-//                    if (xhr.responseText && xhr.responseText[0] == "{")
-//                        err = JSON.parse(xhr.responseText).Message;
-//                    console.log(err);
-//                }
-//            });
-//        } else {
-//            alert("This browser doesn't support HTML5 file uploads!");
-//        }
-//    }
-//});
 
 function sendEmail() {
-    var formData = new FormData();
-
     $.ajax({
         url: baseUrl,
         type: 'POST',
@@ -205,10 +170,18 @@ function sendEmail() {
             //    alert('Email was sent successfully!');
             //}
         },
-        error: function (xhr, status, error) {
-            var err = eval("(" + xhr.responseText + ")");
-            console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
-            //alert(err.Message);
+        error: function (data) {
+            if (data) {
+                alert(JSON.parse(data));
+            } else {
+                alert('There was an error processing this email!');
+            }
+            //error: function (xhr, status, error) {
+
+            //    var err = eval("(" + xhr.responseText + ")");
+            //    console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
+            //    //alert(err.Message);
+            //}
         }
     });
 }

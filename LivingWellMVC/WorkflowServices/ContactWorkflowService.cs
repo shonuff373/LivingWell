@@ -48,7 +48,7 @@ namespace LivingWellMVC.WorkflowServices {
         }
 
         public override Email SetupResponseEmailProperties(SubmissionInfo info, Status status) {
-            AnalysisEmail email = new AnalysisEmail();
+            ContactEmail email = new ContactEmail();
 
             email.ToAddress = info.EmailAddress;
             email.ToDisplayName = info.Name;
