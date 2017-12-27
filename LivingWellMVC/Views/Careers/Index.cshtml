@@ -1,4 +1,4 @@
-﻿
+﻿@model LivingWellMVC.Models.LivingWellInfo
 @{
     ViewBag.Title = "Career Opportunities";
 }
@@ -188,9 +188,9 @@
         <div class="col_full">
             <h3 class="center">To hear more about our generous salaries and comprehensive list of benefits:</h3>                
             <h4 class="center">
-                <strong>Call </strong>us at 215.123.4567 |
-                <strong>E-mail </strong>us at jobs@livingwellrehabilitation.com |
-                <strong>Fax </strong>an application to 215.890.1234
+                <strong>Call </strong>us at @Model.GetPhoneNumberWithPeriod(Model.Phone) |
+                <strong>E-mail </strong>us at @Model.InfoEmailAddress |
+                <strong>Fax </strong>an application to @Model.GetPhoneNumberWithPeriod(Model.Fax)
             </h4>
         </div>
         <div class="col_full">

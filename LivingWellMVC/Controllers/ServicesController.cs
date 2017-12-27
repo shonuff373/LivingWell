@@ -9,7 +9,10 @@ namespace LivingWellMVC.Controllers
     public class ServicesController : Controller
     {
         public ActionResult Index() {
-            return View();
+
+            LivingWellMVC.Models.LivingWellInfo info = new Models.LivingWellInfo();
+
+            return View(info);
         }
     }
 }

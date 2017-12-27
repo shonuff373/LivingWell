@@ -9,9 +9,11 @@ namespace LivingWellMVC.Controllers
     public class ContactController : Controller
     {
         // GET: Contact
-        public ActionResult Index()
-        {
-            return View();
+        public ActionResult Index() {
+
+            LivingWellMVC.Models.LivingWellInfo info = new Models.LivingWellInfo();
+
+            return View(info);
         }
 
     }

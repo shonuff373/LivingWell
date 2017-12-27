@@ -1,4 +1,6 @@
-﻿@{
+﻿@model LivingWellMVC.Models.LivingWellInfo
+
+@{
     ViewBag.Title = "Contact Us";
 }
 
@@ -100,7 +102,7 @@
                             var center = map.getCenter();
                             var infobox = new Microsoft.Maps.Infobox(center, {
                                 title: 'Living Well Rehabilitation',
-                                description: '3805 Mill Rd., Pa, 19090'
+                                description: '@Model.Address.AddressOnOneLine()'
                             });
                             infobox.setMap(map);
 
@@ -108,7 +110,6 @@
 
 
                     </script>
-                    @*<script type='text/javascript' src='http://dev.virtualearth.net/REST/v1/Locations?CountryRegion=US&adminDistrict=PA&locality=Willow%20Grove&postalCode=19090&addressLine=3805%20Mill%20Rd.&key=hIc6rZTSwXIryWymK8OE~WOcU7lC-N_8Pk982iGKXbA~AoJfqbbpgAtHUSkupK56vkR5TXDiB_K8V8vNo6AkdiixcRKdZ83atBW4P00x_u6i&callback=loadMapScenario' async defer></script>*@
 
                     <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?key=hIc6rZTSwXIryWymK8OE~WOcU7lC-N_8Pk982iGKXbA~AoJfqbbpgAtHUSkupK56vkR5TXDiB_K8V8vNo6AkdiixcRKdZ83atBW4P00x_u6i&callback=loadMapScenario' async defer></script>
 
@@ -127,7 +128,7 @@
                         <div class="fbox-icon">
                             <a href="#"><i class="icon-map-marker2"></i></a>
                         </div>
-                        <h3>Our Headquarters<span class="subtitle">Philadelphia, Pennsylvania</span></h3>
+                        <h3>Our Headquarters<span class="subtitle">@Model.Address.City, @Model.Address.Region.Name</span></h3>
                     </div>
                 </div>
 
@@ -136,7 +137,7 @@
                         <div class="fbox-icon">
                             <a href="#"><i class="icon-phone3"></i></a>
                         </div>
-                        <h3>Speak to Us<span class="subtitle">215.123.4567</span></h3>
+                        <h3>Speak to Us<span class="subtitle">@Model.GetPhoneNumberWithPeriod(Model.Phone)</span></h3>
                     </div>
                 </div>
 

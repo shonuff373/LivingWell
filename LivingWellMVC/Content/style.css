@@ -7144,19 +7144,19 @@ body:not(.device-touch) .entry-link {
 }
 
 
-@media (max-width: 1366px){
+@media (max-width: 1366px) {
     .popout-block {
         max-height: 100vh;
         max-width: 100vw;
     }
 
-    .popout-block img {
-        width: 100%;
-    }
-    
-    .popout-block p {
-        font-size: 2vh;
-    }
+        .popout-block img {
+            width: 100%;
+        }
+
+        .popout-block p {
+            font-size: 2vh;
+        }
 
     .popout-block-info {
         width: 100%;
@@ -7167,11 +7167,8 @@ body:not(.device-touch) .entry-link {
     .popout-block-desc {
         height: auto;
     }
-    
- }
-
-
 }
+
 
 
 .stretchy {
@@ -7223,9 +7220,18 @@ body:not(.device-touch) .entry-link {
     }
 
     .geo-location-map {
-        width:100%; 
-        min-height:400px;
+        width: 100%;
+        height: 400px;
+    }
 }
+
+
+@media(max-width: 961px){
+    .geo-location-map {
+        visibility: hidden;
+        height: 0px;
+        width: 0px;
+    }
 }
 
 /* Section Block - with Subtitle
@@ -7477,7 +7483,7 @@ body:not(.device-touch) .entry-link {
 
 .geo-location-map {
     width:100%; 
-    min-height:400px;
+    /*height:400px;*/
 }
 
 /*#endregion*/

@@ -22,21 +22,23 @@ namespace LivingWellMVC.Models {
         public EmailType EmailType { get; set; }
         public WorkflowType Workflow { get; set; }
         public Status Status { get; set; }
+        private LivingWellInfo LivingWellInfo;
 
-        private const string defaultFrom = "noreply@livingwellrehabilitation.com";
-        private const string defaultMailingAddress = "123 Main St., Philadelphia, PA 19191";
+
 
         #endregion  
 
         #region Constructors
 
         public Email() {
-            this.FromAddress = defaultFrom;
+            this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
+            this.LivingWellInfo = new LivingWellInfo();
         }
 
         public Email(string to, string from) {
             this.ToAddress = to;
             this.FromAddress = from;
+            this.LivingWellInfo = new LivingWellInfo();
         }
 
         public virtual void CalculateBodyKeys(SubmissionInfo info){
@@ -44,7 +46,7 @@ namespace LivingWellMVC.Models {
 
             this.BodyKeys.Add("<%PHONE%>", info.Phone);
             this.BodyKeys.Add("<%EMAILADDRESS%>", info.EmailAddress);
-            this.BodyKeys.Add("<%LWLADDRESS%>", defaultMailingAddress);
+            this.BodyKeys.Add("<%LWLADDRESS%>", LivingWellInfo.Address.AddressOnOneLine());
 
         }
 
@@ -113,8 +115,8 @@ namespace LivingWellMVC.Models {
             this.BodyKeys.Add("<%CITY%>", info.City);
             this.BodyKeys.Add("<%STATE%>", info.State);
             this.BodyKeys.Add("<%POSTALCODE%>", info.PostalCode);
-            this.BodyKeys.Add("<%POSITIONTYPE%>", Shared.GetEnumDescription((PositionTypeEnum)Convert.ToInt16(info.PositionType)));
-            this.BodyKeys.Add("<%POSITIONSTATUS%>", Shared.GetEnumDescription((PositionStatusEnum)Convert.ToInt16(info.PositionStatus)));
+            this.BodyKeys.Add("<%POSITIONTYPE%>", Utility.GetEnumDescription((PositionTypeEnum)Convert.ToInt16(info.PositionType)));
+            this.BodyKeys.Add("<%POSITIONSTATUS%>", Utility.GetEnumDescription((PositionStatusEnum)Convert.ToInt16(info.PositionStatus)));
             this.BodyKeys.Add("<%WEEKLYHOURS%>", info.WeeklyHours);
             this.BodyKeys.Add("<%REFERRAL%>", info.Referral);
             this.BodyKeys.Add("<%RESUMEFILENAME%>", info.ResumeFileName);

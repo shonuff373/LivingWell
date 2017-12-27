@@ -7,7 +7,10 @@ using System.Web.Mvc;
 namespace LivingWellMVC.Controllers {
     public class HomeController : Controller {
         public ActionResult Index() {
-            return View();
+
+            LivingWellMVC.Models.LivingWellInfo info = new Models.LivingWellInfo();
+
+            return View(info);
         }
 
     }

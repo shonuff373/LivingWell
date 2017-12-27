@@ -11,7 +11,9 @@ namespace LivingWellMVC.Controllers
         // GET: Partner
         public ActionResult Index()
         {
-            return View();
+            LivingWellMVC.Models.LivingWellInfo info = new Models.LivingWellInfo();
+
+            return View(info);
         }
     }
 }

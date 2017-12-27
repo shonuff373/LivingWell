@@ -178,7 +178,9 @@
     <Compile Include="Controllers\CareersController.cs" />
     <Compile Include="Controllers\PartnerController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
-    <Compile Include="Models\Shared.cs" />
+    <Compile Include="Models\LivingWellInfo.cs" />
+    <Compile Include="Models\PostalAddress.cs" />
+    <Compile Include="Models\Utility.cs" />
     <Compile Include="Models\Workflow.cs" />
     <Compile Include="WorkflowServices\AnalysisWorkflowService.cs" />
     <Compile Include="Global.asax.cs">
