@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LivingWellMVC.ViewModels;
 
-namespace LivingWellMVC.Controllers
-{
-    public class ServicesController : Controller
-    {
+namespace LivingWellMVC.Controllers {
+    public class ServicesController : BaseController {
         public ActionResult Index() {
 
-            LivingWellMVC.Models.LivingWellInfo info = new Models.LivingWellInfo();
+            info = new BaseViewModel();
 
             return View(info);
         }

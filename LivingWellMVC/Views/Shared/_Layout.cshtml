@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model LivingWellMVC.ViewModels.BaseViewModel
+<!DOCTYPE html>
 <html>
 <head>
     @*<meta charset="utf-8" />
@@ -194,12 +195,11 @@
                                 <div style="background: url('../../Content/images/world-map.png') no-repeat center center; background-size: 100%;">
                                     <address>
                                         <abbr title="Phone Number"><strong>Address:</strong></abbr><br>
-                                        123 Main Street, Suite 600<br>
-                                        Bryn Mawr, PA 19010<br>
+                                        @Model.LivingWellInfo.Address.AddressOnOneLine()
                                     </address>
-                                    <abbr title="Phone Number"><strong>Phone:</strong></abbr> 215.123.4567<br>
-                                    <abbr title="Fax"><strong>Fax:</strong></abbr> 215.890.1234<br>
-                                    <abbr title="Email Address"><strong>Email:</strong></abbr>support@livingwellrehab.com
+                                    <abbr title="Phone Number"><strong>Phone: </strong></abbr> @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Phone)<br>
+                                    <abbr title="Fax"><strong>Fax: </strong></abbr> @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Fax)<br>
+                                    <abbr title="Email Address"><strong>Email: </strong></abbr>@Model.LivingWellInfo.InfoEmailAddress
 
 
                                 </div>

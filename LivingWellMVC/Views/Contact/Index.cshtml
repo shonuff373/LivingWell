@@ -1,4 +1,4 @@
-﻿@model LivingWellMVC.Models.LivingWellInfo
+﻿@model LivingWellMVC.ViewModels.BaseViewModel
 
 @{
     ViewBag.Title = "Contact Us";
@@ -102,7 +102,7 @@
                             var center = map.getCenter();
                             var infobox = new Microsoft.Maps.Infobox(center, {
                                 title: 'Living Well Rehabilitation',
-                                description: '@Model.Address.AddressOnOneLine()'
+                                description: '@Model.LivingWellInfo.Address.AddressOnOneLine()'
                             });
                             infobox.setMap(map);
 
@@ -128,7 +128,7 @@
                         <div class="fbox-icon">
                             <a href="#"><i class="icon-map-marker2"></i></a>
                         </div>
-                        <h3>Our Headquarters<span class="subtitle">@Model.Address.City, @Model.Address.Region.Name</span></h3>
+                        <h3>Our Headquarters<span class="subtitle">@Model.LivingWellInfo.Address.City, @Model.LivingWellInfo.Address.Region.Name</span></h3>
                     </div>
                 </div>
 
@@ -137,7 +137,7 @@
                         <div class="fbox-icon">
                             <a href="#"><i class="icon-phone3"></i></a>
                         </div>
-                        <h3>Speak to Us<span class="subtitle">@Model.GetPhoneNumberWithPeriod(Model.Phone)</span></h3>
+                        <h3>Speak to Us<span class="subtitle">@Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Phone)</span></h3>
                     </div>
                 </div>
 

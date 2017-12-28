@@ -173,6 +173,7 @@
     <Compile Include="Controllers\Api\ContactController.cs" />
     <Compile Include="Controllers\Api\ErrorController.cs" />
     <Compile Include="Controllers\Api\UploadsController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CareersController.cs" />
@@ -182,6 +183,7 @@
     <Compile Include="Models\PostalAddress.cs" />
     <Compile Include="Models\Utility.cs" />
     <Compile Include="Models\Workflow.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="WorkflowServices\AnalysisWorkflowService.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -428,6 +430,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Uploads\" />
+    <Folder Include="Views\Base\" />
     <Folder Include="Views\Uploads\" />
   </ItemGroup>
   <ItemGroup>

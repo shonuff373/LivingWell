@@ -1,4 +1,4 @@
-﻿@model LivingWellMVC.Models.LivingWellInfo
+﻿@model LivingWellMVC.ViewModels.BaseViewModel
 
 @{
     ViewBag.Title = "Living Well Rehabilitation";
@@ -227,7 +227,7 @@
         <div class="container clearfix">
             <div class="promo nopadding center">
                 <div class="container clearfix">
-                    <h3>Call us today at @Model.GetPhoneNumberWithPeriod(Model.Phone) or Email us at @Model.InfoEmailAddress</h3>
+                    <h3>Call us today at @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Phone) or Email us at @Model.LivingWellInfo.InfoEmailAddress</h3>
                     <span>We strive to provide our patients with top notch support and care.</span>
                     @*<a href="#" class="button button-xlarge"><span>Browse Now</span></a>*@
                 </div>

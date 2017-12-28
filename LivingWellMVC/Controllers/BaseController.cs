@@ -7,13 +7,7 @@ using LivingWellMVC.ViewModels;
 
 namespace LivingWellMVC.Controllers {
 
-    public class HomeController : BaseController {
-        public ActionResult Index() {
-
-            info = new BaseViewModel();
-
-            return View(info);
-        }
-
+    public class BaseController : Controller {
+        public BaseViewModel info;
     }
 }
