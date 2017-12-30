@@ -7,7 +7,12 @@ using LivingWellMVC.ViewModels;
 
 namespace LivingWellMVC.Controllers {
     public class ServicesController : BaseController {
+
         public ActionResult Index() {
+            return RedirectToAction("Services");
+        }
+
+        public ActionResult Services() {
 
             info = new BaseViewModel();
 

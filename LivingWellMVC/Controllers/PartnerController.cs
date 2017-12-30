@@ -9,6 +9,10 @@ namespace LivingWellMVC.Controllers {
     public class PartnerController : BaseController {
         // GET: Partner
         public ActionResult Index() {
+            return RedirectToAction("Partner");
+        }
+
+        public ActionResult Partner() {
             info = new BaseViewModel();
 
             return View(info);

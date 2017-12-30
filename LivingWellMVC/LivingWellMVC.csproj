@@ -285,7 +285,7 @@
     <Content Include="Content\swiper.css" />
     <Content Include="Content\vmap.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="MailTemplates\AnalysisResponseEmailTemplate.html" />
@@ -420,11 +420,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\About\Index.cshtml" />
-    <Content Include="Views\Contact\Index.cshtml" />
-    <Content Include="Views\Careers\Index.cshtml" />
-    <Content Include="Views\Partner\Index.cshtml" />
-    <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\About\About.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
+    <Content Include="Views\Careers\Careers.cshtml" />
+    <Content Include="Views\Partner\Partner.cshtml" />
+    <Content Include="Views\Services\Services.cshtml" />
     <Content Include="Views\Careers\TherapistApplication.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -434,9 +434,9 @@
     <Folder Include="Views\Uploads\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
