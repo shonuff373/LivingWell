@@ -24,14 +24,14 @@ namespace LivingWellMVC.Controllers.Api {
         // POST: api/Contact
         [Route("submit")]
         [HttpPost]
-        public string Post([FromBody]AnalysisSubmissionInfo info) {
+        public void Post([FromBody]AnalysisSubmissionInfo info) {
             Status status = new Status();
             AnalysisWorkflowService workflow = new AnalysisWorkflowService();
 
             status = workflow.ProcessWorkflow(info);
 
 
-            return status.GetResultMessage();
+            //return status.GetResultMessage();
         }
 
         // PUT: api/Email/5

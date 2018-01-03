@@ -1,0 +1,39 @@
+﻿@model LivingWellMVC.ViewModels.BaseViewModel
+@{
+    ViewBag.Title = "Error";
+}
+
+
+
+<!--Content -->
+<section id="content" style="margin-bottom: 0px;">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+
+            <!-- Living Well Information
+            ============================================= -->
+            <div class="col_full">
+
+                <div class="fancy-title title-dotted-border center">
+                    <div class="career-title">Oops...there was an error!</div>
+
+                    <h2>There appears to have been a problem with your submssion.</h2>
+                    <br />
+                    <h3>Feel free to call us at @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Phone) or email us at @Model.LivingWellInfo.InfoEmailAddress!
+                    <br />
+                    <br />
+                    Thank you!
+                    </h3>
+                </div>
+
+            </div><!-- Living Well Information End -->
+
+            <div class="clear"></div>
+
+        </div>
+
+    </div>
+
+</section>

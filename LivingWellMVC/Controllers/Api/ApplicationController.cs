@@ -27,18 +27,18 @@ namespace LivingWellMVC.Controllers.Api {
 
         // POST: api/Application
         [Route("submit")]
-        public string Post([FromBody]ApplicationSubmissionInfo info)
+        public void Post([FromBody]ApplicationSubmissionInfo info)
         {
             Status status = new Status();
             ApplicationWorkflowService workflow = new ApplicationWorkflowService();
 
             status = workflow.ProcessWorkflow(info);
             
-            return status.GetResultMessage();
+            //return status.GetResultMessage();
         }
 
         [Route("submit")]
-        public string Post(string firstName, string lastName, string name, string phone, string secondaryPhone, string emailAddress,
+        public void Post(string firstName, string lastName, string name, string phone, string secondaryPhone, string emailAddress,
                          string addressOne, string addressTwo, string city, string state, string postalCode, string positionType,
                          string positionStatus, string weeklyHours, string referral, string resumeFileName, string message) {
             ApplicationSubmissionInfo info = new ApplicationSubmissionInfo(firstName,  lastName,  name,  phone,  secondaryPhone,  emailAddress,
@@ -49,7 +49,7 @@ namespace LivingWellMVC.Controllers.Api {
 
             status = workflow.ProcessWorkflow(info);
 
-            return status.GetResultMessage();
+            //return status.GetResultMessage();
         }
 
 

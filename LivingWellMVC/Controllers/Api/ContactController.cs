@@ -27,15 +27,14 @@ namespace LivingWellMVC.Controllers.Api
 
         // POST: api/Contact
         [Route("submit")]
-        public string Post([FromBody]ContactSubmissionInfo info)
+        public void Post([FromBody]ContactSubmissionInfo info)
         {
             Status status = new Status();
             ContactWorkflowService workflow = new ContactWorkflowService();
 
             status = workflow.ProcessWorkflow(info);
 
-
-            return status.GetResultMessage();
+            //return status.GetResultMessage();
 
         }
 

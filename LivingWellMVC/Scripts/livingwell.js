@@ -43,19 +43,19 @@ function applicationSubmissionClick() {
 function setURL(type) {
     switch (type) {
         case 'analysis':
-            baseUrl = 'api/analysis/submit';
+            baseUrl = '/api/analysis/submit';
             break;
         case 'application':
             baseUrl = '/api/application/submit';
             break;
         case 'contact':
-            baseUrl = 'api/contact/submit';
+            baseUrl = '/api/contact/submit';
             break;
         case 'upload':
-            baseUrl = 'api/uploads/resume';
+            baseUrl = '/api/uploads/resume';
             break;
         default:
-            baseUrl = 'api/error/';
+            baseUrl = '/api/error/';
             break;
     }
 }
@@ -162,28 +162,19 @@ function sendEmail() {
         //cache: false,
         //processData: false,
         data: JSON.stringify(self.info),
-        success: function (data) {
-            // ..... any success code you want
-            //if (data) {
-            //    alert(data);
-            //} else {
-            //    alert('Email was sent successfully!');
-            //}
+        success: function () {
+            self.showSuccessModal();
         },
-        error: function (data) {
-            if (data) {
-                alert(JSON.parse(data));
-            } else {
-                alert('There was an error processing this email!');
-            }
-            //error: function (xhr, status, error) {
-
-            //    var err = eval("(" + xhr.responseText + ")");
-            //    console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
-            //    //alert(err.Message);
-            //}
+        error: function () {
+            self.redirectToError();
         }
     });
+}
+
+function redirectToError()
+{
+    var url = '/Error/';
+    window.location.href = url;
 }
 
 function isValidInput() {
@@ -213,3 +204,36 @@ jQuery(window).load(function(){
     });
 
 });
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+//var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+//<button id="myBtn">Open Modal</button> //Add this HTML to trigger button click event.
+
+//btn.onclick = function () {
+//    modal.style.display = "block";
+//}
+
+function showSuccessModal() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+

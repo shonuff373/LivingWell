@@ -175,6 +175,7 @@
     <Compile Include="Controllers\Api\UploadsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CareersController.cs" />
     <Compile Include="Controllers\PartnerController.cs" />
@@ -414,7 +415,9 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -426,6 +429,7 @@
     <Content Include="Views\Partner\Partner.cshtml" />
     <Content Include="Views\Services\Services.cshtml" />
     <Content Include="Views\Careers\TherapistApplication.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
