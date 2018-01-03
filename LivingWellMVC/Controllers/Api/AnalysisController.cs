@@ -11,17 +11,7 @@ using LivingWellMVC.WorkflowServices;
 namespace LivingWellMVC.Controllers.Api {
     [RoutePrefix("api/analysis")]
     public class AnalysisController : ApiController {
-        // GET: api/Email
-        public IEnumerable<string> Get() {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET: api/Email/5
-        public string Get(int id) {
-            return "value";
-        }
-
-        // POST: api/Contact
         [Route("submit")]
         [HttpPost]
         public void Post([FromBody]AnalysisSubmissionInfo info) {
@@ -34,12 +24,5 @@ namespace LivingWellMVC.Controllers.Api {
             //return status.GetResultMessage();
         }
 
-        // PUT: api/Email/5
-        public void Put(int id, [FromBody]string value) {
-        }
-
-        // DELETE: api/Email/5
-        public void Delete(int id) {
-        }
     }
 }

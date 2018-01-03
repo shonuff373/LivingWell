@@ -13,19 +13,7 @@ namespace LivingWellMVC.Controllers.Api
     [RoutePrefix("api/contact")]
     public class ContactController : ApiController
     {
-        // GET: api/Contact
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET: api/Contact/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/Contact
         [Route("submit")]
         public void Post([FromBody]ContactSubmissionInfo info)
         {
@@ -36,16 +24,6 @@ namespace LivingWellMVC.Controllers.Api
 
             //return status.GetResultMessage();
 
-        }
-
-        // PUT: api/Contact/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Contact/5
-        public void Delete(int id)
-        {
         }
     }
 }

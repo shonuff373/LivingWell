@@ -162,10 +162,10 @@ function sendEmail() {
         //cache: false,
         //processData: false,
         data: JSON.stringify(self.info),
-        success: function () {
+        success: function (data) {
             self.showSuccessModal();
         },
-        error: function () {
+        error: function (data) {
             self.redirectToError();
         }
     });

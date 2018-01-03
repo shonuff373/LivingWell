@@ -22,7 +22,7 @@ namespace LivingWellMVC.Models {
         public EmailType EmailType { get; set; }
         public WorkflowType Workflow { get; set; }
         public Status Status { get; set; }
-        private LivingWellInfo LivingWellInfo;
+        protected LivingWellInfo LivingWellInfo;
 
 
 
@@ -31,8 +31,8 @@ namespace LivingWellMVC.Models {
         #region Constructors
 
         public Email() {
-            this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.LivingWellInfo = new LivingWellInfo();
+            this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
         }
 
         public Email(string to, string from) {
@@ -69,7 +69,19 @@ namespace LivingWellMVC.Models {
 
     public class AnalysisEmail : Email {
 
+        public AnalysisEmail() {
+            this.LivingWellInfo = new LivingWellInfo();
+            this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
+        }
+
+        public AnalysisEmail(string to, string from) {
+            this.ToAddress = to;
+            this.FromAddress = from;
+            this.LivingWellInfo = new LivingWellInfo();
+        }
+
         public override void CalculateBodyKeys(SubmissionInfo tmp) {
+
             AnalysisSubmissionInfo info = (AnalysisSubmissionInfo)tmp;
  
             this.BodyKeys.Add("<%FIRSTNAME%>",  info.FirstName);
@@ -87,6 +99,19 @@ namespace LivingWellMVC.Models {
     }
 
     public class ContactEmail : Email {
+
+        public ContactEmail() { 
+            this.LivingWellInfo = new LivingWellInfo();
+            this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
+        }
+
+        public ContactEmail(string to, string from) {
+            this.ToAddress = to;
+            this.FromAddress = from;
+            this.LivingWellInfo = new LivingWellInfo();
+        }
+
+
         public override void CalculateBodyKeys(SubmissionInfo tmp) {
             base.CalculateBodyKeys(tmp);
 
@@ -101,6 +126,19 @@ namespace LivingWellMVC.Models {
     }
 
     public class ApplicationEmail : Email {
+        
+        public ApplicationEmail() {
+            this.LivingWellInfo = new LivingWellInfo();
+            this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
+        }
+
+        public ApplicationEmail(string to, string from) {
+            this.ToAddress = to;
+            this.FromAddress = from;
+            this.LivingWellInfo = new LivingWellInfo();
+        }
+
+        
         public override void CalculateBodyKeys(SubmissionInfo tmp) {
             base.CalculateBodyKeys(tmp);
 

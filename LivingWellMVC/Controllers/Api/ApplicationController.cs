@@ -13,19 +13,7 @@ namespace LivingWellMVC.Controllers.Api {
     [RoutePrefix("api/application")]
     public class ApplicationController : ApiController
     {
-        // GET: api/Application
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
 
-        // GET: api/Application/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST: api/Application
         [Route("submit")]
         public void Post([FromBody]ApplicationSubmissionInfo info)
         {
@@ -37,30 +25,19 @@ namespace LivingWellMVC.Controllers.Api {
             //return status.GetResultMessage();
         }
 
-        [Route("submit")]
-        public void Post(string firstName, string lastName, string name, string phone, string secondaryPhone, string emailAddress,
-                         string addressOne, string addressTwo, string city, string state, string postalCode, string positionType,
-                         string positionStatus, string weeklyHours, string referral, string resumeFileName, string message) {
-            ApplicationSubmissionInfo info = new ApplicationSubmissionInfo(firstName,  lastName,  name,  phone,  secondaryPhone,  emailAddress,
-                          addressOne,  addressTwo,  city,  state,  postalCode,  positionType,
-                          positionStatus,  weeklyHours,  referral,  resumeFileName,  message);
-            Status status = new Status();
-            ApplicationWorkflowService workflow = new ApplicationWorkflowService();
+        //[Route("submit")]
+        //public void Post(string firstName, string lastName, string name, string phone, string secondaryPhone, string emailAddress,
+        //                 string addressOne, string addressTwo, string city, string state, string postalCode, string positionType,
+        //                 string positionStatus, string weeklyHours, string referral, string resumeFileName, string message) {
+        //    ApplicationSubmissionInfo info = new ApplicationSubmissionInfo(firstName,  lastName,  name,  phone,  secondaryPhone,  emailAddress,
+        //                  addressOne,  addressTwo,  city,  state,  postalCode,  positionType,
+        //                  positionStatus,  weeklyHours,  referral,  resumeFileName,  message);
+        //    Status status = new Status();
+        //    ApplicationWorkflowService workflow = new ApplicationWorkflowService();
 
-            status = workflow.ProcessWorkflow(info);
+        //    status = workflow.ProcessWorkflow(info);
 
-            //return status.GetResultMessage();
-        }
-
-
-        // PUT: api/Application/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/Application/5
-        public void Delete(int id)
-        {
-        }
+        //    //return status.GetResultMessage();
+        //}
     }
 }

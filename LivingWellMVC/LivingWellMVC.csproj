@@ -314,6 +314,7 @@
     <Content Include="Content\fonts\Simple-Line-Icons.ttf" />
     <Content Include="Content\fonts\Simple-Line-Icons.woff" />
     <None Include="Properties\PublishProfiles\LivingWellFTP.pubxml" />
+    <None Include="Properties\PublishProfiles\LivingWellHttp.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
