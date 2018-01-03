@@ -22,7 +22,7 @@ namespace LivingWellMVC.Models {
         public EmailType EmailType { get; set; }
         public WorkflowType Workflow { get; set; }
         public Status Status { get; set; }
-        protected LivingWellInfo LivingWellInfo;
+        public LivingWellInfo LivingWellInfo;
 
 
 
@@ -42,6 +42,7 @@ namespace LivingWellMVC.Models {
         }
 
         public virtual void CalculateBodyKeys(SubmissionInfo info){
+            ////https://www.html5rocks.com/en/tutorials/webcomponents/imports/
             this.BodyKeys = new ListDictionary();
 
             this.BodyKeys.Add("<%PHONE%>", info.Phone);
@@ -60,6 +61,55 @@ namespace LivingWellMVC.Models {
             this.Subject = subject;
         }
 
+        public string GetEmailTemplateFilePath(WorkflowType workflow, EmailType emailType) {
+            this.Workflow = workflow;
+            this.EmailType = EmailType;
+
+            return GetEmailTemplateFilePath();
+        }
+
+        protected string GetEmailTemplateFilePath() {
+            string path = "";
+            //https://www.quora.com/Is-there-any-way-to-include-an-HTML-page-in-an-HTML-page
+            switch (this.Workflow) {
+                case WorkflowType.Analysis:
+                    switch (this.EmailType) {
+                        case EmailType.Response:
+                            path = "~/MailTemplates/AnalysisResponseEmailTemplate.html";
+                            break;
+                        case EmailType.Submission:
+                            path = "~/MailTemplates/AnalysisSubmissionNotificationEmailTemplate.html";
+                            break;
+                    }
+                    break;
+                case WorkflowType.Application:
+                    switch (this.EmailType) {
+                        case EmailType.Response:
+                            path = "~/MailTemplates/ApplicationResponseEmailTemplate.html";
+                            break;
+                        case EmailType.Submission:
+                            path = "~/MailTemplates/ApplicationSubmissionNotificationEmailTemplate.html";
+                            break;
+                    }
+                    break;
+                case WorkflowType.Contact:
+                    switch (this.EmailType) {
+                        case  EmailType.Response:
+                            path = "~/MailTemplates/ContactResponseEmailTemplate.html";
+                            break;
+                        case EmailType.Submission:
+                            path = "~/MailTemplates/ContactRequestNotificationEmailTemplate.html";
+                            break;
+                    }
+                    break;
+                default:
+
+                    break;
+            }
+
+            return path;
+        }
+
         #endregion
     }
 
@@ -72,12 +122,23 @@ namespace LivingWellMVC.Models {
         public AnalysisEmail() {
             this.LivingWellInfo = new LivingWellInfo();
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
+            this.Workflow = WorkflowType.Analysis;
+        }
+
+        public AnalysisEmail(EmailType emailType) {
+            this.LivingWellInfo = new LivingWellInfo();
+            this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
+            this.EmailType = emailType;
+            this.Workflow = WorkflowType.Analysis;
+            this.TemplatePath = this.GetEmailTemplateFilePath(this.Workflow, emailType);
+
         }
 
         public AnalysisEmail(string to, string from) {
+            this.LivingWellInfo = new LivingWellInfo();
             this.ToAddress = to;
             this.FromAddress = from;
-            this.LivingWellInfo = new LivingWellInfo();
+            this.Workflow = WorkflowType.Analysis;
         }
 
         public override void CalculateBodyKeys(SubmissionInfo tmp) {
@@ -103,14 +164,24 @@ namespace LivingWellMVC.Models {
         public ContactEmail() { 
             this.LivingWellInfo = new LivingWellInfo();
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
+            this.Workflow = WorkflowType.Contact;
+        }
+
+        public ContactEmail(EmailType emailType) {
+            this.LivingWellInfo = new LivingWellInfo();
+            this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
+            this.EmailType = emailType;
+            this.Workflow = WorkflowType.Contact;
+            this.TemplatePath = this.GetEmailTemplateFilePath(this.Workflow, emailType);
+
         }
 
         public ContactEmail(string to, string from) {
+            this.LivingWellInfo = new LivingWellInfo();
             this.ToAddress = to;
             this.FromAddress = from;
-            this.LivingWellInfo = new LivingWellInfo();
+            this.Workflow = WorkflowType.Contact;
         }
-
 
         public override void CalculateBodyKeys(SubmissionInfo tmp) {
             base.CalculateBodyKeys(tmp);
@@ -130,12 +201,22 @@ namespace LivingWellMVC.Models {
         public ApplicationEmail() {
             this.LivingWellInfo = new LivingWellInfo();
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
+            this.Workflow = WorkflowType.Application;
+        }
+
+        public ApplicationEmail(EmailType emailType) {
+            this.LivingWellInfo = new LivingWellInfo();
+            this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
+            this.EmailType = emailType;
+            this.Workflow = WorkflowType.Application;
+            this.TemplatePath = this.GetEmailTemplateFilePath(this.Workflow, emailType);
         }
 
         public ApplicationEmail(string to, string from) {
+            this.LivingWellInfo = new LivingWellInfo();
             this.ToAddress = to;
             this.FromAddress = from;
-            this.LivingWellInfo = new LivingWellInfo();
+            this.Workflow = WorkflowType.Application;
         }
 
         

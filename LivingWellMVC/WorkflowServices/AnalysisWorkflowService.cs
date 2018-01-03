@@ -31,15 +31,14 @@ namespace LivingWellMVC.WorkflowServices {
         }
 
         public override Email SetupSubmissionEmailProperties(SubmissionInfo info, Status status) {
-            AnalysisEmail email = new AnalysisEmail();
+            AnalysisEmail email = new AnalysisEmail(EmailType.Response);
 
-            email.ToAddress = info.EmailAddress;
-            email.ToDisplayName = info.Name;
-            email.FromDisplayName = "Living Well Rehabilitation";
+            email.ToAddress = email.LivingWellInfo.InfoEmailAddress;
+            email.ToDisplayName = email.LivingWellInfo.FullName;
+            email.FromAddress = info.EmailAddress;
+            email.FromDisplayName = info.Name;
             email.Subject = "Living Well Submission Analysis";
-            email.EmailType = EmailType.Submission;
-            email.Workflow = WorkflowType.Analysis;
-            email.TemplatePath = "~/MailTemplates/AnalysisSubmissionNotificationEmailTemplate.html";
+
             email.CalculateBodyKeys(info);
 
             email.Status = status;
@@ -48,14 +47,13 @@ namespace LivingWellMVC.WorkflowServices {
         }
 
         public override Email SetupResponseEmailProperties(SubmissionInfo info, Status status){
-            AnalysisEmail email = new AnalysisEmail();
+            AnalysisEmail email = new AnalysisEmail(EmailType.Response);
 
             email.ToAddress = info.EmailAddress;
-            email.FromDisplayName = "Living Well Rehabilitation";
+            email.ToDisplayName = info.Name;
+            email.FromAddress = email.LivingWellInfo.NoReplyEmailAddress;
+            email.FromDisplayName = email.LivingWellInfo.FullName;
             email.Subject = "Analysis Submission Recieved!";
-            email.EmailType = EmailType.Response;
-            email.Workflow = WorkflowType.Analysis;
-            email.TemplatePath = "~/MailTemplates/AnalysisResponseEmailTemplate.html";
 
             email.CalculateBodyKeys(info);
 

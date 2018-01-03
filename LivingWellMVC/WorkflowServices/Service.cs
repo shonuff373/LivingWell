@@ -20,6 +20,8 @@ namespace LivingWellMVC.WorkflowServices {
 
     public class BaseService : Service {
         protected Status validation;
+        protected string submissionEmailTemplate;
+        protected string responseEmailTemplate;
 
         public virtual Status ProcessWorkflow(SubmissionInfo info) {
             Status status = new Status();
@@ -145,6 +147,7 @@ namespace LivingWellMVC.WorkflowServices {
                 }
             }
         }
+
     }
 
     public class ResultMessages {
