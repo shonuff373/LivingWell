@@ -22,6 +22,7 @@ namespace LivingWellMVC.WorkflowServices {
         protected Status validation;
         protected string submissionEmailTemplate;
         protected string responseEmailTemplate;
+        protected Email email;
 
         public virtual Status ProcessWorkflow(SubmissionInfo info) {
             Status status = new Status();
@@ -52,12 +53,28 @@ namespace LivingWellMVC.WorkflowServices {
         }
 
         public virtual Email SetupSubmissionEmailProperties(SubmissionInfo info, Status status){
-            return new AnalysisEmail();
+
+            email.ToAddress = email.LivingWellInfo.InfoEmailAddress;
+            email.ToDisplayName = email.LivingWellInfo.FullName;
+            email.FromAddress = info.EmailAddress;
+            email.FromDisplayName = info.Name;
+            email.Status = status;
+
+            email.CalculateSubject();
+
+            return email;
         }
 
         public virtual Email SetupResponseEmailProperties(SubmissionInfo info, Status status) {
+            email.ToAddress = info.EmailAddress;
+            email.ToDisplayName = info.Name;
+            email.FromAddress = email.LivingWellInfo.NoReplyEmailAddress;
+            email.FromDisplayName = email.LivingWellInfo.FullName;
+            email.Status = status;
 
-            return new AnalysisEmail();
+            email.CalculateSubject();
+
+            return email;
         }
         
         public virtual MailMessage GenerateEmail(Email email) {

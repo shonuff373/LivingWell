@@ -9,7 +9,9 @@ namespace LivingWellMVC.Controllers {
     public class ServicesController : BaseController {
 
         public ActionResult Index() {
-            return RedirectToAction("Services");
+            info = new BaseViewModel();
+
+            return View(info);
         }
 
         public ActionResult Services() {

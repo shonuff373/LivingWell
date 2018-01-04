@@ -11,7 +11,9 @@ namespace LivingWellMVC.Controllers
     {
         // GET: Error
         public ActionResult Index() {
-            return RedirectToAction("Error");
+            info = new BaseViewModel();
+
+            return View(info);
         }
 
         public ActionResult Error() {

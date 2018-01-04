@@ -30,13 +30,9 @@ namespace LivingWellMVC.WorkflowServices {
         }
 
         public override Email SetupSubmissionEmailProperties(SubmissionInfo info, Status status) {
-            ApplicationEmail email = new ApplicationEmail(EmailType.Submission);
+            this.email = new ApplicationEmail(EmailType.Submission);
 
-            email.ToAddress = email.LivingWellInfo.InfoEmailAddress;
-            email.ToDisplayName = email.LivingWellInfo.FullName;
-            email.FromAddress = info.EmailAddress;
-            email.FromDisplayName = info.Name;
-            email.Subject = "Living Well Application Submission";
+            base.SetupSubmissionEmailProperties(info, status);
             email.CalculateBodyKeys(info); 
 
             email.Status = status;
@@ -45,13 +41,9 @@ namespace LivingWellMVC.WorkflowServices {
         }
 
         public override Email SetupResponseEmailProperties(SubmissionInfo info, Status status) {
-            ApplicationEmail email = new ApplicationEmail(EmailType.Response);
+            this.email = new ApplicationEmail(EmailType.Response);
 
-            email.ToAddress = info.EmailAddress;
-            email.ToDisplayName = info.Name;
-            email.FromAddress = email.LivingWellInfo.NoReplyEmailAddress;
-            email.FromDisplayName = email.LivingWellInfo.FullName;
-            email.Subject = "Application Submission Recieved!";
+            base.SetupResponseEmailProperties(info, status);
             email.CalculateBodyKeys(info);
 
             email.Status = status;

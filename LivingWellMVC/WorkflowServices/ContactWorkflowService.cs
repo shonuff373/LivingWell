@@ -32,32 +32,22 @@ namespace LivingWellMVC.WorkflowServices {
         }
 
         public override Email SetupSubmissionEmailProperties(SubmissionInfo info, Status status) {
-            ContactEmail email = new ContactEmail(EmailType.Submission);
+            this.email = new ContactEmail(EmailType.Submission);
 
-            email.ToAddress = email.LivingWellInfo.InfoEmailAddress;
-            email.ToDisplayName = email.LivingWellInfo.FullName;
-            email.FromAddress = info.EmailAddress;
-            email.FromDisplayName = info.Name;
-            email.Subject = "Living Well Contact Request";
-            email.CalculateBodyKeys(info);
-
-            email.Status = status;
+            base.SetupSubmissionEmailProperties(info, status);
+            email.Subject.Replace("Submission", "Request");
+            email.CalculateBodyKeys(info);         
 
             return email;
         }
 
         public override Email SetupResponseEmailProperties(SubmissionInfo info, Status status) {
-            ContactEmail email = new ContactEmail(EmailType.Response);
+            this.email = new ContactEmail(EmailType.Response);
 
-            email.ToAddress = info.EmailAddress;
-            email.ToDisplayName = info.Name;
-            email.FromDisplayName = email.LivingWellInfo.FullName;
-            email.Subject = "Analysis Submission Recieved!";
-
+            base.SetupResponseEmailProperties(info, status);
+            email.Subject.Replace("Submission", "Request");
             email.CalculateBodyKeys(info);
-
-            email.Status = status;
-
+            
             return email;
         }
     }

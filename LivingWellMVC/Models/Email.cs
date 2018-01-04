@@ -51,6 +51,23 @@ namespace LivingWellMVC.Models {
 
         }
 
+        public virtual void CalculateSubject(){
+            string subject =  this.LivingWellInfo.ShortName + " " + 
+                Enum.GetName(typeof(Models.WorkflowType), this.Workflow).ToString() + " "  +
+            Enum.GetName(typeof(Models.EmailType), this.EmailType).ToString();
+            
+            switch(this.EmailType){
+                case Models.EmailType.Submission:
+                    subject += " Notification";
+                    break;
+                case Models.EmailType.Response:
+                    subject += " Received!";
+                    break;
+            }
+
+            this.Subject = subject;
+        }
+
         #endregion
 
         #region Methods
@@ -142,6 +159,7 @@ namespace LivingWellMVC.Models {
         }
 
         public override void CalculateBodyKeys(SubmissionInfo tmp) {
+            base.CalculateBodyKeys(tmp);
 
             AnalysisSubmissionInfo info = (AnalysisSubmissionInfo)tmp;
  
@@ -219,7 +237,6 @@ namespace LivingWellMVC.Models {
             this.Workflow = WorkflowType.Application;
         }
 
-        
         public override void CalculateBodyKeys(SubmissionInfo tmp) {
             base.CalculateBodyKeys(tmp);
 
