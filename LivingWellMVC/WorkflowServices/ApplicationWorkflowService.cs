@@ -32,10 +32,10 @@ namespace LivingWellMVC.WorkflowServices {
         public override Email SetupSubmissionEmailProperties(SubmissionInfo info, Status status) {
             this.email = new ApplicationEmail(EmailType.Submission);
 
+            ApplicationSubmissionInfo appInfo = (ApplicationSubmissionInfo)info;
             base.SetupSubmissionEmailProperties(info, status);
+            email.AttachmentFileNames.Add(appInfo.ResumeFileName);
             email.CalculateBodyKeys(info); 
-
-            email.Status = status;
 
             return email;
         }
@@ -46,9 +46,18 @@ namespace LivingWellMVC.WorkflowServices {
             base.SetupResponseEmailProperties(info, status);
             email.CalculateBodyKeys(info);
 
-            email.Status = status;
-
             return email;
+        }
+
+        public override MailMessage GenerateEmail(Email email) {
+            MailMessage msg = base.GenerateEmail(email);
+
+            foreach(string attachment in email.AttachmentFileNames){
+                if (System.IO.File.Exists(HttpContext.Current.Server.MapPath(email.AttachmentFilePath) + attachment)) {
+                    msg.Attachments.Add(new Attachment(HttpContext.Current.Server.MapPath(email.AttachmentFilePath) + attachment));
+                }
+            }
+            return msg;
         }
     }
 }

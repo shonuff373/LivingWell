@@ -114,7 +114,7 @@ dl, dt, dd, ol, ul, li {
 }
 
 ::selection {
-	/*background: #1ABC9C;*/
+	background: #1ABC9C;
 	color: #FFF;
 	text-shadow: none;
 }
@@ -639,11 +639,11 @@ html[xmlns] .slider-wrap {display: block;}
 }
 
 .flex-control-nav {
-	position: absolute;
-	z-index: 10;
+	/*width:100%;
+	z-index: 10;*/
 	text-align: center;
-	top: 14px;
-	right: 10px;
+	/*top: 14px;
+	right: 10px;*/
 	margin: 0;
 }
 
@@ -670,6 +670,20 @@ html[xmlns] .slider-wrap {display: block;}
 
 .flex-control-nav li:hover a,
 .flex-control-nav li a.flex-active { background-color: #FFF; }
+
+.testimonial-text{
+    width: 100%; 
+    float: left; 
+    margin-right: -100%; 
+    position: relative; 
+    opacity: 1; 
+    display: block; 
+    z-index: 2;
+}
+
+.testimonial-signature {
+    text-align:right;
+}
 
 /*#endregion*/
 
@@ -825,6 +839,7 @@ body.stretched #header.full-header .container {
 	-webkit-transition: opacity .3s ease;
 	-o-transition: opacity .3s ease;
 	transition: opacity .3s ease;
+    color: white;
 }
 
 #primary-menu ul {
@@ -837,8 +852,7 @@ body.stretched #header.full-header .container {
 #primary-menu ul li { position: relative; }
 
 #primary-menu ul li.mega-menu { position: inherit; }
-
-#primary-menu ul > li {
+#primary-menu ul li.mega-menu:hover { background-color: #536977;} /*ILJ*/ #primary-menu ul > li {
 	float: left;
 	margin-left: 2px;
 }
@@ -7107,7 +7121,10 @@ body:not(.device-touch) .entry-link {
     animation-name: animatetop;
     animation-duration: 0.4s
 }
+.modal-icon {
+    font-size: 5vh;
 
+}
 /* Add Animation */
 @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
@@ -7142,6 +7159,7 @@ body:not(.device-touch) .entry-link {
     padding: 0px;
     background-color: #435967;
     color: white;
+    font-size: 5vh;
 }
 
 .modal-body {padding: 0px;}
@@ -7168,6 +7186,20 @@ body:not(.device-touch) .entry-link {
     # -- Button 
     #435967 -- Dark Background colors
 */
+.services-list ul {
+    margin-bottom: 0px;
+}
+
+.services-list li,
+.services-list-right li{
+    font-size: 24px;
+    list-style: none;
+    margin-bottom: 2.5vh;
+}
+
+.services-list-right li {
+    text-align: right;
+}
 
 .popout-block{
     min-width: 74vw;
@@ -7218,8 +7250,8 @@ body:not(.device-touch) .entry-link {
 }
 
 .popout-block-desc {
-    height: 20vh;
-    max-height: 20vh;
+    /*height: 20vh;
+    max-height: 20vh;*/
 }
 
 .popout-block-button,
@@ -7307,16 +7339,94 @@ body:not(.device-touch) .entry-link {
         width: 100%;
         height: 400px;
     }
+
+    .analysis-description {
+        font-size: 4vh;
+    }
+
+    .analysis-message {
+        height:25vh;
+    }
+
+    .application-footer {
+        height: 5vh;
+    }
+
+    .application-footer button,
+    .application-footer a {
+        height: 4vh;
+    }
+
+    .testimonial-text {
+        font-size: 2vh;
+        text-align: justify;
+    }
+
+    .flex-control-nav {
+        padding:  0 48% 0 49%;
+    }
 }
 
-
+@media(min-width:768px) and (max-width: 1024px){
+    .button.button-large{
+        font-size: 1vh;
+    }
+}
 @media(max-width: 961px){
     .geo-location-map {
         visibility: hidden;
         height: 0px;
         width: 0px;
     }
+
+    .analysis-description {
+        font-size:3vh; 
+    }
+
+    .analysis-message {
+        height:15vh;
+    }
+
+    .application-footer{
+        height: 6.5vh;
+    }
+
+    .application-footer button,
+    .application-footer a {
+        height: 5vh;
+    }
+
+    .testimonial-text {
+        font-size: 1.5vh;
+        text-align: justify;
+    }
+
+    .flex-control-nav {
+        padding: 0 35% 0 35%;
+    }
+
+
+    .services-list li,
+    .services-list-right li {
+        font-size: 24px;
+        list-style: none;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .services-image {
+        display: none;
+        
+    }
+
+    #content {
+        padding: 0 3vw 0 3vw;
+    }
+
+    .header-blurb-container
 }
+
+
 
 /* Section Block - with Subtitle
 -----------------------------------------------------------------*/
@@ -7430,6 +7540,14 @@ body:not(.device-touch) .entry-link {
 
 }
 
+.analysis-description {
+    text-align: justify
+}
+
+.analysis-message{
+    /*height: 25vh;*/
+}
+
 /* Vertical Center
 -----------------------------------------------------------------*/
 
@@ -7484,7 +7602,6 @@ body:not(.device-touch) .entry-link {
     position: fixed;
     bottom: 0;
     width: 100vw;
-    height: 6.5vh;
     clear: both;
     color: white;
     font-size:2vh;
@@ -7495,7 +7612,7 @@ body:not(.device-touch) .entry-link {
 
 .application-footer button,
 .application-footer a {
-    height: 5vh;
+    /*height: 5vh;*/
     font-size: 1.5vh;
     margin-top: 5px;
     margin-bottom: 5px;

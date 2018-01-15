@@ -1199,7 +1199,7 @@
 		width: 100%;
 		margin-right: 0;
 		float: none;
-		margin-bottom: 50px !important;
+		margin-bottom: 50px /*!important*/;
 	}
 
 	.sidebar.col_last { margin-bottom: 0 !important; }
@@ -1808,7 +1808,7 @@ only screen and (                min-resolution: 2dppx) {
 	.preloader,
 	.preloader2,
 	.form-process {
-		background-image: url('../images/preloader@2x.gif');
+		/*background-image: url('../images/preloader@2x.gif');*/
 		background-size: 24px 24px;
 	}
 

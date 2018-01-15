@@ -121,12 +121,12 @@
                                 </div>
 
                                 <div class="col_half">
-                                    <label for="template-quick-analysis-address-one" class="dark">Community Address One</label>
+                                    <label for="template-quick-analysis-address-one" class="dark">Address Line One</label>
                                     <input type="text" id="template-quick-analysis-address-one" name="template-quick-analysis-address-one" value="" class="sm-form-control">
                                 </div>
 
                                 <div class="col_one_fourth">
-                                    <label for="template-quick-analysis-address-two" class="dark">Address Two</label>
+                                    <label for="template-quick-analysis-address-two" class="dark">Line Two</label>
                                     <input type="text" name="template-quick-analysis-address-two" id="template-quick-analysis-address-two" value="" class="sm-form-control">
                                 </div>
 
@@ -157,7 +157,7 @@
 
                                 <div class="col_full">
                                     <label for="template-quick-analysis-message" class="dark">Message</label>
-                                    <textarea type="email" name="template-quick-analysis-message" id="template-quick-analysis-message" value="" class="sm-form-control" rows="6"></textarea>
+                                    <textarea type="email" name="template-quick-analysis-message" id="template-quick-analysis-message" value="" class="sm-form-control  analysis-message"></textarea>
                                 </div>
                                 <div class="clear"></div>
 
@@ -194,8 +194,11 @@
 
                                 <div style="background: url('../../Content/images/world-map.png') no-repeat center center; background-size: 100%;">
                                     <address>
-                                        <abbr title="Phone Number"><strong>Address:</strong></abbr><br>
-                                        @Model.LivingWellInfo.Address.AddressOnOneLine()
+                                        
+                                        <abbr title="Phone Number"><strong>Address:</strong></abbr>
+                                        @Model.LivingWellInfo.Address.AddressLineOne,
+                                        <br />
+                                        @Model.LivingWellInfo.Address.CityStateZip()
                                     </address>
                                     <abbr title="Phone Number"><strong>Phone: </strong></abbr> @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Phone)<br>
                                     <abbr title="Fax"><strong>Fax: </strong></abbr> @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Fax)<br>
@@ -317,15 +320,16 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <span class="close">X</span>
-                    <h2>Success!!!</h2>
+                    <div class="col_one_eighth modal-icon nobottommargin">
+                        <i id="modal-icon" class="icon-thumb"></i>
+                    </div>
+                    <div id="modal-header-text">Success!!!</div>
                 </div>
-                <div class="modal-body">
-                    <p>Thank you for your submission!</p>
-                    <p>A member from our team will be in contact with you.</p>
+                <div id="modal-body-text" class="modal-body">
                 </div>
                 @*<div class="modal-footer">
                     <h3>Modal Footer</h3>
-                </div>*@
+                </div>*@    
             </div>
 
         </div>

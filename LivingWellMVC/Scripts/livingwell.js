@@ -7,8 +7,10 @@ function quickAnalysisSubmissionClick() {
     self = this;
     setURL('analysis');
     bindQuickAnalysisInput();
-    if (isValidInput()) {
+    if (validateInput()) {
         sendEmail();
+    } else {
+        showModal('invalid');
     }
 }
 
@@ -16,8 +18,10 @@ function analysisSubmissionClick() {
     self = this;
     setURL('analysis');
     bindAnalysisInput();
-    if (isValidInput()) {
+    if (validateInput()) {
         sendEmail();
+    } else {
+        showModal('invalid');
     }
 }
 
@@ -25,8 +29,10 @@ function contactRequestClick() {
     self = this;
     setURL('contact');
     bindContactUsInput();
-    if (isValidInput()) {
+    if (validateInput()) {
         sendEmail();
+    } else {
+        showModal('invalid');
     }
 }
 
@@ -34,11 +40,12 @@ function applicationSubmissionClick() {
     self = this;
     setURL('application')
     bindApplicationInput();
-    if (isValidInput()) {
+    if (validateInput()) {
         sendEmail();
+    } else {
+        showModal('invalid');
     }
 }
-
 
 function setURL(type) {
     switch (type) {
@@ -141,7 +148,7 @@ $('#application-resume').on('change', function (e) {
     }
     //Creating an XMLHttpRequest and sending
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'api/uploads/resume');
+    xhr.open('POST', '/api/uploads/resume');
     xhr.send(formdata);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -150,7 +157,6 @@ $('#application-resume').on('change', function (e) {
     }
     return false;
 });
-
 
 
 function sendEmail() {
@@ -163,7 +169,11 @@ function sendEmail() {
         //processData: false,
         data: JSON.stringify(self.info),
         success: function (data) {
-            self.showSuccessModal();
+            self.validationStatus = {
+                isValid: true,
+                message: 'Thank you for your submission! <br /> A member of our team will be in contact with you.'
+            }
+            showModal('success');
         },
         error: function (data) {
             self.redirectToError();
@@ -177,21 +187,41 @@ function redirectToError()
     window.location.href = url;
 }
 
-function isValidInput() {
-    var isValid = true;
+function validateInput() {
+    var emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var hasErrors = false;
+    var validationMessage = '';
+    self.validationStatus = {};
+
     if (!self.info.firstName || !self.info.lastName) {
-        isValid = false;
+        
+        hasErrors = true;
+        validationMessage = concatenateValidationMessage(validationMessage, ' - The name is not completely filled out.');
     }
 
-    if (!self.info.emailAddress) {
-        isValid = false;
-    } else {
-
+    if (!self.info.emailAddress || !emailRegex.test(self.info.emailAddress)) {
+        hasErrors = true;
+        validationMessage = concatenateValidationMessage(validationMessage, '- Email address is in an incorrect format.');
     }
 
-    return isValid;
+    self.validationStatus = {
+        isValid: !hasErrors,
+        message: validationMessage
+    }
+
+    return self.validationStatus.isValid;
 }
 
+function concatenateValidationMessage(existingMessage, appendage) {
+    var message = '';
+    if (existingMessage.length > 0) {
+        message = existingMessage + "<br />";
+    } else {
+        message = 'The submission could not be processed for the following reasons: ' + '<br />';
+    }
+
+    return message += appendage;
+}
 
 jQuery(window).load(function(){
 
@@ -205,21 +235,54 @@ jQuery(window).load(function(){
 
 });
 
+
 // Get the modal
 var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
-//var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+// Get the button that opens the modal
+//var btn = document.getElementById("myBtn");
+//btn.onclick = function () {
 // When the user clicks the button, open the modal 
 //<button id="myBtn">Open Modal</button> //Add this HTML to trigger button click event.
-
-//btn.onclick = function () {
-//    modal.style.display = "block";
+//    //modal.style.display = "block";
+//    self = this;
+//    self.validationStatus = { message: "This is a message" };
+//    //self.validationStatus.message = 'This is a message';
+//    showModal('success');
 //}
+
+function showModal(modalType) {
+
+    modal.style.display = "block";
+    var modalIcon = document.getElementById("modal-icon");
+    var modalHeaderText = document.getElementById("modal-header-text");
+    var modalBodyText = document.getElementById('modal-body-text');
+    switch (modalType) {
+        case 'success':
+            modalIcon.classList.remove('icon-warning-sign');
+            modalIcon.classList.add('icon-thumbs-up2');
+            modalHeaderText.innerHTML = 'Success!!!';
+            modalBodyText.innerHTML = self.validationStatus.message;
+            break;
+        case 'invalid':
+            modalIcon.classList.remove('icon-thumbs-up2');
+            modalIcon.classList.add('icon-warning-sign');
+            modalHeaderText.innerHTML = 'Invalid Entry!';
+            modalBodyText.innerHTML = self.validationStatus.message;
+            break;
+        default:
+            modalIcon.classList.remove('icon-thumbs-up2');
+            modalIcon.classList.remove('icon-warning-sign');
+            modalHeaderText.innerHTML = 'Living Well Rehabilitation';
+            modalBodyText.innerHTML = 'Thank you for your interest. Please contact us at info@livingwellrehabilitation.com';
+    }
+
+    
+}
 
 function showSuccessModal() {
     modal.style.display = "block";

@@ -180,7 +180,7 @@
     <Compile Include="Controllers\CareersController.cs" />
     <Compile Include="Controllers\PartnerController.cs" />
     <Compile Include="Controllers\ServicesController.cs" />
-    <Compile Include="Models\LivingWellInfo.cs" />
+    <Compile Include="Models\CompanyInfo.cs" />
     <Compile Include="Models\PostalAddress.cs" />
     <Compile Include="Models\Utility.cs" />
     <Compile Include="Models\Workflow.cs" />
@@ -253,6 +253,7 @@
     <Content Include="Content\images\temp\cityScape.png" />
     <Content Include="Content\images\temp\diverse-workforce-banner.png" />
     <Content Include="Content\images\temp\generic_graph_up.png" />
+    <Content Include="Content\images\temp\hero-physical-therapy-occupational-therapy-degree.png" />
     <Content Include="Content\images\temp\LivingWellLogo.PNG" />
     <Content Include="Content\images\temp\Nurse-Happy-hold-stethoscope.png" />
     <Content Include="Content\images\temp\nurse003.png" />
@@ -433,8 +434,7 @@
     <Content Include="Views\Error\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Uploads\" />
+    <Folder Include="App_Data\Uploads\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Uploads\" />
   </ItemGroup>

@@ -10,7 +10,7 @@ namespace LivingWellMVC.Models {
     public abstract class Email {
 
         #region Properties
-
+        protected const string _uploadFilePath = "/App_Data/Uploads/";
         public string ToAddress { get; set; }
         public string ToDisplayName { get; set; }
         public string FromAddress { get; set; }
@@ -22,7 +22,9 @@ namespace LivingWellMVC.Models {
         public EmailType EmailType { get; set; }
         public WorkflowType Workflow { get; set; }
         public Status Status { get; set; }
-        public LivingWellInfo LivingWellInfo;
+        public string AttachmentFilePath { get; set; }
+        public List<string> AttachmentFileNames;
+        public CompanyInfo LivingWellInfo;
 
 
 
@@ -31,14 +33,18 @@ namespace LivingWellMVC.Models {
         #region Constructors
 
         public Email() {
-            this.LivingWellInfo = new LivingWellInfo();
+            this.LivingWellInfo = new CompanyInfo();
+            this.AttachmentFileNames = new List<string>();
+            this.AttachmentFilePath = _uploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
         }
 
         public Email(string to, string from) {
+            this.LivingWellInfo = new CompanyInfo();
+            this.AttachmentFileNames = new List<string>();
+            this.AttachmentFilePath = _uploadFilePath;
             this.ToAddress = to;
             this.FromAddress = from;
-            this.LivingWellInfo = new LivingWellInfo();
         }
 
         public virtual void CalculateBodyKeys(SubmissionInfo info){
@@ -53,8 +59,16 @@ namespace LivingWellMVC.Models {
 
         public virtual void CalculateSubject(){
             string subject =  this.LivingWellInfo.ShortName + " " + 
-                Enum.GetName(typeof(Models.WorkflowType), this.Workflow).ToString() + " "  +
-            Enum.GetName(typeof(Models.EmailType), this.EmailType).ToString();
+                Enum.GetName(typeof(Models.WorkflowType), this.Workflow).ToString();
+
+            switch (this.Workflow) {
+                case WorkflowType.Contact:
+                    subject += " Request";
+                    break;
+                default:
+                    subject += " Submission";
+                    break;
+            }
             
             switch(this.EmailType){
                 case Models.EmailType.Submission:
@@ -135,15 +149,20 @@ namespace LivingWellMVC.Models {
     }
 
     public class AnalysisEmail : Email {
+        #region Constructors 
 
         public AnalysisEmail() {
-            this.LivingWellInfo = new LivingWellInfo();
+            this.LivingWellInfo = new CompanyInfo();
+            this.AttachmentFileNames = new List<string>();
+            this.AttachmentFilePath = _uploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.Workflow = WorkflowType.Analysis;
         }
 
         public AnalysisEmail(EmailType emailType) {
-            this.LivingWellInfo = new LivingWellInfo();
+            this.LivingWellInfo = new CompanyInfo();
+            this.AttachmentFileNames = new List<string>();
+            this.AttachmentFilePath = _uploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.EmailType = emailType;
             this.Workflow = WorkflowType.Analysis;
@@ -152,12 +171,17 @@ namespace LivingWellMVC.Models {
         }
 
         public AnalysisEmail(string to, string from) {
-            this.LivingWellInfo = new LivingWellInfo();
+            this.LivingWellInfo = new CompanyInfo();
+            this.AttachmentFileNames = new List<string>();
+            this.AttachmentFilePath = _uploadFilePath;
             this.ToAddress = to;
             this.FromAddress = from;
             this.Workflow = WorkflowType.Analysis;
         }
 
+        #endregion
+
+        #region Methods
         public override void CalculateBodyKeys(SubmissionInfo tmp) {
             base.CalculateBodyKeys(tmp);
 
@@ -175,18 +199,25 @@ namespace LivingWellMVC.Models {
             this.BodyKeys.Add("<%MESSAGE%>", info.Message);
 
         }
+        #endregion
+
     }
 
     public class ContactEmail : Email {
+        #region Constructors
 
         public ContactEmail() { 
-            this.LivingWellInfo = new LivingWellInfo();
+            this.LivingWellInfo = new CompanyInfo();
+            this.AttachmentFileNames = new List<string>();
+            this.AttachmentFilePath = _uploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.Workflow = WorkflowType.Contact;
         }
 
         public ContactEmail(EmailType emailType) {
-            this.LivingWellInfo = new LivingWellInfo();
+            this.LivingWellInfo = new CompanyInfo();
+            this.AttachmentFileNames = new List<string>();
+            this.AttachmentFilePath = _uploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.EmailType = emailType;
             this.Workflow = WorkflowType.Contact;
@@ -195,11 +226,17 @@ namespace LivingWellMVC.Models {
         }
 
         public ContactEmail(string to, string from) {
-            this.LivingWellInfo = new LivingWellInfo();
+            this.LivingWellInfo = new CompanyInfo();
+            this.AttachmentFileNames = new List<string>();
+            this.AttachmentFilePath = _uploadFilePath;
             this.ToAddress = to;
             this.FromAddress = from;
             this.Workflow = WorkflowType.Contact;
         }
+
+        #endregion
+
+        #region Methods
 
         public override void CalculateBodyKeys(SubmissionInfo tmp) {
             base.CalculateBodyKeys(tmp);
@@ -212,18 +249,24 @@ namespace LivingWellMVC.Models {
 
         }
 
+        #endregion
     }
 
     public class ApplicationEmail : Email {
-        
+        #region Constructors
+
         public ApplicationEmail() {
-            this.LivingWellInfo = new LivingWellInfo();
+            this.LivingWellInfo = new CompanyInfo();
+            this.AttachmentFileNames = new List<string>();
+            this.AttachmentFilePath = _uploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.Workflow = WorkflowType.Application;
         }
 
         public ApplicationEmail(EmailType emailType) {
-            this.LivingWellInfo = new LivingWellInfo();
+            this.LivingWellInfo = new CompanyInfo();
+            this.AttachmentFileNames = new List<string>();
+            this.AttachmentFilePath = _uploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.EmailType = emailType;
             this.Workflow = WorkflowType.Application;
@@ -231,11 +274,17 @@ namespace LivingWellMVC.Models {
         }
 
         public ApplicationEmail(string to, string from) {
-            this.LivingWellInfo = new LivingWellInfo();
+            this.LivingWellInfo = new CompanyInfo();
+            this.AttachmentFileNames = new List<string>();
+            this.AttachmentFilePath = _uploadFilePath;
             this.ToAddress = to;
             this.FromAddress = from;
             this.Workflow = WorkflowType.Application;
         }
+
+        #endregion
+
+        #region Methods
 
         public override void CalculateBodyKeys(SubmissionInfo tmp) {
             base.CalculateBodyKeys(tmp);
@@ -258,6 +307,8 @@ namespace LivingWellMVC.Models {
             this.BodyKeys.Add("<%RESUMEFILENAME%>", info.ResumeFileName);
             this.BodyKeys.Add("<%MESSAGE%>", info.Message);
         }
+
+        #endregion
     }
 
 

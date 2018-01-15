@@ -16,6 +16,7 @@ namespace LivingWellMVC.Controllers.Api
         [HttpPost]
         [Route("resume")]
         public void Upload() {
+            LivingWellMVC.Models.CompanyInfo company = new Models.CompanyInfo();
             //http://ajeeshms.in/articles/upload-files-using-ajax-in-asp-net-mvc/
             for (int i = 0; i < HttpContext.Current.Request.Files.Count; i++) {
                 HttpPostedFileBase file = new System.Web.HttpPostedFileWrapper(HttpContext.Current.Request.Files[i]); //Uploaded file
@@ -25,9 +26,9 @@ namespace LivingWellMVC.Controllers.Api
                 string mimeType = file.ContentType;
                 System.IO.Stream fileContent = file.InputStream;
                 //Delete existing resume file. "*" matches all characters
-                System.IO.File.Delete("/Uploads/Resume_*");
+                //System.IO.File.Delete("App_Data/Uploads/");
                 //To save file, use SaveAs method
-                file.SaveAs(HttpContext.Current.Server.MapPath("/Uploads/Resume_") + fileName); //File will be saved in application root
+                file.SaveAs(HttpContext.Current.Server.MapPath("/App_Data/Uploads/" + fileName)); //File will be saved in application root
             }
 
         }
