@@ -28,7 +28,7 @@ namespace LivingWellMVC.Controllers.Api
                 //Delete existing resume file. "*" matches all characters
                 //System.IO.File.Delete("App_Data/Uploads/");
                 //To save file, use SaveAs method
-                file.SaveAs(HttpContext.Current.Server.MapPath("/App_Data/Uploads/" + fileName)); //File will be saved in application root
+                file.SaveAs(HttpContext.Current.Server.MapPath("/App_Data/Uploads/")); //File will be saved in application root
             }
 
         }

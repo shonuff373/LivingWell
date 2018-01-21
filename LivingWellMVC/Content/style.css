@@ -182,7 +182,7 @@ h6 {
 	font-weight: 600;
 	line-height: 1.5;
 	margin: 0 0 30px 0;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 h5,
@@ -243,6 +243,14 @@ small { font-family: 'Lato', sans-serif; }
 
 .header-blurb-small-container {
     padding: 5vw 10vw 5vw 10vw;
+}
+
+.header-blurb-container h1
+.header-blurb-container h2,
+.header-blurb-container h3,
+.header-blurb-container h4,
+.header-blurb-container h5 {
+    font-family: "Roboto", sans-serif;
 }
 /*#endregion*/
 
@@ -852,7 +860,14 @@ body.stretched #header.full-header .container {
 #primary-menu ul li { position: relative; }
 
 #primary-menu ul li.mega-menu { position: inherit; }
-#primary-menu ul li.mega-menu:hover { background-color: #536977;} /*ILJ*/ #primary-menu ul > li {
+#primary-menu ul li.mega-menu:hover { 
+    /*background-color: #536977;*/
+    -moz-box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+
+} /*ILJ*/ 
+#primary-menu ul > li {
 	float: left;
 	margin-left: 2px;
 }
@@ -7423,7 +7438,7 @@ body:not(.device-touch) .entry-link {
         padding: 0 3vw 0 3vw;
     }
 
-    .header-blurb-container
+ 
 }
 
 
