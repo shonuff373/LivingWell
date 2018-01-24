@@ -10,7 +10,7 @@ namespace LivingWellMVC.Models {
     public abstract class Email {
 
         #region Properties
-        protected const string _uploadFilePath = "/App_Data/Uploads/";
+        private const string _uploadFilePath = "~/App_Data/Uploads";
         public string ToAddress { get; set; }
         public string ToDisplayName { get; set; }
         public string FromAddress { get; set; }
@@ -25,7 +25,9 @@ namespace LivingWellMVC.Models {
         public string AttachmentFilePath { get; set; }
         public List<string> AttachmentFileNames;
         public CompanyInfo LivingWellInfo;
-
+        protected string UploadFilePath {
+            get { return HttpContext.Current.Server.MapPath(_uploadFilePath); } 
+        }
 
 
         #endregion  
@@ -35,14 +37,14 @@ namespace LivingWellMVC.Models {
         public Email() {
             this.LivingWellInfo = new CompanyInfo();
             this.AttachmentFileNames = new List<string>();
-            this.AttachmentFilePath = _uploadFilePath;
+            this.AttachmentFilePath = UploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
         }
 
         public Email(string to, string from) {
             this.LivingWellInfo = new CompanyInfo();
             this.AttachmentFileNames = new List<string>();
-            this.AttachmentFilePath = _uploadFilePath;
+            this.AttachmentFilePath = UploadFilePath;
             this.ToAddress = to;
             this.FromAddress = from;
         }
@@ -145,7 +147,11 @@ namespace LivingWellMVC.Models {
     }
 
     public class EmailList : List<Email> {
-        public Status Status { get; set; }
+        public Status Status { get; set; }  
+
+        public EmailList() {
+            this.Status = new Status();
+        }
     }
 
     public class AnalysisEmail : Email {
@@ -154,7 +160,7 @@ namespace LivingWellMVC.Models {
         public AnalysisEmail() {
             this.LivingWellInfo = new CompanyInfo();
             this.AttachmentFileNames = new List<string>();
-            this.AttachmentFilePath = _uploadFilePath;
+            this.AttachmentFilePath = UploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.Workflow = WorkflowType.Analysis;
         }
@@ -162,7 +168,7 @@ namespace LivingWellMVC.Models {
         public AnalysisEmail(EmailType emailType) {
             this.LivingWellInfo = new CompanyInfo();
             this.AttachmentFileNames = new List<string>();
-            this.AttachmentFilePath = _uploadFilePath;
+            this.AttachmentFilePath = UploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.EmailType = emailType;
             this.Workflow = WorkflowType.Analysis;
@@ -173,7 +179,7 @@ namespace LivingWellMVC.Models {
         public AnalysisEmail(string to, string from) {
             this.LivingWellInfo = new CompanyInfo();
             this.AttachmentFileNames = new List<string>();
-            this.AttachmentFilePath = _uploadFilePath;
+            this.AttachmentFilePath = UploadFilePath;
             this.ToAddress = to;
             this.FromAddress = from;
             this.Workflow = WorkflowType.Analysis;
@@ -209,7 +215,7 @@ namespace LivingWellMVC.Models {
         public ContactEmail() { 
             this.LivingWellInfo = new CompanyInfo();
             this.AttachmentFileNames = new List<string>();
-            this.AttachmentFilePath = _uploadFilePath;
+            this.AttachmentFilePath = UploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.Workflow = WorkflowType.Contact;
         }
@@ -217,7 +223,7 @@ namespace LivingWellMVC.Models {
         public ContactEmail(EmailType emailType) {
             this.LivingWellInfo = new CompanyInfo();
             this.AttachmentFileNames = new List<string>();
-            this.AttachmentFilePath = _uploadFilePath;
+            this.AttachmentFilePath = UploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.EmailType = emailType;
             this.Workflow = WorkflowType.Contact;
@@ -228,7 +234,7 @@ namespace LivingWellMVC.Models {
         public ContactEmail(string to, string from) {
             this.LivingWellInfo = new CompanyInfo();
             this.AttachmentFileNames = new List<string>();
-            this.AttachmentFilePath = _uploadFilePath;
+            this.AttachmentFilePath = UploadFilePath;
             this.ToAddress = to;
             this.FromAddress = from;
             this.Workflow = WorkflowType.Contact;
@@ -258,7 +264,7 @@ namespace LivingWellMVC.Models {
         public ApplicationEmail() {
             this.LivingWellInfo = new CompanyInfo();
             this.AttachmentFileNames = new List<string>();
-            this.AttachmentFilePath = _uploadFilePath;
+            this.AttachmentFilePath = UploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.Workflow = WorkflowType.Application;
         }
@@ -266,7 +272,7 @@ namespace LivingWellMVC.Models {
         public ApplicationEmail(EmailType emailType) {
             this.LivingWellInfo = new CompanyInfo();
             this.AttachmentFileNames = new List<string>();
-            this.AttachmentFilePath = _uploadFilePath;
+            this.AttachmentFilePath = UploadFilePath;
             this.FromAddress = LivingWellInfo.NoReplyEmailAddress;
             this.EmailType = emailType;
             this.Workflow = WorkflowType.Application;
@@ -276,7 +282,7 @@ namespace LivingWellMVC.Models {
         public ApplicationEmail(string to, string from) {
             this.LivingWellInfo = new CompanyInfo();
             this.AttachmentFileNames = new List<string>();
-            this.AttachmentFilePath = _uploadFilePath;
+            this.AttachmentFilePath = UploadFilePath;
             this.ToAddress = to;
             this.FromAddress = from;
             this.Workflow = WorkflowType.Application;

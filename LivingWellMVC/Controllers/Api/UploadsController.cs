@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Administration;
 using System.Web.Http;
 using Newtonsoft.Json;
+
 
 namespace LivingWellMVC.Controllers.Api
 {
@@ -25,10 +27,13 @@ namespace LivingWellMVC.Controllers.Api
                 string fileName = file.FileName;
                 string mimeType = file.ContentType;
                 System.IO.Stream fileContent = file.InputStream;
+                string path = Path.Combine(HttpContext.Current.Server.MapPath("~/App_Data/Uploads"), fileName);
                 //Delete existing resume file. "*" matches all characters
                 //System.IO.File.Delete("App_Data/Uploads/");
                 //To save file, use SaveAs method
-                file.SaveAs(HttpContext.Current.Server.MapPath("/App_Data/Uploads/")); //File will be saved in application root
+                
+                //file.SaveAs(HttpContext.Current.Server.MapPath("~/App_Data/Uploads")); //File will be saved in application root
+                file.SaveAs(path);
             }
 
         }

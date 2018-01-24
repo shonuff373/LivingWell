@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -51,13 +52,22 @@ namespace LivingWellMVC.WorkflowServices {
 
         public override MailMessage GenerateEmail(Email email) {
             MailMessage msg = base.GenerateEmail(email);
+            
+            Attachment attachment;
+            foreach(string fileName in email.AttachmentFileNames){
+                attachment = new Attachment(Path.Combine(email.AttachmentFilePath, fileName));
 
-            foreach(string attachment in email.AttachmentFileNames){
-                if (System.IO.File.Exists(HttpContext.Current.Server.MapPath(email.AttachmentFilePath) + attachment)) {
-                    msg.Attachments.Add(new Attachment(HttpContext.Current.Server.MapPath(email.AttachmentFilePath) + attachment));
+                if (attachment != null){
+                    msg.Attachments.Add(attachment);
                 }
             }
             return msg;
+        }
+
+        protected override void CleanUpWorkflow(Email email) {
+            foreach (string fileName in email.AttachmentFileNames) {
+                //File.Delete(Path.Combine(email.AttachmentFilePath, fileName));
+            }
         }
     }
 }

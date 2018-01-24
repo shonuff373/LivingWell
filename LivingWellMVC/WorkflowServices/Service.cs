@@ -34,6 +34,10 @@ namespace LivingWellMVC.WorkflowServices {
                 emailList.Add(SetupEmailProperties(info, status, EmailType.Submission));
                 emailList.Add(SetupEmailProperties(info, status, EmailType.Response));
                 status = SendEmails(emailList);
+
+                if (status.StatusType == StatusEnum.Success) {
+                    this.CleanUpWorkflow(emailList);
+                }
             }
 
             return status;
@@ -149,6 +153,14 @@ namespace LivingWellMVC.WorkflowServices {
             smtp.Send(msg);
 
         }
+
+        protected virtual void CleanUpWorkflow(EmailList emailList) {
+            foreach (Email email in emailList) {
+                CleanUpWorkflow(email);
+            }
+        }
+
+        protected virtual void CleanUpWorkflow(Email email) {}
 
         protected void ValidateEmptyString(string value) {
             if (string.IsNullOrWhiteSpace(value)) {
