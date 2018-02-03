@@ -47,8 +47,8 @@
                     <!-- Logo
                     ============================================= -->
                     <div id="logo">
-                        <a href="@Url.Action("Index","Home")" class="standard-logo" data-dark-logo="../../Content/images/logo-dark.png"><img src="../../Content/images/logo.png" alt="Canvas Logo"></a>
-                        <a href="@Url.Action("Index","Home")" class="retina-logo" data-dark-logo="../../Content/images/logo-dark@2x.png"><img src="../../Content/images/logo-dark@2x.png" alt="Canvas Logo"></a>
+                        <a href="@Url.Action("Index","Home")" class="standard-logo" data-dark-logo="../../Content/images/temp/LW-logo-right-greyred.png"><img src="../../Content/images/temp/LW-logo-right-greyred.png" alt="Living Well Logo"></a>
+                        <a href="@Url.Action("Index","Home")" class="retina-logo" data-dark-logo="../../Content/images/temp/LW-logo-right-greyred.png"><img src="~/Content/images/temp/LW-logo-right-greyred.png" alt="Living Well Logo"></a>
                     </div><!-- #logo end -->
                     <!-- Primary Navigation
                     ============================================= -->
@@ -182,119 +182,76 @@
 
                 <!-- Footer Widgets
                 ============================================= -->
-                <div class="footer-widgets-wrap clearfix">
+                <div class="footer-widgets-wrap toppadding-sm clearfix">
 
-                    <div class="col_two_third">
+                    <div class="col_full footer-item-wrapper">
 
                         <div class="col_one_third">
 
-                            <div class="widget clearfix">
+                            <div class="clearfix">
 
-                                <h4>Contact Us</h4>
+                                <h4 class="footer-item-header">Contact Us</h4>
 
-                                <div style="background: url('../../Content/images/world-map.png') no-repeat center center; background-size: 100%;">
-                                    <address>
-                                        
-                                        <abbr title="Phone Number"><strong>Address:</strong></abbr>
-                                        @Model.LivingWellInfo.Address.AddressLineOne,
-                                        <br />
-                                        @Model.LivingWellInfo.Address.CityStateZip()
-                                    </address>
-                                    <abbr title="Phone Number"><strong>Phone: </strong></abbr> @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Phone)<br>
-                                    <abbr title="Fax"><strong>Fax: </strong></abbr> @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Fax)<br>
-                                    <abbr title="Email Address"><strong>Email: </strong></abbr>@Model.LivingWellInfo.InfoEmailAddress
-
+                                <div class="footer-item-body footer-item-background">
+                                    <div title="Phone Number"><strong>Address:</strong> @Model.LivingWellInfo.Address.AddressOnOneLine()</div>
+                                    <div class="col_full" title="Phone Number"><strong>Phone: </strong> @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Phone)</div>
+                                    <div title="Fax"><strong>Fax: </strong> @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Fax)</div>
+                                    <div title="Email Address"><strong>Email: </strong>@Model.LivingWellInfo.InfoEmailAddress</div>
+                                    <br />
+                                    <p>Give us a call, we look foward to meeting you!</p>
 
                                 </div>
-                                <div class="topmargin-sm clearfix"><p>Give us a call, we look foward to meeting you!</p></div>
+                                
+
+                            </div>
+
+                            <div class="footer-item-button">
+                                @Html.ActionLink("Contact Us", "Index", "Contact", null, new { @class = "button button-default-background button-large" })
 
                             </div>
 
                         </div>
 
-                        <div class="col_one_third">
+                        <div class="col_one_third footer-item-wrapper">
 
-                            <div class="widget widget_links clearfix">
+                            <div class="clearfix">
 
-                                <h4>Free Analysis</h4>
+                                <h4 class="footer-item-header">Free Analysis</h4>
 
-                                <div class="topmargin-sm clearfix"><p>Living Well Rehab is the perfect therapy solution for you. Our free analysis is the first step in letting show you what we can do.</p></div>
+                                <div class="footer-item-body">
+                                    <p>Living Well Rehab is the perfect therapy solution for you. Our free analysis is the first step in letting show you what we can do.</p>
+                                </div>
 
                             </div>
-
+                            <div class="footer-item-button">
+                                @Html.ActionLink("Schedule Now", "Index", "Partner", null, new { @class = "button button-default-background button-large" })
+                            </div>
                         </div>
 
-                        <div class="col_one_third col_last">
+                        <div class="col_one_third col_last footer-item-wrapper">
 
-                            <div class="widget clearfix">
-                                <h4>Opportunities</h4>
-                                <ul class="unordered-list">
+                            <div class="clearfix">
+                                <h4 class="footer-item-header">Opportunities</h4>
+                                <ul class="unordered-list footer-item-body">
                                     <li>Patient-centered approach to care</li>
                                     <li>On-site and local regional management</li>
                                     <li>Growth opportunities</li>
                                     <li>Flexible Schedules</li>
                                     <li>Point of service documentation and more...</li>
                                 </ul>
-
                             </div>
-
+                            <div class="col_full footer-item-button">
+                                @Html.ActionLink("Learn more", "Index", "Services", null, new { @class = "button button-default-background button-large" })
+                            </div>
                         </div>
 
                     </div>
 
-                    <div class="col_one_third col_last">
-
-                        <div class="widget subscribe-widget clearfix">
-                            <h4>FollOw US</h4>
-                            <h5><strong>Subscribe</strong> to Our Newsletter to get Important News &amp; Updates:</h5>
-                            <div class="widget-subscribe-form-result"></div>
-                            <form id="widget-subscribe-form" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
-                                <div class="input-group divcenter">
-                                    <span class="input-group-addon"><i class="icon-email2"></i></span>
-                                    <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-                                    <span class="input-group-btn">
-                                        <button class="btn btn-success" type="submit">Subscribe</button>
-                                    </span>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="widget clearfix" style="margin-bottom: -20px;">
-
-                            <div class="row">
-
-                                <div class="col-md-6 clearfix bottommargin-sm">
-                                    <a href="#" class="social-icon si-dark si-colored si-facebook nobottommargin" style="margin-right: 10px;">
-                                        <i class="icon-facebook"></i>
-                                        <i class="icon-facebook"></i>
-                                    </a>
-                                    <a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>
-                                </div>
-                                <div class="col-md-6 clearfix">
-                                    <a href="#" class="social-icon si-dark si-colored si-rss nobottommargin" style="margin-right: 10px;">
-                                        <i class="icon-rss"></i>
-                                        <i class="icon-rss"></i>
-                                    </a>
-                                    <a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
 
                     <div class="col_two_third">
-                        <div class="col_one_third">
-                            <a href="#" class="button button-default-background button-large" style="width:100%; text-align:center; color: white;"><!--<i class="icon-angle-right"></i>--><span>Contact Us</span></a>
 
-                        </div>
-                        <div class="col_one_third">
-                            <a href="#" class="button button-default-background button-large " style="width:100%; text-align:center; color: white;"><!--<i class="icon-angle-right"></i>--><span>Schedule Now</span></a>
-                        </div>
-                        <div class="col_one_third norightmargin">
-                            <a href="#" class="button button-default-background button-large" style="width:100%; text-align:center; color: white;"><!--<i class="icon-angle-right"></i>--><span>Learn More</span></a>
-                        </div>
+                        
+                        
                     </div>
                 </div><!-- .footer-widgets-wrap end -->
 

@@ -79,32 +79,26 @@
             <!-- Career Posts
             ============================================= -->
             
-            <div id="posts" class="post-grid post-masonry grid-3 clearfix" style="position: relative; height: 1878.8px;">
+            <div id="posts" class="post-grid post-masonry grid-3 clearfix" style="position: relative;">
                 <div class="entry career-container thin-text">
-                    <div>
-                        <div class="thin-text career-title">Occupational Therapist</div>
-                        <div class="thin-text career-short-desc">Assist in the recuperation of physical or mental illness through performing activities required in daily life.</div>
-                    </div>
-                    <div class="popout-block-button center">
-                        @Html.ActionLink("Apply Now", "Apply", "Careers", new { applicationType = "Occupational" }, new { @class = "button button-default-background button-xlarge" })
+                    <div class="thin-text career-title">Occupational Therapist / COTA</div>
+                    @*<div class="thin-text career-short-desc">Assist in the recuperation of physical or mental illness through performing activities required in daily life.</div>*@
+                    <div class="popout-block-button career-button center">
+                        @Html.ActionLink("Apply Now", "Apply", "Careers", new { applicationType = "Occupational" }, new { @class = "button button-default-background button-large" })
                     </div>
                 </div>
                 <div class="entry career-container">
-                    <div>
-                        <div class="thin-text career-title">Physical Therapist</div>
-                        <div class="thin-text career-short-desc">Help grow the preservation, enhancement and restoration of movement and physical function.</div>
-                    </div>
-                    <div class="popout-block-button center">
-                        @Html.ActionLink("Apply Now", "Apply", "Careers", new { applicationType = "Physical" }, new { @class = "button button-default-background button-xlarge" })
+                    <div class="thin-text career-title">Physical Therapist / CPTA</div>
+                    @*<div class="thin-text career-short-desc">Help grow the preservation, enhancement and restoration of movement and physical function.</div>*@
+                    <div class="popout-block-button career-button center">
+                        @Html.ActionLink("Apply Now", "Apply", "Careers", new { applicationType = "Physical" }, new { @class = "button button-default-background button-large" })
                     </div>
                 </div>
                 <div class="entry career-container">
-                    <div>
-                        <div class="thin-text career-title">Speech Therapist</div>
-                        <div class="thin-text career-short-desc">Aid others in strengthening their ability to communicate by training and treating speech defects.</div>
-                    </div>
-                    <div class="popout-block-button center">
-                        @Html.ActionLink("Apply Now", "Apply", "Careers", new{ applicationType = "Speech"}, new { @class = "button button-default-background button-xlarge" })
+                    <div class="thin-text career-title">Speech Therapist / SLP</div>
+                    @*<div class="thin-text career-short-desc">Aid others in strengthening their ability to communicate by training and treating speech defects.</div>*@
+                    <div class="popout-block-button career-button center">
+                        @Html.ActionLink("Apply Now", "Apply", "Careers", new { applicationType = "Speech" }, new { @class = "button button-default-background button-large" })
                     </div>
                 </div>
 

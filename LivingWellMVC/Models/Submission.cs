@@ -122,12 +122,17 @@ namespace LivingWellMVC.Models {
     public enum PositionTypeEnum {
         [Description("Unknown")]
         Unknown = 0,
-        [Description("Occupational Therapy")]
-        Occupational = 1,
-        [Description("Physical Therapy")]
-        Physical = 2,
-        [Description("Speech Therapy")]
-        Speech = 3
+        [Description("Occupational Therapist")] 
+        OccupationalTherapist = 1,
+        [Description("Occupational Therapy Assistant (OTA)")] 
+        OccupationalTherapistAssistant = 2,
+        [Description("Physical Therapist")] 
+        PhysicalTherapist = 3,
+        [Description("Physical Therapy Assistant (PTA)")] 
+        PhysicalTherapyAssistant = 4,
+        [Description("Speech Therapist")]
+        SpeechTherapist = 5
+
     }
 
     public enum PositionStatusEnum {

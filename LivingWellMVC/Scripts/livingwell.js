@@ -134,7 +134,7 @@ function bindApplicationInput() {
         weeklyHours: document.getElementById('application-weekly-hours').value,
         referral: document.getElementById('application-referral').value,
         resumeFileName: document.getElementById('application-resume').value.split(/(\\|\/)/g).pop(), //use regular expression to get filename
-        message: document.getElementById('application-additional-information').value
+        message: '' //document.getElementById('application-additional-information').value
     }
 }
 

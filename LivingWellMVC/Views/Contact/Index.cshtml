@@ -6,27 +6,54 @@
 
 <section class="nomargin nopadding"></section><!--Buffer for header-->
 <!--Page Title-->
-<section id="page-title">
+@*<section id="page-title">
 
     <div class="container clearfix">
         <h1>Contact</h1>
         <span>Get in Touch with Us</span>
 
     </div>
+</section>*@
+
+<!-- Main Image
+============================================= -->
+
+<section id="slider" class="boxed-slider swiper_wrapper nopadding clearfix">
+    <div class="swiper_wrapper_med_height">
+
+        <div class="swiper-container swiper-parent">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide dark main-image-contact-us">
+                    <div class="container clearfix">
+                        <div class="slider-caption slider-caption-center">
+                            <h2 data-caption-animate="fadeInUp">Contact Us</h2>
+                            <p data-caption-animate="fadeInUp" data-caption-delay="200">We want to help!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
+
+<!-- #main image end -->
 
 <!--Content -->
 <section id="content" style="margin-bottom: 0px;">
-    <div class="content-wrap">
+    <div class="content-wrap toppadding-sm">
 
         <div class="container clearfix">
 
             <!-- Contact Form
             ============================================= -->
             <div class="col_full">
+                <h4 class="thin-text center">
+                    We're here to help! For assistance, please fill out the form below with your contact information and details about your question or issue. You can also call us at @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Phone).
+                </h4>
 
                 <div class="fancy-title title-dotted-border">
-                    <h3>Send us an Email</h3>
+                    <h3>Send us an Email!</h3>
                 </div>
 
                 <div class="contact-widget col_half">
@@ -63,9 +90,9 @@
                             <label for="template-contactform-service">Services</label>
                             <select id="template-contactform-service" name="template-contactform-service" class="sm-form-control">
                                 <option value="">-- Select One --</option>
-                                <option value="OccupationalTherapy">Occupational Therapy</option>
-                                <option value="PhysicalTherapy">Physical Therapy</option>
-                                <option value="SpeechTherapy">Speech Therapy</option>
+                                <option value="CareerInquiry">Career Inquiry</option>
+                                <option value="PartnershipInquiry">Partnership Inquiry</option>
+                                <option value="CommunityAnalysis">Community Analysis</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>
@@ -100,7 +127,7 @@
                             });
                             var center = map.getCenter();
                             var infobox = new Microsoft.Maps.Infobox(center, {
-                                title: 'Living Well Rehabilitation',
+                                title: '@Model.LivingWellInfo.FullName',
                                 description: '@Model.LivingWellInfo.Address.AddressOnOneLine()'
                             });
                             infobox.setMap(map);

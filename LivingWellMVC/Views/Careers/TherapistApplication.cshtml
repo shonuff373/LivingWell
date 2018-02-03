@@ -109,12 +109,14 @@
             <h2 class="col_full bottommargin-sm">Desired Position Information</h2>
 
             <div class="col_one_third">
-                <label for="application-position-type" class="">Position Type</label>
+                <label for="application-position-type" class="">Desired Position</label>
                 <select id="application-position-type" name="application-position-type" class="sm-form-control">
                     <option value="0">-- Select One --</option>
-                    <option value="1">Occupational Therapy</option>
-                    <option value="2">Physical Therapy</option>
-                    <option value="3">Speech Therapy</option>
+                    <option value="Occupational Therapist">Occupational Therapist</option>
+                    <option value="Occupational Therapy Assistant">Occupational Therapy Assistant (OTA)</option>
+                    <option value="Physical Therapist">Physical Therapist</option>
+                    <option value="Physical Therapy Assitant">Physical Therapy Assistant (PTA)</option>
+                    <option value="Speech Therapist">Speech Therapist</option>
                 </select>
             </div>
 
@@ -122,9 +124,9 @@
                 <label for="application-position-status" class="">Position Status</label>
                 <select id="application-position-status" name="application-position-status" class="sm-form-control">
                     <option value="0">-- Select One --</option>
-                    <option value="1">Full Time</option>
-                    <option value="2">Part Time</option>
-                    <option value="3">Per Diem days / PRN</option>
+                    <option value="Full Time">Full Time</option>
+                    <option value="Part Time">Part Time</option>
+                    <option value="Per Diem days / PRN">Per Diem days / PRN</option>
                 </select>
             </div>
 
@@ -139,12 +141,14 @@
 
             <div class="col_full">
                 <label for="application-referral" class="">How did you hear about us?</label>
-                <input type="text" id="application-referral" name="application-referral" value="" class="sm-form-control required" placeholder="(e.g. LinkedIn, Indeed, Employee Referral)">
-            </div>
-
-            <div class="col_full">
-                <label for="application-additional-information" class="">Additional Information related to position?</label>
-                <textarea type="text" id="application-additional-information" name="application-additional-information" value="" class="no_resize sm-form-control required " rows="6" placeholder="(e.g. Citizenship information, Disabilities, Previously Employed at Living Well)"></textarea>
+                <select id="application-referral" name="application-referral" class="sm-form-control">
+                    <option value="0">-- Select One --</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Indeed">Indeed</option>
+                    <option value="Referral">Employee Referral</option>
+                </select>
+                @*<input type="text" id="application-referral" name="application-referral" value="" class="sm-form-control required" placeholder="(e.g. LinkedIn, Indeed, Employee Referral)">*@
+                
             </div>
 
             <div class="col_full">

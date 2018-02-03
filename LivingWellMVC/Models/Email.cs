@@ -306,8 +306,8 @@ namespace LivingWellMVC.Models {
             this.BodyKeys.Add("<%CITY%>", info.City);
             this.BodyKeys.Add("<%STATE%>", info.State);
             this.BodyKeys.Add("<%POSTALCODE%>", info.PostalCode);
-            this.BodyKeys.Add("<%POSITIONTYPE%>", Utility.GetEnumDescription((PositionTypeEnum)Convert.ToInt16(info.PositionType)));
-            this.BodyKeys.Add("<%POSITIONSTATUS%>", Utility.GetEnumDescription((PositionStatusEnum)Convert.ToInt16(info.PositionStatus)));
+            this.BodyKeys.Add("<%POSITIONTYPE%>", info.PositionType);//Utility.GetEnumDescription((PositionTypeEnum)Convert.ToInt16(info.PositionType)));
+            this.BodyKeys.Add("<%POSITIONSTATUS%>", info.PositionStatus);// Utility.GetEnumDescription((PositionStatusEnum)Convert.ToInt16(info.PositionStatus)));
             this.BodyKeys.Add("<%WEEKLYHOURS%>", info.WeeklyHours);
             this.BodyKeys.Add("<%REFERRAL%>", info.Referral);
             this.BodyKeys.Add("<%RESUMEFILENAME%>", info.ResumeFileName);
