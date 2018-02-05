@@ -278,7 +278,7 @@ function showModal(modalType) {
             modalIcon.classList.remove('icon-thumbs-up2');
             modalIcon.classList.remove('icon-warning-sign');
             modalHeaderText.innerHTML = 'Living Well Rehabilitation';
-            modalBodyText.innerHTML = 'Thank you for your interest. Please contact us at info@livingwellrehabilitation.com';
+            modalBodyText.innerHTML = 'Thank you for your interest. Please contact us at info@livingwellrehab.com';
     }
 
     

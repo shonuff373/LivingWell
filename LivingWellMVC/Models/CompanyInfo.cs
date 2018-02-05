@@ -52,8 +52,8 @@ namespace LivingWellMVC.Models {
             _shortName = "Living Well";
             _phone = "1234567890";
             _fax = "0987654321";
-            _noReplyEmailAddress = "noreply@livingwellrehabilitation.com";
-            _infoEmailAddress = "info@livingwellrehabilitation.com";
+            _noReplyEmailAddress = "noreply@livingwellrehab.com";
+            _infoEmailAddress = "info@livingwellrehab.com";
             _address = new PostalAddress("123 Main St.", "", "Philadelphia", "PA", "19191");
         }
 

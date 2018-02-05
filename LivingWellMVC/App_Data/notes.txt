@@ -1,0 +1,5 @@
+﻿Email info :https://stackoverflow.com/questions/16373692/best-way-for-sending-advance-email
+
+- On server, Get App_Data to be created and be readable/writable
+- Center footer buttons
+- Center Career (OT/PT/SLP) buttons
