@@ -11,6 +11,7 @@ namespace LivingWellMVC.Models {
 
         #region Properties
         private const string _uploadFilePath = "~/App_Data/Uploads";
+        private const string _headerImagePath = "http://www.livingwellrehab.com/Content/images/temp/LW-logo-right-greyred.png";
         public string ToAddress { get; set; }
         public string ToDisplayName { get; set; }
         public string FromAddress { get; set; }
@@ -52,7 +53,7 @@ namespace LivingWellMVC.Models {
         public virtual void CalculateBodyKeys(SubmissionInfo info){
             ////https://www.html5rocks.com/en/tutorials/webcomponents/imports/
             this.BodyKeys = new ListDictionary();
-
+            this.BodyKeys.Add("<%HEADERIMAGE%>", _headerImagePath);
             this.BodyKeys.Add("<%PHONE%>", info.Phone);
             this.BodyKeys.Add("<%EMAILADDRESS%>", info.EmailAddress);
             this.BodyKeys.Add("<%LWLADDRESS%>", LivingWellInfo.Address.AddressOnOneLine());

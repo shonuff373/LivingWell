@@ -6478,7 +6478,7 @@ body:not(.no-transition) #wrapper,
 #posts { position: relative; }
 
 .entry {
-    min-height: 35vh;
+    /*min-height: 35vh;*/
 	position: relative;
 	margin: 0 0 50px;
 	padding: 1vh 1vw 1vh 1vw;
@@ -7208,10 +7208,10 @@ body:not(.device-touch) .entry-link {
 */
 
 .footer-item-wrapper{
-
 }
-.footer-item-header{
 
+.footer-item-header{
+    text-align: center;
 }
 
 .footer-item-body {
@@ -7219,8 +7219,15 @@ body:not(.device-touch) .entry-link {
     margin: 0;
 }
 
+.footer-item-body li {
+    list-style-position: inside;
+}
+
 .footer-item-button {
     margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-item-background {
@@ -7301,6 +7308,13 @@ body:not(.device-touch) .entry-link {
     font-size: 3vh;
 }
 
+/*For Laptops*/
+@media (min-width: 1200px) {
+    .benefits-short-desc {
+        min-height: 28vh;
+        font-size: 2vh;
+    }
+}
 
 @media (max-width: 1366px) {
     .popout-block {
@@ -7373,6 +7387,8 @@ body:not(.device-touch) .entry-link {
 }
 
 @media (min-width: 961px) {
+
+
     .margin-one-hundred-px {
         margin-top: 100px;
     }
@@ -7408,16 +7424,28 @@ body:not(.device-touch) .entry-link {
         padding:  0 48% 0 49%;
     }
 
-    .footer-item-body{
-        height: 18vh;
+    .footer-item-wrapper{
+        padding-left: 3vw;
+        padding-right: 2vw;
     }
+    .footer-item-body{
+        height: 22vh;
+    }
+
+
 }
 
 @media(min-width:768px) and (max-width: 1024px){
     .button.button-large{
         font-size: 1vh;
     }
+
+    .benefits-short-desc {
+        font-size: 1vh;
+        min-height: 15vh;
+    }
 }
+
 @media(max-width: 961px){
     .geo-location-map {
         visibility: hidden;
@@ -7692,20 +7720,20 @@ body:not(.device-touch) .entry-link {
 
 .career-container {
     
-    min-height: 35vh;
+    /*min-height: 35vh;*/
     border: solid;
     border-color: #CCC;
     border-width: 2px;
-    padding: 1vh 1vw 1vh 1vw;
+    padding: 2vh 2vw 2vh 2vw;
 }
 .career-title {
     min-height: 12vh;
-    font-size: 5vh;
+    font-size: 4.5vh;
     line-height: 1;
     margin-bottom: 2vh;
 }
 .career-short-desc {
-    min-height: 18vh;
+    /*min-height: 18vh;*/
     text-align: justify;
     line-height: 1.5;
     font-size: 3vh;
@@ -7713,7 +7741,7 @@ body:not(.device-touch) .entry-link {
 .career-button {
     bottom: 10%;
     margin: auto;
-    position: absolute;
+    width: 100%;
 }
 
 .benefits-title {
@@ -7726,9 +7754,8 @@ body:not(.device-touch) .entry-link {
     font-family:'Franklin Gothic', 'Arial Narrow', Arial, sans-serif
 }
 .benefits-short-desc {
-    height: 16vh;
+
     text-align: justify;
-    font-size: 2.2vh;
     font-weight: 300;
 }
 

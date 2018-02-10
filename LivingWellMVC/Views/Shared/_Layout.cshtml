@@ -2,9 +2,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @*<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">*@
 
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KWHDSWQ');
+    </script>
+    <!-- End Google Tag Manager -->
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="SemiColonWeb" />
@@ -25,13 +35,35 @@
     <link rel="stylesheet" href="~/Content/responsive.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>@ViewBag.Title</title>
+    <!--SEO Metadata-->
+    <meta name="description" content="Living Well Rehabilitation specializing in clinical solutions. We are your therapy specialists." />
+    <meta name="keywords" content="Living,Well,Rehab,Rehabilitation,Living Well,Living Well Rehab,Living Well Rehabilitation,livingwellrehab,livingwellrehab.com,www.livingwellrehab.com,livingwellrehabilitation,livingwellrehabilitation.com,www.livingwellrehabilitation.com,Therapy,Clinical Therapy,Clinical Therapist,OT,OTA,COTA,Occupational Therapy,Occupational Therapist,PT,PTA,CPTA,Physical Therapy,Physical Therapist,SLP,Speech Therapy,Speech Therapist,Speech Language Therapy,Speech Pathologist,Philadelphia,PA,New Jersey,NJ" />
+    <!--end SEO Metadata-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113569647-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-113569647-1');
+    </script><!-- end Google Analytics-->
+
+    <title>Living Well Rehab</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 
 <body class="stretched side-panel-left device-lg nopadding">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWHDSWQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <div id="wrapper" class="clearfix">
 
         <!-- Header
@@ -184,24 +216,24 @@
                 ============================================= -->
                 <div class="footer-widgets-wrap toppadding-sm clearfix">
 
-                    <div class="col_full footer-item-wrapper">
+                    <div class="col_full">
 
-                        <div class="col_one_third">
+                        <div class="col_one_third footer-item-wrapper">
 
-                            <div class="clearfix">
+                            <div class="clearfix">      
 
                                 <h4 class="footer-item-header">Contact Us</h4>
 
                                 <div class="footer-item-body footer-item-background">
                                     <div title="Phone Number"><strong>Address:</strong> @Model.LivingWellInfo.Address.AddressOnOneLine()</div>
-                                    <div class="col_full" title="Phone Number"><strong>Phone: </strong> @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Phone)</div>
+                                    <div class="col_full" title="Phone Number"><strong>Phone: </strong> @Model.LivingWellInfo.GetPhoneNumberWithLettersAndSpaces(Model.LivingWellInfo.Phone)</div>
                                     <div title="Fax"><strong>Fax: </strong> @Model.LivingWellInfo.GetPhoneNumberWithPeriod(Model.LivingWellInfo.Fax)</div>
                                     <div title="Email Address"><strong>Email: </strong>@Model.LivingWellInfo.InfoEmailAddress</div>
                                     <br />
                                     <p>Give us a call, we look foward to meeting you!</p>
 
                                 </div>
-                                
+
 
                             </div>
 

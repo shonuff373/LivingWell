@@ -1,5 +1,25 @@
 ﻿Email info :https://stackoverflow.com/questions/16373692/best-way-for-sending-advance-email
 
+/*----------------------------
+	To Dos - In Code
+-----------------------------*/
 - On server, Get App_Data to be created and be readable/writable
 - Center footer buttons
 - Center Career (OT/PT/SLP) buttons
+- Update Address
+- Update Phone Number
+- Add logic to Delete files in App_Data after send
+
+/*----------------------------
+	To Dos - On Web
+-----------------------------*/
+- Update Address in
+	- Google Business
+	- Yelp
+	- Yellow Pages
+- Update Phone Number in 
+	- Google Business
+	- Yelp
+	- Yellow Pages
+
+*https://www.google.com/webmasters/tools/home?hl=en - To see Google's crawl data

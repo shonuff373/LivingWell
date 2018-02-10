@@ -23,6 +23,14 @@ namespace LivingWellMVC.Models {
         public static string GetPhoneNumberWithPeriod(string value) {
             return FormatPhoneNumber(value, ".");
         }
+        public static string GetPhoneNumberWithLettersAndSpaces(string value) {
+            string formattedValue = value;
+
+            formattedValue = formattedValue.Insert(1, " ").Insert(5, " ").Insert(8, " ").Insert(11, " ");
+
+            return formattedValue;
+        }
+
 
         private static string FormatPhoneNumber(string value, string separator) {
             int result;

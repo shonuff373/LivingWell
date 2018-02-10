@@ -50,7 +50,7 @@ namespace LivingWellMVC.Models {
         public CompanyInfo() {
             _fullName = "Living Well Rehabilitation";
             _shortName = "Living Well";
-            _phone = "1234567890";
+            _phone = "1833OTPTSLP";//"18336878757";
             _fax = "0987654321";
             _noReplyEmailAddress = "noreply@livingwellrehab.com";
             _infoEmailAddress = "info@livingwellrehab.com";
@@ -63,7 +63,9 @@ namespace LivingWellMVC.Models {
         public string GetPhoneNumberWithPeriod(string value) {
             return Utility.GetPhoneNumberWithPeriod(value);
         }
-
+        public string GetPhoneNumberWithLettersAndSpaces(string value) {
+            return Utility.GetPhoneNumberWithLettersAndSpaces(value);
+        }
         #endregion
     }
 
